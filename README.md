@@ -1,9 +1,28 @@
 # HO SIN DO Melsungen – Website-Neuaufbau
 
-Statischer Neuaufbau von www.hosindo.de im Design-System des kimi-Templates (Oswald + Space Grotesk, Eis-Weiß / Tinte-Schwarz / Cyan-Akzent, Klammer-Panels, Kontur-Backdrops).
+Neuaufbau von www.hosindo.de im Design-System des kimi-Starters: Oswald + Space
+Grotesk, Eis-Weiß / Tinte-Schwarz / Cyan-Akzent, Klammer-Ecken, gestufte Plates,
+animiertes Konturfeld und Zielflaggen-Übergänge zwischen den Blöcken.
 
-- `index.html` – komplette Seite (alle Bereiche als Sektionen mit Anker-Navigation)
-- `assets/img/` – Bildmaterial (JPG, aus den gelieferten PNGs verkleinert)
-- `assets/ui/` – SVG-Elemente aus dem Template (Konturlinien, Icons)
+## Dateien
 
-Einfach `index.html` im Browser öffnen oder den Ordner auf einen Webserver legen.
+| Datei | Zweck |
+|---|---|
+| `index.html` | **Das Ergebnis.** Eine einzige Datei, alle Bilder sind als Base64 eingebettet – einfach im Browser öffnen oder irgendwo hochladen. |
+| `index.src.html` | Die Quelle mit `var(--i-…)`-Platzhaltern statt Bilddaten. Hier wird bearbeitet. |
+| `build.py` | Baut aus der Quelle `index.html`, bettet jedes Bild genau einmal ein. |
+| `assets/img/` | Die acht Motive als JPG. |
+| `assets/ui/` | SVG-Elemente aus dem Template. |
+
+## Ändern
+
+```bash
+# index.src.html bearbeiten, dann:
+python3 build.py
+```
+
+## Inhalt
+
+Alle Bereiche der alten Seite als eine Seite mit Ankernavigation: Verein,
+Sparten, Trainingszeiten, DO-Werte, Geschichte, Trainingselemente, Rangfolge,
+Trainer, Verband, Vereinsleben, Kontakt, Impressum und Datenschutz.
