@@ -5,959 +5,822 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HO SIN DO Melsungen – Koreanische Kampfkunst seit 1976</title>
 <meta name="description" content="HO SIN DO Karateverein Melsungen e.V. – koreanische Kampfkunst, Kickboxen, Move and Box und Tai Chi im Dojang der Gesamtschule Melsungen. Trainingszeiten, Trainer, Rangfolge, Verband und Kontakt.">
-<meta name="theme-color" content="#f7fafb">
+<meta name="theme-color" content="#0D0000">
+<meta name="generator" content="Awesmos — AI website prompts and source code — https://awesmos.com" />
+<!--
+Template reconstructed from an Awesmos prompt.
+Original template source: https://awesmos.com
+-->
+<style id="img-vars">/*__IMG_VARS__*/</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<style id="img-vars">/*__IMG_VARS__*/</style>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════════════════════
-   TIER 1 — PRIMITIVES   (Design-System aus dem kimi-Starter)
-   ═══════════════════════════════════════════════════════════════════ */
+/* ═══════════════ THEME ═══════════════ */
 :root{
-  --raw-color-ice-50:#f7fafb;
-  --raw-color-ice-100:#ebeef1;
-  --raw-color-ice-200:#dfe5e9;
-  --raw-color-steel-400:#b6c1c8;
-  --raw-color-ink-950:#090a0b;
-  --raw-color-ink-900:#0e0f14;
-  --raw-color-ink-800:#1b1d24;
-  --raw-color-ink-700:#2a2d36;
-  --raw-color-ink-alpha-35:rgb(9 10 11 / .35);
-  --raw-color-ink-alpha-08:rgb(9 10 11 / .08);
-  --raw-color-cyan-400:#02d2e3;
-  --raw-color-cyan-alpha-25:rgb(2 210 227 / .25);
-  --raw-color-stone-600:#535450;
-  --raw-color-white:#fff;
-  --raw-color-white-alpha-10:rgb(255 255 255 / .1);
-  --raw-color-white-alpha-20:rgb(255 255 255 / .2);
-  --raw-color-white-alpha-40:rgb(255 255 255 / .4);
-  --raw-font-size-96:6rem;    --raw-font-size-70:4.375rem;
-  --raw-font-size-55:3.4375rem; --raw-font-size-52:3.25rem;
-  --raw-font-size-38:2.375rem;  --raw-font-size-36:2.25rem;
-  --raw-font-size-20:1.25rem;   --raw-font-size-18:1.125rem;
-  --raw-font-size-16:1rem;      --raw-font-size-14:.875rem;
-  --raw-font-size-12:.75rem;
+  --red-950:#0D0000;
+  --red-900:#1F0000;
+  --red-800:#5C0000;
+  --red-700:#8B0000;
+  --red-600:#A01212;
+  --red-500:#C01818;
+  --red-400:#D43030;
+  --red-300:#E85050;
+  --red-200:#F28080;
+  --red-100:#FAB8B8;
+  --fg:#F4F1E8;
+  --fg-muted:rgba(244,241,232,0.55);
+  --line:rgba(255,255,255,0.10);
+  --line-strong:rgba(255,255,255,0.22);
+  --glass:rgba(255,255,255,0.08);
+  --ease-spring:cubic-bezier(0.96, -0.02, 0.38, 1.01);
+  --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io:cubic-bezier(0.76, 0, 0.24, 1);
+  --gutter:clamp(20px,5vw,60px);
 }
-/* TIER 2 — SEMANTIC */
-:root{
-  --background:var(--raw-color-ice-50);
-  --foreground:var(--raw-color-ink-950);
-  --foreground-muted:var(--raw-color-ink-alpha-35);
-  --surface-dark:var(--raw-color-ink-900);
-  --surface-dark-raised:var(--raw-color-ink-800);
-  --surface-black:var(--raw-color-ink-950);
-  --surface-muted:var(--raw-color-ice-100);
-  --surface-soft:var(--raw-color-ice-200);
-  --foreground-on-dark:var(--raw-color-white);
-  --foreground-on-dark-muted:var(--raw-color-steel-400);
-  --foreground-on-dark-faint:var(--raw-color-white-alpha-40);
-  --border-muted:var(--raw-color-ice-200);
-  --border-on-dark:var(--raw-color-ink-700);
-  --accent:var(--raw-color-cyan-400);
-  --accent-muted:var(--raw-color-cyan-alpha-25);
-  --timeline-outline:var(--raw-color-stone-600);
-  --timeline-fill:var(--raw-color-white-alpha-10);
-  --timeline-rail:var(--raw-color-white-alpha-20);
-  --paddock-contour:var(--raw-color-ink-alpha-08);
-  --footer-contour:var(--raw-color-white-alpha-10);
-
-  --type-impact:var(--raw-font-size-96);
-  --type-display-lg:var(--raw-font-size-70);
-  --type-display-sm:var(--raw-font-size-55);
-  --type-display:var(--raw-font-size-52);
-  --type-heading:var(--raw-font-size-38);
-  --type-year:var(--raw-font-size-36);
-  --type-title:var(--raw-font-size-20);
-  --type-lead:var(--raw-font-size-18);
-  --type-label:var(--raw-font-size-16);
-  --type-body:var(--raw-font-size-14);
-  --type-eyebrow:var(--raw-font-size-12);
-
-  --font-sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --font-display:"Oswald","Arial Narrow",Impact,sans-serif;
-  --ease-entrance:cubic-bezier(.2,0,0,1);
-  --ease-plate:cubic-bezier(.33,0,0,1);
-  --gutter:clamp(1.5rem,4.4vw,4rem);
-}
-
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--background);color:var(--foreground);
-  font-family:var(--font-sans);font-size:var(--type-body);line-height:1.5;
-  min-height:100lvh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+html,body{margin:0;padding:0;background:var(--red-950);color:var(--fg);
+  overflow-x:hidden;scroll-behavior:smooth}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-h1,h2,h3,h4{margin:0;font-weight:500}
-p{margin:0}
-ul,ol{margin:0;padding:0;list-style:none}
-dl,dd{margin:0}
+ul,ol{list-style:none}
 canvas{display:block}
-.ph{display:block;background-image:var(--i);background-size:cover;background-position:center 32%;background-repeat:no-repeat}
-::selection{background:var(--accent);color:var(--surface-black)}
-
-/* ── Bausteine ───────────────────────────────────────────────── */
-.display{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
-  line-height:.95;letter-spacing:-.005em}
-.eyebrow{font-size:var(--type-eyebrow);letter-spacing:-.02em;text-transform:uppercase;
-  color:var(--foreground-muted);display:flex;align-items:center;gap:.55rem;font-weight:500}
-.eyebrow::before{content:"";width:6px;height:6px;background:var(--accent);flex:none}
-.on-dark .eyebrow,.eyebrow.light{color:var(--foreground-on-dark-muted)}
-.h2{font-size:clamp(2.5rem,5.6vw,var(--type-display-sm));color:var(--accent)}
-.h2 .l{display:block}
-.h2 .l+.l{color:var(--foreground)}
-.on-dark .h2 .l+.l{color:var(--foreground-on-dark)}
-.h2 .dot{color:var(--foreground)}
-.on-dark .h2 .dot{color:var(--foreground-on-dark)}
-.intro{font-size:clamp(1rem,1.35vw,var(--type-lead));line-height:1.45;max-width:38rem;
-  text-transform:uppercase;letter-spacing:-.01em}
-.on-dark .intro{color:var(--foreground-on-dark-muted)}
-.body-copy{font-size:var(--type-lead);line-height:1.55;max-width:40rem;color:#2c2f36}
-.on-dark .body-copy{color:var(--foreground-on-dark-muted)}
-
-.section{position:relative;padding:clamp(4.5rem,9vw,8.5rem) var(--gutter);isolation:isolate}
-.section.seam{padding-top:clamp(8rem,17vw,13rem)}
-.wrap{max-width:1440px;margin:0 auto;position:relative;z-index:2}
-.on-dark{background:var(--surface-black);color:var(--foreground-on-dark)}
-
-/* Klammer-Ecken (bracket panel) */
-.panel{position:relative;padding:1.1rem 1.25rem}
-.panel::before,.panel::after,.panel>i:first-child::before,.panel>i:first-child::after{
-  content:"";position:absolute;width:10px;height:10px;border:1px solid currentColor;pointer-events:none}
-.panel::before{left:0;top:0;border-width:1px 0 0 1px}
-.panel::after{right:0;top:0;border-width:1px 1px 0 0}
-.panel>i:first-child::before{left:0;bottom:0;border-width:0 0 1px 1px}
-.panel>i:first-child::after{right:0;bottom:0;border-width:0 1px 1px 0}
-.panel .big{font-family:var(--font-display);font-weight:500;font-size:var(--type-title);
-  text-transform:uppercase;line-height:1.05;margin-top:.55rem}
-.panel .muted{color:var(--foreground-muted);text-transform:uppercase;font-size:var(--type-body);line-height:1.3}
-.on-dark .panel .muted{color:var(--foreground-on-dark-muted)}
-
-/* Buttons */
-.cta{position:relative;display:inline-flex;align-items:center;justify-content:space-between;
-  gap:2rem;height:3.125rem;padding:0 1.5rem;font-family:var(--font-display);font-weight:500;
-  font-size:var(--type-title);text-transform:uppercase;line-height:.9;color:var(--accent);
-  isolation:isolate;overflow:hidden}
-.cta svg.frame{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
-.cta .flood{transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease-plate)}
-.cta:hover .flood{transform:scaleX(1)}
-.cta:hover{color:var(--surface-black)}
-.cta .arw{width:.68em;height:.53em;transition:transform .15s var(--ease-entrance)}
-.cta:hover .arw{transform:translateX(.25rem)}
-.cta .arw path{stroke:currentColor}
-.arrow{display:inline-flex;align-items:center;gap:.6rem;font-size:var(--type-label);
-  text-transform:uppercase;font-weight:500}
-.arrow svg{width:14px;height:11px;transition:transform .25s var(--ease-entrance)}
-.arrow svg path{stroke:var(--accent)}
-.arrow:hover svg{transform:translateX(4px)}
-.brk{position:relative;display:inline-block}
-.brk::before,.brk::after{content:"";position:absolute;width:8px;height:8px;border:1px solid currentColor}
-.brk::before{left:-.7rem;top:-.3rem;border-width:1px 0 0 1px}
-.brk::after{right:-.7rem;bottom:-.3rem;border-width:0 1px 1px 0}
-
-/* Konturfeld + Zielflaggen-Übergang */
-.contour,.chequer{position:absolute;pointer-events:none}
-/* Canvas ist ein ersetztes Element: ohne explizite Breite zieht es seine
-   intrinsische Größe statt der Inset-Kästchen – daher 100%/100%. */
-.contour{inset:0;width:100%;height:100%;z-index:0}
-.chequer{left:0;top:0;width:100%;height:34svh;z-index:1}
-
-/* Text-Reveals */
-.rv{display:inline-flex;flex-wrap:wrap;column-gap:.3em}
-.rv u{text-decoration:none;display:inline-block;opacity:0;transform:translateY(.35em);
-  transition:opacity .75s var(--ease-entrance),transform .75s var(--ease-entrance)}
-.rv.ltr{column-gap:0}
-.rv.ltr u{transform:translateY(.3em)}
-.in .rv u,.rv.in u{opacity:1;transform:none}
+.ph{display:block;background-image:var(--i);background-size:cover;
+  background-position:center;background-repeat:no-repeat}
+::selection{background:var(--red-500);color:var(--fg)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.up{opacity:0;transform:translateY(1.1rem);
-  transition:opacity .8s var(--ease-entrance),transform .8s var(--ease-entrance)}
-.up.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .rv u,.up{opacity:1!important;transform:none!important;transition:none}
-  html{scroll-behavior:auto}
+
+.label{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--fg-muted);
+  font-weight:500;display:block}
+.label--accent{color:var(--red-300)}
+
+/* ═══════════════ LOADER ═══════════════ */
+.loader{position:fixed;inset:0;z-index:10001;background:#000;
+  display:flex;align-items:center;justify-content:center;
+  animation:loaderExit 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;animation-delay:1.3s}
+@keyframes loaderExit{to{opacity:0;visibility:hidden}}
+.loader-inner{display:flex;flex-direction:column;align-items:center;gap:18px}
+.loader-name{display:flex;align-items:flex-end;font-family:'Geist',sans-serif;font-size:17px;
+  font-weight:700;letter-spacing:0.38em;color:#fff;line-height:1}
+.l-char-wrap{display:inline-block;overflow:hidden;line-height:1.08}
+.l-char{display:inline-block;transform:translateY(110%);
+  animation:charUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;animation-delay:calc(var(--i) * 60ms)}
+@keyframes charUp{to{transform:translateY(0)}}
+.l-space{display:inline-block;width:0.26em}
+.loader-rule{height:1px;background:#fff;opacity:0.2;width:0;
+  animation:ruleExpand 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;animation-delay:0.5s}
+@keyframes ruleExpand{to{width:100%}}
+.loader-tagline{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);opacity:0;
+  animation:fadeInSub 0.55s ease forwards;animation-delay:0.7s;font-weight:400}
+@keyframes fadeInSub{to{opacity:1}}
+
+/* ═══════════════ ENTRANCE ═══════════════ */
+@keyframes heroImageIn{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:scale(1)}}
+.hero-image-animate{animation:heroImageIn 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay:1s;opacity:0}
+@keyframes wordReveal{from{opacity:0;transform:translateY(12px);filter:blur(8px)}
+  to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.word-reveal{opacity:0;display:inline-block;margin-right:0.28em;
+  animation:wordReveal 0.5s ease forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-sub-animate{opacity:0;animation:fadeUp 0.7s ease forwards}
+@keyframes slideUpScale{from{opacity:0;transform:translateY(40px) scale(0.92)}
+  to{opacity:1;transform:translateY(0) scale(1)}}
+.cta-animate{opacity:0;animation:slideUpScale 0.7s var(--ease-spring) forwards}
+.reveal-up{opacity:0;transform:translateY(18px);
+  transition:opacity 0.7s ease,transform 0.7s var(--ease-out)}
+.reveal-up.in{opacity:1;transform:translateY(0)}
+
+/* ═══════════════ NAV ═══════════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;padding:24px var(--gutter);
+  background:linear-gradient(to bottom, rgba(13,0,0,0.5), rgba(255,255,255,0));
+  transition:background 0.3s ease}
+.nav.solid{background:rgba(13,0,0,0.90);backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:36px;height:36px;display:grid;place-items:center;background:var(--red-500);
+  font-family:'Geist',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.04em;color:#fff}
+.brand-text{font-family:'Geist',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.26em;
+  text-transform:uppercase;line-height:1}
+.brand-text small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:9px;
+  letter-spacing:0.28em;color:var(--fg-muted);margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-muted);
+  transition:color 0.3s ease}
+.nav-links a:hover{color:var(--fg)}
+.burger-btn{width:46px;height:46px;border:1px solid var(--line-strong);background:var(--glass);
+  backdrop-filter:blur(12px);border-radius:9999px;display:grid;place-content:center;gap:6px;
+  cursor:pointer;transition:all 0.35s cubic-bezier(0.76,0,0.24,1)}
+.burger-btn span{display:block;width:16px;height:1.5px;background:var(--fg);
+  transition:all 0.35s cubic-bezier(0.76,0,0.24,1)}
+.burger-btn[aria-expanded="true"] span:first-child{transform:rotate(45deg) translate(0px, 3.25px)}
+.burger-btn[aria-expanded="true"] span:last-child{transform:rotate(-45deg) translate(0px, -3.25px)}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* ═══════════════ MENU ═══════════════ */
+.menu-panel{position:fixed;inset:0;z-index:8000;background:rgba(13,0,0,0.90);
+  backdrop-filter:blur(32px);clip-path:inset(0 0 100% 0);
+  transition:clip-path 0.65s cubic-bezier(0.76, 0, 0.24, 1);
+  display:flex;flex-direction:column;justify-content:center;padding:120px var(--gutter) 60px}
+.menu-panel.open{clip-path:inset(0 0 0% 0)}
+.menu-inner{max-width:1440px;margin:0 auto;width:100%;display:grid;
+  grid-template-columns:1.3fr 1fr;gap:48px;align-items:end}
+.menu-nav a{display:block;font-family:'Geist',sans-serif;font-weight:700;
+  font-size:clamp(30px,4.5vw,56px);line-height:115%;letter-spacing:-0.02em;color:var(--fg);
+  opacity:0.35;transition:opacity 0.25s ease,transform 0.25s ease}
+.menu-nav a:hover{opacity:1;transform:translateX(12px)}
+.menu-side{display:flex;flex-direction:column;gap:28px;padding-bottom:8px}
+.menu-side .label{margin-bottom:8px}
+.menu-side p,.menu-side a{font-size:14px;color:var(--fg-muted);line-height:170%}
+.menu-side a:hover{color:var(--fg)}
+.menu-cta-circle{width:48px;height:48px;border-radius:9999px;background:var(--red-500);
+  display:grid;place-items:center;transition:transform 0.4s var(--ease-spring)}
+.menu-cta-circle:hover{transform:rotate(45deg)}
+@media (max-width:768px){.menu-inner{grid-template-columns:1fr;gap:38px}}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;
+  align-items:flex-end;isolation:isolate}
+.hero-base-img{position:absolute;inset:0;z-index:0;background-size:cover;
+  background-position:center 28%;background-repeat:no-repeat}
+.reveal-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero-shade{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient( to top, rgba(13,0,0,0.90) 0%, rgba(13,0,0,0.55) 35%, rgba(13,0,0,0.15) 65%, rgba(13,0,0,0.5) 100%)}
+.hero-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,0.08) 1px,transparent 1px);
+  background-size:3px 3px;mix-blend-mode:overlay}
+.hero-inner{position:relative;z-index:4;width:100%;max-width:1440px;margin:0 auto;
+  padding:clamp(120px,16vw,148px) var(--gutter) clamp(40px,8vw,92px)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;border-radius:9999px;
+  border:1px solid var(--line-strong);background:var(--glass);backdrop-filter:blur(12px);
+  margin-bottom:24px}
+.hero-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--red-400);flex:none}
+.hero h1{font-family:'Geist',sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:110%;
+  font-size:clamp(40px,6.4vw,92px);max-width:13ch}
+.hero h1 em{font-style:normal;color:var(--red-400)}
+.hero-sub{margin-top:24px;max-width:640px;font-size:clamp(15px,1.4vw,20px);line-height:170%;
+  color:rgba(244,241,232,0.55)}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:40px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:36px;margin-top:48px;padding-top:24px;
+  border-top:1px solid var(--line)}
+.hero-meta b{display:block;font-family:'Geist',sans-serif;font-weight:700;font-size:28px;
+  line-height:1;margin-bottom:6px}
+.hero-scroll{position:absolute;right:var(--gutter);bottom:clamp(40px,8vw,92px);z-index:4;
+  writing-mode:vertical-rl;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--fg-muted);display:flex;align-items:center;gap:12px}
+.hero-scroll::after{content:"";width:1px;height:60px;background:var(--line-strong)}
+@media (max-width:768px){.hero-scroll{display:none}.hero{min-height:640px}
+  /* Auf schmalen Schirmen liegt die Copy direkt auf dem Motiv – der Verlauf trägt sie. */
+  .hero-shade{background:linear-gradient( to top, rgba(13,0,0,0.90) 0%, rgba(13,0,0,0.78) 45%, rgba(13,0,0,0.35) 80%, rgba(13,0,0,0.5) 100%)}}
+
+/* ── CTA ── */
+.magnetic-wrap{display:inline-block}
+.cta-btn{display:inline-flex;align-items:center;gap:16px;padding:8px 8px 8px 28px;
+  border-radius:9999px;background:var(--red-500);color:#fff;border:0;cursor:pointer;
+  box-shadow:0 4px 24px rgba(192,24,24,0.25);
+  transition:transform 0.5s var(--ease-spring), box-shadow 0.3s ease}
+.cta-btn:hover{box-shadow:0 8px 36px rgba(192,24,24,0.4)}
+.cta-btn-text{font-size:14px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.cta-btn-circle{width:40px;height:40px;border-radius:9999px;background:#fff;display:grid;
+  place-items:center;transition:transform 0.4s var(--ease-spring)}
+.cta-btn:hover .cta-btn-circle{transform:rotate(45deg)}
+.cta-btn-circle svg{width:14px;height:14px;stroke:var(--red-500);fill:none}
+.cta-ghost{display:inline-flex;align-items:center;gap:12px;font-size:13px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--fg);padding-bottom:6px;position:relative}
+.cta-ghost::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:24px;
+  background:var(--red-400);transition:width 0.4s var(--ease-spring)}
+.cta-ghost:hover::after{width:100%}
+.cta-ghost svg{width:13px;height:13px;stroke:currentColor;fill:none;
+  transition:transform 0.3s ease}
+.cta-ghost:hover svg{transform:translateX(-4px)}
+
+/* ═══════════════ MARQUEE ═══════════════ */
+.logo-strip-section{padding:32px 0;border-bottom:1px solid var(--line);background:var(--red-950)}
+.logo-strip-label{text-align:center;margin-bottom:22px}
+.logo-strip{overflow:hidden;position:relative;
+  mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)}
+.logo-track{display:flex;align-items:center;gap:59px;width:max-content;
+  animation:marquee 28s linear infinite}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.logo-track span{font-family:'Geist',sans-serif;font-weight:700;font-size:20px;
+  letter-spacing:0.18em;text-transform:uppercase;color:rgba(244,241,232,0.55);
+  display:flex;align-items:center;gap:59px;white-space:nowrap}
+.logo-track span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--red-700)}
+
+/* ═══════════════ SECTIONS ═══════════════ */
+.section{position:relative;padding:clamp(72px,11vw,148px) var(--gutter)}
+.section--raised{background:var(--red-900)}
+.wrap{max-width:1440px;margin:0 auto}
+.head{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
+.head h2{font-family:'Geist',sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:110%;
+  font-size:clamp(32px,4.5vw,72px);margin-top:16px}
+.head h2 em,.foot h2 em{font-style:normal;color:var(--red-400)}
+.head p{font-size:15px;line-height:170%;color:var(--fg-muted);max-width:380px}
+@media (max-width:900px){.head{grid-template-columns:1fr;gap:24px;margin-bottom:44px}}
+.body-copy{font-size:15px;line-height:170%;color:var(--fg-muted)}
+.body-copy+.body-copy{margin-top:16px}
+
+/* Karten */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{position:relative;border:1px solid var(--line);background:rgba(255,255,255,0.02);
+  overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:380px;
+  padding:24px;transition:transform 0.5s var(--ease-spring),border-color 0.3s ease}
+.card:hover{transform:translateY(-6px);border-color:rgba(192,24,24,0.4)}
+.card .media{position:absolute;inset:0;z-index:0;background:var(--red-950)}
+.card .media .ph{position:absolute;inset:0;mix-blend-mode:screen;
+  transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94)}
+.card .media.paper{background:var(--fg)}
+.card .media.paper .ph{mix-blend-mode:multiply}
+.card:hover .media .ph{transform:scale(1.06)}
+.card .media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(13,0,0,0.90) 8%, rgba(13,0,0,0.5) 45%, rgba(13,0,0,0.15) 100%)}
+.card>*{position:relative;z-index:1}
+.card h3{font-family:'Geist',sans-serif;font-weight:700;font-size:24px;line-height:115%;
+  margin:12px 0 8px}
+.card p{font-size:13px;line-height:170%;color:rgba(244,241,232,0.55);max-height:0;overflow:hidden;
+  transition:max-height 0.5s var(--ease-out)}
+.card:hover p,.card:focus-within p{max-height:200px}
+.card .time{margin-top:12px;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--red-200)}
+@media (max-width:1100px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}.card{min-height:320px}.card p{max-height:200px}}
+
+/* Kennzahlen */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:64px}
+.kpis div{background:var(--red-950);padding:24px}
+.section--raised .kpis div{background:var(--red-900)}
+.kpis b{display:block;font-family:'Geist',sans-serif;font-weight:800;font-size:38px;line-height:1;
+  margin-top:12px;letter-spacing:-0.02em}
+@media (max-width:820px){.kpis{grid-template-columns:1fr 1fr}}
+
+/* Woche */
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:48px}
+.day{border:1px solid var(--line);padding:24px;background:rgba(255,255,255,0.02);position:relative}
+.day .dow{margin-bottom:12px}
+.day h3{font-family:'Geist',sans-serif;font-weight:700;font-size:20px;line-height:115%}
+.day .slot{border-top:1px solid var(--line);margin-top:16px;padding-top:12px}
+.day .slot time{display:block;font-size:11px;letter-spacing:0.18em;color:var(--fg-muted);
+  text-transform:uppercase}
+.day .slot b{font-size:14px;font-weight:600}
+.day.live{border-color:var(--red-600);background:rgba(192,24,24,0.08)}
+.day.live .dow{color:var(--red-200)}
+.day.live::before{content:"";position:absolute;top:14px;right:14px;width:8px;height:8px;
+  border-radius:50%;background:var(--red-400);box-shadow:0 0 0 0 rgba(212,48,48,.7);
+  animation:livePulse 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite}
+@keyframes livePulse{to{box-shadow:0 0 0 22px rgba(212,48,48,0)}}
+@media (max-width:1100px){.week{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.week{grid-template-columns:1fr}}
+
+/* Duo + Figuren */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.figure{position:relative;background:var(--red-950);border:1px solid var(--line);overflow:hidden}
+.figure .ph{aspect-ratio:2/3;mix-blend-mode:screen;background-size:cover;
+  background-position:center}
+.figure.paper{background:var(--fg)}
+.figure.paper .ph{mix-blend-mode:multiply}
+.figure figcaption{position:absolute;left:16px;bottom:16px;z-index:2}
+.figure.paper figcaption{color:rgba(13,0,0,0.55)}
+@media (max-width:900px){.duo{grid-template-columns:1fr}}
+
+/* Werte */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:40px}
+.values div{background:var(--red-950);padding:20px}
+.section--raised .values div{background:var(--red-900)}
+.values b{display:block;font-family:'Geist',sans-serif;font-weight:700;font-size:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chips li{border:1px solid var(--line);border-radius:9999px;padding:8px 16px;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-muted)}
+.chips li.on{border-color:var(--red-600);color:var(--red-200)}
+@media (max-width:768px){.values{grid-template-columns:1fr 1fr}}
+
+/* Zeitstrahl */
+.rail-wrap{position:relative;margin-top:64px}
+.rail{position:absolute;left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%);
+  background:var(--line);z-index:0}
+.rail i{position:absolute;left:0;top:0;width:1px;background:var(--red-500);height:0}
+.rail u{position:absolute;left:50%;top:0;width:9px;height:9px;background:var(--red-400);
+  transform:translate(-50%,-50%) rotate(45deg)}
+.row{position:relative;display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;
+  gap:20px;padding:20px 0;z-index:1}
+.entry{border:1px solid var(--line);background:rgba(255,255,255,0.02);padding:28px;
+  transition:border-color 0.3s ease,transform 0.5s var(--ease-spring)}
+.entry:hover{border-color:rgba(192,24,24,0.4);transform:translateY(-4px)}
+.row.left .entry{grid-column:1}
+.row.right .entry{grid-column:3}
+.row .year{grid-column:2;grid-row:1;text-align:center;font-family:'Geist',sans-serif;
+  font-weight:800;font-size:30px;color:var(--red-400);letter-spacing:-0.02em}
+.entry h3{font-family:'Geist',sans-serif;font-weight:700;font-size:20px;line-height:115%;
+  margin:12px 0 8px}
+.entry .media{margin-top:16px;background:var(--red-950);overflow:hidden}
+.entry .media .ph{aspect-ratio:16/9;mix-blend-mode:screen;background-size:cover}
+@media (max-width:900px){
+  .rail{left:6px;transform:none}
+  .rail u{left:6px}
+  .row{grid-template-columns:38px 1fr;padding:12px 0}
+  .row .year{grid-column:1;font-size:13px;writing-mode:vertical-rl;transform:rotate(180deg)}
+  .row.left .entry,.row.right .entry{grid-column:2}
 }
 
-/* ═════ MASTHEAD ═════ */
-.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:1rem;
-  justify-content:space-between;padding:.85rem var(--gutter);
-  background:color-mix(in srgb,var(--background) 84%,transparent);
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--border-muted)}
-.brand{display:flex;align-items:center;gap:.7rem}
-.brand b{display:grid;place-items:center;width:36px;height:36px;background:var(--surface-black);
-  color:var(--accent);font-family:var(--font-display);font-weight:700;font-size:.82rem;letter-spacing:.02em}
-.brand span{font-family:var(--font-display);font-weight:500;text-transform:uppercase;
-  font-size:var(--type-title);line-height:1;letter-spacing:.03em}
-.brand small{display:block;font-family:var(--font-sans);font-size:.66rem;letter-spacing:0;
-  text-transform:none;color:var(--foreground-muted);margin-top:.15rem}
-.nav ul{display:flex;gap:2rem;font-size:var(--type-label);text-transform:uppercase}
-.nav ul a{position:relative;padding:.3rem 0;transition:color .15s var(--ease-entrance)}
-.nav ul a:hover{color:var(--accent)}
-.burger{display:none;background:none;border:0;padding:.5rem;cursor:pointer}
-.burger i{display:block;width:24px;height:1px;background:var(--foreground);margin:5px 0}
-@media (max-width:1279px){
-  .nav ul,.nav .nav-cta{display:none}
-  .burger{display:block}
-}
-/* Menü-Sheet */
-.sheet{position:fixed;inset:0;z-index:100;background:var(--background);
-  padding:1.5rem var(--gutter);display:none;flex-direction:column}
-.sheet.open{display:flex}
-.sheet-top{display:flex;justify-content:space-between;align-items:center}
-.sheet-close{background:none;border:0;padding:.5rem;cursor:pointer;position:relative;width:40px;height:40px}
-.sheet-close i{position:absolute;left:8px;top:19px;width:24px;height:1px;background:var(--foreground)}
-.sheet-close i:first-child{transform:rotate(45deg)}
-.sheet-close i:last-child{transform:rotate(-45deg)}
-.sheet nav{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.65rem}
-.sheet nav a{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(1.9rem,7vw,var(--type-display));line-height:.95}
-.sheet nav a:hover{color:var(--accent)}
+/* Raster */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line)}
+.grid3 article{background:var(--red-950);padding:28px;display:flex;flex-direction:column;gap:12px}
+.section--raised .grid3 article{background:var(--red-900)}
+.grid3 .num{font-family:'Geist',sans-serif;font-weight:800;font-size:14px;color:var(--red-500);
+  letter-spacing:0.18em}
+.grid3 h3{font-family:'Geist',sans-serif;font-weight:700;font-size:20px}
+.grid3 h3 small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-muted);margin-top:6px}
+.grid3 p{font-size:13px;line-height:170%;color:var(--fg-muted)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.trio .figure .ph{aspect-ratio:3/4}
+@media (max-width:1000px){.grid3,.trio{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.grid3,.trio{grid-template-columns:1fr}}
 
-/* ═════ HERO ═════ */
-.hero{position:relative;overflow:hidden;padding:clamp(2rem,4vw,3.5rem) var(--gutter) clamp(2rem,3vw,2.5rem);
-  min-height:calc(92svh - 62px);display:grid;grid-template-columns:1.05fr .95fr;
-  gap:2rem;align-items:stretch;isolation:isolate}
-.hero-left{display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;position:relative;z-index:4}
-.hero-id{display:flex;flex-wrap:wrap;gap:1.6rem;font-size:var(--type-eyebrow);
-  text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-muted)}
-.hero h1{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
-  line-height:.95;font-size:clamp(3.2rem,8.4vw,var(--type-impact));margin-top:1rem}
-.hero h1 .rv{display:flex}
-.hero h1 .thin{font-weight:300;color:var(--foreground-muted)}
-.hero .tag{margin-top:1.3rem;max-width:30rem;font-size:clamp(1rem,1.3vw,var(--type-lead));line-height:1.45}
-.meta{margin-top:1.8rem;display:flex;flex-direction:column;gap:.6rem;
-  font-size:var(--type-lead);text-transform:uppercase;line-height:.95}
-.meta li{display:flex;align-items:center;gap:.8rem}
-.meta em{width:18px;height:12px;position:relative;flex:none;border:1px solid var(--border-muted);
-  background:#fff;overflow:hidden}
-.meta em::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 50%,#cd2e3a 0 3px,#0047a0 3px 5.2px,transparent 5.2px)}
-.meta i.dot{width:8px;height:8px;background:var(--accent);flex:none}
-.meta i.sq{width:12px;height:12px;border:1px solid var(--foreground);flex:none}
-.hero-panels{display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:flex-end}
-.hero-panels .panel{min-width:14rem}
-.stats{display:flex;gap:1.75rem;margin-top:.85rem}
-.stats div{display:flex;flex-direction:column;gap:.2rem}
-.stats b{font-family:var(--font-display);font-weight:500;font-size:var(--type-heading);
-  letter-spacing:-.08em;line-height:.72}
-.stats span{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.04em;
-  color:var(--foreground-muted)}
-.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem 2.5rem;margin-top:.25rem}
-.hero-fig{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;margin:0}
-.hero-fig .ph{width:min(100%,560px);aspect-ratio:2/3;mix-blend-mode:multiply;filter:brightness(1.03);
-  mask-image:radial-gradient(closest-side ellipse at 52% 48%,#000 58%,transparent 100%);
-  -webkit-mask-image:radial-gradient(closest-side ellipse at 52% 48%,#000 58%,transparent 100%)}
-.hero-fig figcaption{position:absolute;left:0;bottom:.6rem;display:flex;gap:1rem;
-  font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-muted)}
-.hero-social{position:absolute;right:0;top:0;z-index:5;display:flex;flex-direction:column;
-  gap:.45rem;text-align:right;font-size:var(--type-body);text-transform:uppercase}
-.hero-social a:hover{color:var(--accent)}
-@media (max-width:1023px){
-  .hero{grid-template-columns:1fr;min-height:0;gap:1rem}
-  .hero-fig{order:-1;flex-direction:column}
-  .hero-fig .ph{width:min(100%,420px)}
-  .hero-fig figcaption{position:static;margin-top:.4rem;justify-content:center}
-  .hero-social{display:none}
-  /* Die Naht ist auf schmalen Schirmen kürzer, sonst deckt sie die
-     Überschrift, bevor sie beim Scrollen aufgelöst ist. */
-  .chequer{height:20svh}
-  .section.seam{padding-top:clamp(7.5rem,26vw,11rem)}
-}
-
-/* ═════ SPARTEN (dunkel) ═════ */
-.sparten{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.sparte{position:relative;aspect-ratio:3/4.15;overflow:hidden;display:flex;flex-direction:column;
-  justify-content:flex-end;padding:1.4rem;background:var(--surface-dark);isolation:isolate}
-.sparte .ph{position:absolute;inset:0;z-index:-2;
-  mix-blend-mode:screen;transition:transform .9s var(--ease-plate),opacity .6s}
-.sparte::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(to top,rgb(9 10 11/.96) 6%,rgb(9 10 11/.25) 55%,transparent 82%)}
-.sparte:hover img{transform:scale(1.05)}
-.sparte h3{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(1.5rem,2.2vw,var(--type-heading));line-height:.9;margin:.6rem 0}
-.sparte p{font-size:var(--type-body);color:var(--foreground-on-dark-muted);
-  max-height:0;overflow:hidden;transition:max-height .6s var(--ease-plate)}
-.sparte:hover p,.sparte:focus-within p{max-height:14rem}
-.sparte .time{margin-top:.7rem;font-size:var(--type-eyebrow);text-transform:uppercase;
-  letter-spacing:-.02em;color:var(--foreground-on-dark-faint)}
-.sparte .eyebrow{color:var(--accent)}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-on-dark);
-  border:1px solid var(--border-on-dark);margin-top:3rem}
-.kpis div{background:var(--surface-dark);padding:1.2rem}
-.kpis b{display:block;font-family:var(--font-display);font-weight:500;font-size:var(--type-heading);
-  letter-spacing:-.06em;line-height:.9;margin-top:.5rem}
-.kpis span{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.04em;
-  color:var(--foreground-on-dark-faint)}
-@media (max-width:1023px){.sparten,.kpis{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.sparten{grid-template-columns:1fr}.sparte{aspect-ratio:4/4.4}.sparte p{max-height:14rem}}
-
-/* ═════ TRAININGSZEITEN (hell, mit dunkler Bande) ═════ */
-.paddock{padding-bottom:0;overflow:hidden}
-.paddock .wrap{padding-bottom:clamp(3rem,5vw,4.5rem)}
-.paddock-fig .ph{aspect-ratio:2/3}
-.paddock-fig{position:absolute;right:1%;bottom:2rem;width:min(40%,440px);z-index:0;margin:0;
-  opacity:.62;mix-blend-mode:multiply;pointer-events:none;
-  mask-image:radial-gradient(closest-side ellipse at 50% 50%,#000 52%,transparent 100%);
-  -webkit-mask-image:radial-gradient(closest-side ellipse at 50% 50%,#000 52%,transparent 100%)}
-.band{position:relative;margin-inline:calc(var(--gutter) * -1);
-  background:var(--surface-black);color:var(--foreground-on-dark);
-  padding:2.2rem var(--gutter) 2.4rem;z-index:4}
-.band::before{content:"";position:absolute;left:0;right:0;top:-7rem;height:7rem;pointer-events:none;
-  background:linear-gradient(to bottom,rgb(9 10 11/0),var(--surface-black) 86%)}
-.week{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;
-  position:relative}
-.day{position:relative;padding-top:2.6rem}
-.day .mark{position:absolute;top:0;left:0;display:flex;align-items:center;gap:.6rem;width:100%}
-.day .mark i{width:11px;height:11px;border:1px solid var(--foreground-on-dark);border-radius:50%;flex:none}
-.day .mark .line{flex:1;height:1px;background:repeating-linear-gradient(to right,
-  var(--foreground-on-dark-muted) 0 7px,transparent 7px 11.45px);
-  background-size:11.45px 1px;animation:crawl 5.2s linear infinite}
-@keyframes crawl{to{background-position-x:11.45px}}
-.day:last-child .mark .line{display:none}
-.day h3{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
-  font-size:var(--type-title);line-height:.95}
-.day .dow{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;
-  color:var(--foreground-on-dark-muted);margin-bottom:.35rem}
-.day .slot{border-top:1px solid var(--border-on-dark);padding:.55rem 0;margin-top:.6rem}
-.day .slot time{display:block;font-size:var(--type-eyebrow);letter-spacing:-.02em;
-  color:var(--foreground-on-dark-muted)}
-.day .slot b{font-weight:500;text-transform:uppercase;font-size:var(--type-body)}
-.day.live .mark i{background:var(--accent);border-color:var(--accent)}
-.day.live h3,.day.live .dow{color:var(--accent)}
-.day.live::before,.day.live::after{content:"";position:absolute;width:12px;height:12px;
-  border:1px solid var(--accent);top:1.9rem}
-.day.live::before{left:-.7rem;border-width:1px 0 0 1px}
-.day.live::after{right:-.7rem;border-width:1px 1px 0 0}
-.pulse{position:absolute;left:0;top:0;width:11px;height:11px;border-radius:50%;
-  border:1px solid var(--accent);animation:pulse 3.2s cubic-bezier(.2,.8,.3,1) infinite}
-@keyframes pulse{from{transform:scale(1);opacity:.5}to{transform:scale(4.4);opacity:0}}
-.place{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;max-width:64rem}
-@media (max-width:1023px){
-  .week{grid-template-columns:1fr 1fr}
-  .day .mark .line{display:none}
-  .paddock-fig .ph{aspect-ratio:2/3}
-.paddock-fig{width:52%;opacity:.5}
-  .place{grid-template-columns:1fr}
-}
-@media (max-width:560px){.week{grid-template-columns:1fr}.paddock-fig .ph{aspect-ratio:2/3}
-.paddock-fig{display:none}}
-
-/* ═════ DO / WERTE (dunkel, mit Plate) ═════ */
-.do-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-on-dark);
-  border:1px solid var(--border-on-dark);margin-top:2.5rem}
-.values div{background:var(--surface-dark);padding:1rem 1.1rem}
-.values b{display:block;font-family:var(--font-display);font-weight:500;text-transform:uppercase;
-  font-size:var(--type-title)}
-.values small{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;
-  color:var(--foreground-on-dark-faint)}
-.geist{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
-.geist li{border:1px solid var(--border-on-dark);padding:.4rem .75rem;font-size:var(--type-eyebrow);
-  text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-on-dark-muted)}
-.plate-badge{position:relative;width:min(100%,277px);height:78px;display:grid;
-  grid-template-columns:83px 1fr;margin-top:2.2rem}
-.plate-badge svg.frame{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.plate-badge .badge,.plate-badge dl{position:relative;z-index:1}
-.plate-badge .badge{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:.4rem;font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;line-height:.9}
-.plate-badge .badge b{color:var(--foreground-on-dark);font-weight:500}
-.plate-badge .badge span{color:var(--accent)}
-.plate-badge dl{padding-left:1rem;display:flex;flex-direction:column;gap:.5rem;
-  justify-content:center;font-size:var(--type-body);text-transform:uppercase;line-height:.8}
-.plate-badge dl div{display:flex;gap:.45rem}
-.plate-badge dt{color:var(--accent);font-weight:500}
-.plate-badge dd{color:var(--foreground-on-dark)}
-.dark-fig{position:relative;margin:0;justify-self:end;width:min(100%,480px)}
-.dark-fig .ph{aspect-ratio:2/3;mix-blend-mode:screen}
-.dark-fig figcaption{position:absolute;left:0;bottom:-1.5rem;font-size:var(--type-eyebrow);
-  text-transform:uppercase;color:var(--foreground-on-dark-faint)}
-@media (max-width:1023px){.do-grid{grid-template-columns:1fr}.dark-fig{justify-self:center;width:min(100%,400px)}
-  .values{grid-template-columns:repeat(2,1fr)}}
-
-/* ═════ TIMELINE ═════ */
-.timeline{background:var(--surface-dark);color:var(--foreground-on-dark)}
-.rail-wrap{position:relative;margin-top:clamp(2.5rem,5vw,4rem)}
-.rail{position:absolute;left:50%;top:0;bottom:0;width:16px;transform:translateX(-50%);z-index:1}
-.rail svg{width:100%;height:100%;overflow:visible}
-.row{position:relative;display:grid;grid-template-columns:1fr 7rem 1fr;align-items:center;
-  gap:1rem;padding:1.6rem 0;transition:opacity .7s var(--ease-plate)}
-.rail-wrap:hover .row{opacity:.32}
-.rail-wrap:hover .row:hover{opacity:1}
-.row .year{grid-column:2;grid-row:1;text-align:center;font-family:var(--font-display);font-weight:700;
-  font-size:var(--type-year);color:var(--accent);background:var(--surface-dark);padding:.4rem 0;
-  position:relative;z-index:2;opacity:.4;transition:opacity .6s var(--ease-entrance)}
-.row.in .year,.row:hover .year{opacity:1}
-.plate{position:relative;grid-row:1;padding:1.4rem;isolation:isolate}
-.plate .fill{position:absolute;inset:0;background:var(--timeline-fill);z-index:-1;
-  clip-path:url(#plate-clip);transition:inset .7s var(--ease-plate)}
-.plate:hover .fill{inset:5%}
-.plate .outline{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
-.plate .outline path{fill:none;stroke:var(--timeline-outline);stroke-width:1;vector-effect:non-scaling-stroke}
-.row.left .plate{grid-column:1}
-.row.right .plate{grid-column:3}
-.plate h3{font-size:var(--type-lead);font-weight:700;margin:.35rem 0 .4rem;text-transform:uppercase;line-height:1.1}
-.plate p{font-size:var(--type-body);color:var(--foreground-on-dark-muted);line-height:1.5}
-.plate figure{margin:1rem 0 0;overflow:hidden}
-.plate .ph{width:100%;aspect-ratio:16/9;mix-blend-mode:screen}
-.plate .eyebrow{color:var(--accent)}
-@media (max-width:767px){
-  .rail{left:1.1rem;transform:none}
-  .row{grid-template-columns:2.6rem 1fr;padding:.9rem 0}
-  .row .year{grid-column:1;font-size:var(--type-eyebrow);writing-mode:vertical-rl;
-    transform:rotate(180deg);padding:.5rem 0}
-  .row.left .plate,.row.right .plate{grid-column:2}
-  .rail-wrap:hover .row{opacity:1}
-}
-
-/* ═════ ELEMENTE ═════ */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-muted);
-  border:1px solid var(--border-muted);margin-top:3rem}
-.grid3 article{background:var(--background);padding:1.6rem;display:flex;flex-direction:column;gap:.75rem}
-.grid3 .num{font-family:var(--font-display);font-weight:300;font-size:var(--type-heading);
-  letter-spacing:-.06em;line-height:.8;color:var(--foreground-muted)}
-.grid3 h3{font-family:var(--font-display);font-weight:500;text-transform:uppercase;font-size:var(--type-title)}
-.grid3 h3 small{display:block;font-family:var(--font-sans);font-size:var(--type-eyebrow);
-  text-transform:none;color:var(--foreground-muted);margin-top:.15rem}
-.grid3 p{color:#33363d;font-size:var(--type-body);line-height:1.55}
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
-.trio figure{position:relative;margin:0;overflow:hidden;aspect-ratio:3/4;background:var(--surface-muted)}
-.trio .ph{width:100%;height:100%;mix-blend-mode:multiply}
-.trio figure.dark{background:var(--surface-black)}
-.trio figure.dark .ph{background-size:contain}
-.trio figure.dark img{mix-blend-mode:screen}
-.trio figcaption{position:absolute;left:.8rem;bottom:.8rem;background:var(--surface-black);
-  color:var(--foreground-on-dark);font-size:var(--type-eyebrow);text-transform:uppercase;
-  letter-spacing:-.02em;padding:.25rem .55rem}
-@media (max-width:1023px){.grid3{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.grid3,.trio{grid-template-columns:1fr}}
-
-/* ═════ RANGFOLGE ═════ */
-.rang{background:var(--surface-muted)}
-.belts{display:grid;grid-template-columns:repeat(10,1fr);gap:.5rem;margin-top:2.8rem}
-.belt i{display:block;height:2.6rem;border:1px solid var(--border-muted);background:var(--b1)}
+/* Gürtel */
+.belts{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;margin-top:48px}
+.belt i{display:block;height:38px;background:var(--b1);border:1px solid var(--line)}
 .belt i.two{background:linear-gradient(to bottom,var(--b1) 0 68%,var(--b2) 68%)}
-.belt b{display:block;font-family:var(--font-display);font-weight:500;font-size:var(--type-label);
-  text-transform:uppercase;margin-top:.5rem}
-.belt span{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-muted)}
-.dans{display:grid;grid-template-columns:repeat(9,1fr);gap:.5rem;margin-top:2rem}
-.dans div{background:var(--surface-black);color:var(--foreground-on-dark);padding:.75rem .4rem;text-align:center}
-.dans b{display:block;font-family:var(--font-display);font-weight:500;font-size:var(--type-title);text-transform:uppercase}
-.dans span{font-size:var(--type-eyebrow);text-transform:uppercase;color:var(--foreground-on-dark-faint)}
-.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-muted);
-  border:1px solid var(--border-muted);margin-top:2.5rem}
-.seasons div{background:var(--background);padding:1.1rem}
-.seasons b{display:block;font-family:var(--font-display);font-weight:500;text-transform:uppercase;font-size:var(--type-title)}
-.seasons p{color:#33363d;font-size:var(--type-body);margin-top:.3rem}
-@media (max-width:1023px){.belts{grid-template-columns:repeat(5,1fr)}.dans{grid-template-columns:repeat(3,1fr)}
+.belt b{display:block;font-family:'Geist',sans-serif;font-weight:700;font-size:13px;margin-top:12px}
+.belt span{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-muted)}
+.dans{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin-top:32px}
+.dans div{border:1px solid var(--line);padding:14px 6px;text-align:center;
+  background:rgba(255,255,255,0.02)}
+.dans b{display:block;font-family:'Geist',sans-serif;font-weight:700;font-size:14px}
+.dans span{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-muted)}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:32px}
+.seasons div{background:var(--red-950);padding:20px}
+.section--raised .seasons div{background:var(--red-900)}
+.seasons b{display:block;font-family:'Geist',sans-serif;font-weight:700;font-size:16px;
+  margin-bottom:6px}
+.seasons p{font-size:13px;line-height:170%;color:var(--fg-muted)}
+@media (max-width:1000px){.belts{grid-template-columns:repeat(5,1fr)}.dans{grid-template-columns:repeat(3,1fr)}
   .seasons{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.belts{grid-template-columns:repeat(2,1fr)}.seasons{grid-template-columns:1fr}}
+@media (max-width:560px){.belts{grid-template-columns:1fr 1fr}.seasons{grid-template-columns:1fr}}
 
-/* ═════ TRAINER ═════ */
-.trainers{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.trainer{position:relative;padding:1.3rem;min-height:11.5rem;display:flex;flex-direction:column;gap:.4rem;
-  border:1px solid var(--border-muted);background:var(--background);color:var(--foreground)}
-.trainer .dan{font-family:var(--font-display);font-weight:500;font-size:var(--type-heading);
-  letter-spacing:-.06em;line-height:.8}
-.trainer .dan small{display:block;font-family:var(--font-sans);font-size:var(--type-eyebrow);
-  letter-spacing:-.02em;text-transform:uppercase;color:var(--foreground-muted);margin-top:.4rem}
-.trainer h3{margin-top:auto;font-size:var(--type-lead);font-weight:700}
-.trainer p{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-muted)}
-.trainer.lead{background:var(--surface-black);color:var(--foreground-on-dark);border-color:var(--surface-black)}
-.trainer.lead .dan small,.trainer.lead p{color:var(--accent)}
-@media (max-width:1023px){.trainers{grid-template-columns:1fr 1fr}}
-@media (max-width:480px){.trainers{grid-template-columns:1fr}}
+/* Trainer */
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.person{border:1px solid var(--line);background:rgba(255,255,255,0.02);padding:24px;
+  min-height:180px;display:flex;flex-direction:column;gap:8px;
+  transition:border-color 0.3s ease,transform 0.5s var(--ease-spring)}
+.person:hover{border-color:rgba(192,24,24,0.4);transform:translateY(-4px)}
+.person .dan{font-family:'Geist',sans-serif;font-weight:800;font-size:28px;letter-spacing:-0.02em}
+.person h3{margin-top:auto;font-size:16px;font-weight:600}
+.person p{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--fg-muted)}
+.person.lead{background:var(--red-500);border-color:var(--red-500)}
+.person.lead .label,.person.lead p{color:rgba(255,255,255,0.70)}
+@media (max-width:1000px){.people{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.people{grid-template-columns:1fr}}
 
-/* ═════ VERBAND ═════ */
-.meister{margin-top:2rem;border-top:1px solid var(--border-on-dark)}
-.meister li{display:grid;grid-template-columns:3.4rem 1fr auto;gap:1rem;align-items:baseline;
-  padding:.75rem 0;border-bottom:1px solid var(--border-on-dark)}
-.meister li span:first-child{font-family:var(--font-display);font-weight:500;color:var(--accent)}
-.meister li span:last-child{font-size:var(--type-eyebrow);text-transform:uppercase;
-  color:var(--foreground-on-dark-faint);text-align:right}
-.vereine{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
-.vereine li{border:1px solid var(--border-on-dark);padding:.35rem .75rem;font-size:var(--type-eyebrow);
-  text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-on-dark-muted)}
-.vereine li.me{border-color:var(--accent);color:var(--accent)}
+/* Listen */
+.rows{border-top:1px solid var(--line);margin-top:24px}
+.rows li{display:grid;grid-template-columns:46px 1fr auto;gap:20px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--line)}
+.rows li span:first-child{font-family:'Geist',sans-serif;font-weight:700;color:var(--red-400)}
+.rows li span:last-child{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--fg-muted);text-align:right}
+.mini{border-top:1px solid var(--line);margin-top:12px}
+.mini li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;
+  border-bottom:1px solid var(--line);font-size:13px}
+.mini li span:first-child{color:var(--red-300);font-family:'Geist',sans-serif;font-weight:600}
+.docs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:24px}
+.docs a{border:1px solid var(--line);border-radius:9999px;padding:14px 20px;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;transition:all 0.35s cubic-bezier(0.76,0,0.24,1)}
+.docs a:hover{background:var(--red-500);border-color:var(--red-500);color:#fff}
+@media (max-width:1000px){.docs{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.docs{grid-template-columns:1fr}.docs a{padding:14px 16px;letter-spacing:0.12em}}
 
-/* ═════ VEREINSLEBEN ═════ */
-.list{border-top:1px solid var(--border-muted);margin-top:.4rem}
-.list li{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;
-  border-bottom:1px solid var(--border-muted);font-size:var(--type-body)}
-.list li span:first-child{font-family:var(--font-display);font-weight:500;color:var(--foreground-muted)}
-.docs{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-top:1.2rem}
-.docs a{border:1px solid var(--foreground);padding:.85rem;display:flex;justify-content:space-between;
-  align-items:center;font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;
-  transition:background .25s,color .25s}
-.docs a:hover{background:var(--surface-black);color:var(--foreground-on-dark)}
-@media (max-width:1023px){.docs{grid-template-columns:1fr 1fr}}
+/* Kontakt */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:48px}
+.panel{border:1px solid var(--line);background:rgba(255,255,255,0.02);padding:32px}
+.panel h3{font-family:'Geist',sans-serif;font-weight:700;font-size:20px;margin-bottom:24px}
+.panel dl{display:grid;grid-template-columns:130px 1fr;gap:12px 20px;font-size:14px;line-height:170%}
+.panel dt{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--fg-muted);
+  padding-top:4px}
+.panel a{border-bottom:1px solid rgba(192,24,24,0.4);transition:border-color 0.3s ease}
+.panel a:hover{border-color:var(--red-400)}
+.invite{position:relative;overflow:hidden;border:1px solid var(--line);padding:32px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:380px;
+  background:var(--red-950)}
+.invite .ph{position:absolute;inset:0;mix-blend-mode:screen;opacity:.6;z-index:0;
+  background-size:cover;background-position:center}
+.invite::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top, rgba(13,0,0,0.90) 10%, rgba(13,0,0,0.5) 60%, rgba(13,0,0,0.15) 100%)}
+.invite>*{position:relative;z-index:2}
+.invite .big{font-family:'Geist',sans-serif;font-weight:800;font-size:clamp(24px,3vw,38px);
+  line-height:115%;letter-spacing:-0.02em}
+@media (max-width:900px){.contact{grid-template-columns:1fr}.panel dl{grid-template-columns:1fr}}
 
-/* ═════ KONTAKT ═════ */
-.kontakt{background:var(--surface-muted)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:start}
-.card{background:var(--background);border:1px solid var(--border-muted);padding:1.6rem}
-.card h3{font-family:var(--font-display);font-weight:500;text-transform:uppercase;
-  font-size:var(--type-title);margin-bottom:1rem}
-.card dl{display:grid;grid-template-columns:9rem 1fr;gap:.6rem 1rem;font-size:var(--type-body)}
-.card dt{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;
-  color:var(--foreground-muted);padding-top:.12rem}
-.card a{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
-.invite{position:relative;overflow:hidden;background:var(--surface-black);color:var(--foreground-on-dark);
-  padding:1.8rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.6rem;min-height:20rem}
-.invite .ph{position:absolute;inset:0;
-  mix-blend-mode:screen;opacity:.55;z-index:0}
-.invite>*{position:relative;z-index:1}
-.invite .big{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(1.8rem,3.4vw,var(--type-display));line-height:.95}
-@media (max-width:900px){.split{grid-template-columns:1fr}.card dl{grid-template-columns:1fr}}
+/* Footer */
+.foot{border-top:1px solid var(--line);padding:clamp(60px,8vw,110px) var(--gutter) 40px}
+.foot-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.foot h2{font-family:'Geist',sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:110%;
+  font-size:clamp(32px,4.5vw,64px)}
+.foot nav{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.foot nav h4{margin-bottom:16px}
+.foot nav li{padding:6px 0;font-size:13px;letter-spacing:0.04em}
+.foot nav a{color:var(--fg-muted);transition:color 0.3s ease}
+.foot nav a:hover{color:var(--fg)}
+.legal{max-width:1440px;margin:60px auto 0;padding-top:24px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1.6fr 1fr;gap:24px;font-size:12px;line-height:170%;
+  color:rgba(244,241,232,0.55)}
+.legal b{color:var(--fg)}
+@media (max-width:900px){.foot-grid,.legal{grid-template-columns:1fr}}
 
-/* ═════ FOOTER ═════ */
-.foot{position:relative;background:var(--accent);padding:16px}
-.foot-panel{position:relative;overflow:hidden;background:var(--surface-black);
-  color:var(--foreground-on-dark);padding:clamp(3rem,6vw,5rem) var(--gutter) clamp(2rem,3vw,2.5rem)}
-.foot-grid{position:relative;z-index:2;max-width:1440px;margin:0 auto;
-  display:grid;grid-template-columns:1.1fr 1fr;gap:3rem}
-.foot h2{font-size:clamp(2.4rem,5.4vw,var(--type-display-sm))}
-.foot nav{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.foot nav h4{font-size:var(--type-eyebrow);text-transform:uppercase;letter-spacing:-.02em;
-  color:var(--foreground-on-dark-faint);margin-bottom:.8rem}
-.foot nav li{padding:.28rem 0;text-transform:uppercase;font-size:var(--type-label)}
-.foot nav a:hover{color:var(--accent)}
-.legal{position:relative;z-index:2;max-width:1440px;margin:2.5rem auto 0;
-  border-top:1px solid var(--border-on-dark);padding-top:1.4rem;display:grid;
-  grid-template-columns:1.6fr 1fr;gap:1.5rem;font-size:var(--type-body);color:var(--foreground-on-dark-faint)}
-.legal b{color:var(--foreground-on-dark)}
-@media (max-width:1023px){.foot-grid,.legal{grid-template-columns:1fr}}
-
-/* ═════ LADEVORHANG ═════ */
-.veil{position:fixed;inset:0;z-index:200;background:var(--background);display:flex;
-  flex-direction:column;align-items:center;justify-content:center;
-  transition:opacity .7s var(--ease-entrance)}
-.veil.gone{opacity:0;pointer-events:none}
-.veil .mark{width:96px;height:96px;background:var(--surface-black);color:var(--accent);
-  display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:1.6rem}
-.veil .name{margin-top:1.6rem;font-size:var(--type-lead);text-transform:uppercase;letter-spacing:.18em}
-.veil .meter{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--border-muted)}
-.veil .meter i{display:block;height:100%;width:0;background:var(--foreground);
-  transform-origin:left;transition:width 1.2s var(--ease-entrance)}
+@media (prefers-reduced-motion: reduce){
+  .loader{animation:loaderExit 0.01s linear forwards}
+  *,*::before,*::after{animation:none !important;transform:none !important;opacity:1 !important;
+    filter:none !important;transition:none !important}
+}
 </style>
 </head>
 <body>
 
-<!-- Ladevorhang -->
-<div class="veil" id="veil" role="status" aria-label="Seite wird geladen">
-  <div class="mark">HSD</div>
-  <div class="name">Ho Sin Do Melsungen</div>
-  <div class="meter"><i id="meter"></i></div>
+<!-- ═════════ LOADER ═════════ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-name" id="loaderName"></div>
+    <div class="loader-rule"></div>
+    <div class="loader-tagline">Karateverein Melsungen e.V. · seit 1976</div>
+  </div>
 </div>
 
-<!-- SVG-Definitionen: Plate-Clip aus dem Design-System -->
-<svg width="0" height="0" aria-hidden="true" style="position:absolute">
-  <defs>
-    <clipPath id="plate-clip" clipPathUnits="objectBoundingBox">
-      <path d="M 0.01915,0.00107H 0.98085C 0.98574,0.00107 0.99044,0.00300 0.99390,0.00642C 0.99736,0.00984 0.99930,0.01449 0.99930,0.01933V 0.88815C 0.99930,0.89299 0.99736,0.89763 0.99390,0.90105C 0.99044,0.90448 0.98574,0.90640 0.98085,0.90640H 0.64733C 0.63864,0.90640 0.63007,0.90834 0.62224,0.91206C 0.61442,0.91579 0.60754,0.92122 0.60212,0.92794L 0.56153,0.97830C 0.55635,0.98474 0.54976,0.98993 0.54227,0.99350C 0.53478,0.99707 0.52656,0.99892 0.51825,0.99892H 0.01915C 0.01426,0.99892 0.00956,0.99700 0.00610,0.99358C 0.00264,0.99016 0.00070,0.98551 0.00070,0.98067V 0.01933C 0.00070,0.01449 0.00264,0.00984 0.00610,0.00642C 0.00956,0.00300 0.01426,0.00107 0.01915,0.00107Z"/>
-    </clipPath>
-  </defs>
-</svg>
-
-<!-- ═════════════ MASTHEAD ═════════════ -->
-<header class="nav">
-  <a class="brand" href="#top" aria-label="HO SIN DO Melsungen – Startseite">
-    <b>HSD</b>
-    <span>Ho Sin Do<small>Karateverein Melsungen e.V.</small></span>
+<!-- ═════════ NAV ═════════ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="HO SIN DO Melsungen — Startseite">
+    <span class="brand-mark">HSD</span>
+    <span class="brand-text">Ho Sin Do<small>Melsungen</small></span>
   </a>
-  <nav aria-label="Hauptnavigation">
-    <ul>
-      <li><a href="#verein">Verein</a></li>
-      <li><a href="#sparten">Sparten</a></li>
-      <li><a href="#training">Training</a></li>
-      <li><a href="#geschichte">Geschichte</a></li>
-      <li><a href="#elemente">Elemente</a></li>
-      <li><a href="#trainer">Trainer</a></li>
-      <li><a href="#verband">Verband</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
+  <nav class="nav-links" aria-label="Hauptnavigation">
+    <a href="#verein">Verein</a>
+    <a href="#training">Training</a>
+    <a href="#geschichte">Geschichte</a>
+    <a href="#trainer">Trainer</a>
+    <a href="#kontakt">Kontakt</a>
   </nav>
-  <a class="arrow nav-cta" href="#kontakt"><span class="brk">Probetraining</span>
-    <svg viewBox="0 0 14 11" fill="none"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg></a>
-  <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><i></i><i></i></button>
+  <button class="burger-btn" id="burger-btn" aria-label="Menü öffnen" aria-expanded="false"
+          aria-controls="menu-panel"><span></span><span></span></button>
 </header>
 
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menü">
-  <div class="sheet-top">
-    <div class="brand"><b>HSD</b><span>Ho Sin Do<small>Melsungen e.V.</small></span></div>
-    <button class="sheet-close" id="sheetClose" aria-label="Menü schließen"><i></i><i></i></button>
+<!-- ═════════ MENÜ ═════════ -->
+<div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Menü">
+  <div class="menu-inner">
+    <nav class="menu-nav" aria-label="Menü">
+      <a href="#verein">Verein</a>
+      <a href="#sparten">Sparten</a>
+      <a href="#training">Training</a>
+      <a href="#geschichte">Geschichte</a>
+      <a href="#elemente">Elemente</a>
+      <a href="#rangfolge">Rangfolge</a>
+      <a href="#trainer">Trainer</a>
+      <a href="#verband">Verband</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="menu-side">
+      <div>
+        <span class="label">Dojang</span>
+        <p>Gymnastikraum der Gesamtschule Melsungen<br>Dreuxallee 28 · 34212 Melsungen</p>
+      </div>
+      <div>
+        <span class="label">Kontakt</span>
+        <p><a href="mailto:webmaster@hosindo-melsungen.de">webmaster@hosindo-melsungen.de</a><br>
+           <a href="tel:+4956625223">05662 – 5223</a></p>
+      </div>
+      <div>
+        <span class="label">Social</span>
+        <p><a href="https://www.facebook.com/HoSinDo/" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+      <a class="menu-cta-circle" href="#kontakt" aria-label="Probetraining anfragen">
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 13L13 1M13 1H4M13 1v9" stroke="#fff" stroke-width="1.5"/></svg>
+      </a>
+    </div>
   </div>
-  <nav aria-label="Menü">
-    <a href="#verein">Verein</a><a href="#sparten">Sparten</a><a href="#training">Training</a>
-    <a href="#geschichte">Geschichte</a><a href="#elemente">Elemente</a><a href="#rangfolge">Rangfolge</a>
-    <a href="#trainer">Trainer</a><a href="#verband">Verband</a><a href="#kontakt">Kontakt</a>
-  </nav>
 </div>
 
-<!-- ═════════════ HERO ═════════════ -->
+<!-- ═════════ HERO ═════════ -->
 <section class="hero" id="top">
-  <canvas class="contour" data-contour="light" aria-hidden="true"></canvas>
+  <div class="hero-base-img hero-image-animate" style="background-image:var(--i-judo-wurf-dark)"
+       role="img" aria-label="Wurftechnik im Ho Sin Do, in Bewegung aufgelöst"></div>
+  <canvas class="reveal-canvas" id="reveal-canvas" aria-hidden="true"></canvas>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
 
-  <div class="hero-left">
-    <div>
-      <div class="hero-id up"><span>dojang_melsungen</span><span>seit 24.08.1976</span><span>DHV e.V.</span></div>
-      <h1>
-        <span class="sr">Ho Sin Do Melsungen</span>
-        <span class="rv" data-reveal="words" data-stagger="110" aria-hidden="true">Ho Sin Do</span>
-        <span class="rv thin" data-reveal="words" data-stagger="110" data-delay="120" aria-hidden="true">Melsungen</span>
-      </h1>
-      <p class="tag up" data-delay="240">Koreanische Kampfkunst für Kinder, Jugendliche und Erwachsene.
-        Selbstverteidigung, Sport und ein Weg – seit fünf Jahrzehnten im Herzen von Melsungen.</p>
-      <ul class="meta">
-        <li class="up" data-delay="360"><em aria-hidden="true"></em>Ursprung: Korea · Großmeister Soo Ung Choi</li>
-        <li class="up" data-delay="450"><i class="dot" aria-hidden="true"></i>Kampfkunst_seit 1976 in Melsungen</li>
-        <li class="up" data-delay="540"><i class="sq" aria-hidden="true"></i>Mitglied im Deutschen HO SIN DO Verband e.V.</li>
-      </ul>
+  <div class="hero-inner">
+    <div class="hero-eyebrow hero-sub-animate" style="animation-delay:1.9s">
+      <i aria-hidden="true"></i>
+      <span class="label">Seit 24.08.1976 in Melsungen</span>
     </div>
 
-    <div class="hero-panels">
-      <div class="panel up" data-delay="700"><i></i>
-        <div class="eyebrow">Nächstes Training</div>
-        <div class="big">HO SIN DO Kinder</div>
-        <div class="muted">Montag · 18:00 – 19:30 Uhr<br>Dojang · Gesamtschule Melsungen</div>
-      </div>
-      <div class="panel up" data-delay="790"><i></i>
-        <div class="eyebrow">Verein in Zahlen</div>
-        <div class="stats">
-          <div><b>50</b><span>Jahre</span></div>
-          <div><b>1000+</b><span>Schüler</span></div>
-          <div><b>59</b><span>DM-Titel</span></div>
-        </div>
-      </div>
-      <div class="hero-actions up" data-delay="880">
-        <a class="cta" href="#kontakt">
-          <svg class="frame" viewBox="0 0 220 50" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M220 42L212.932 50H0V0H220V42Z" fill="#0E0F14"/>
-            <path class="flood" d="M220 42L212.932 50H0V0H220V42Z" fill="#02d2e3"/>
-            <path d="M205 49.5H213L219.5 42V36M212 0.5H219.5V7M8 0.5H0.5V7M7.5 49.5H0.5V42.5"
-                  stroke="#02d2e3" fill="none"/>
-          </svg>
-          Probetraining
-          <svg class="arw" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg>
+    <h1 id="heroHeadline" data-words="Der Weg beginnt im Dojang.">
+      <span class="sr">Der Weg beginnt im Dojang.</span>
+    </h1>
+
+    <p class="hero-sub hero-sub-animate" style="animation-delay:1.9s">
+      Koreanische Kampfkunst für Kinder, Jugendliche und Erwachsene. Ho Sin Do, Kickboxen,
+      Move and Box und Tai Chi – gemeinsam trainiert, seit fünf Jahrzehnten.
+    </p>
+
+    <div class="hero-actions">
+      <div class="magnetic-wrap">
+        <a class="cta-btn cta-animate" href="#kontakt" style="animation-delay:2.1s">
+          <span class="cta-btn-text">Probetraining</span>
+          <span class="cta-btn-circle" aria-hidden="true">
+            <svg viewBox="0 0 14 14"><path d="M1 13L13 1M13 1H4M13 1v9" stroke-width="1.5"/></svg>
+          </span>
         </a>
-        <a class="arrow" href="#training"><span class="brk">Trainingszeiten</span>
-          <svg viewBox="0 0 14 11" fill="none"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg></a>
       </div>
+      <a class="cta-ghost cta-animate" href="#training" style="animation-delay:2.1s">
+        Trainingszeiten
+        <svg viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M13 1L1 13M1 13h9M1 13V4" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-meta hero-sub-animate" style="animation-delay:1.9s">
+      <div><b>50</b><span class="label">Jahre Verein</span></div>
+      <div><b>1000+</b><span class="label">ausgebildete Schüler</span></div>
+      <div><b>59</b><span class="label">Deutsche Meistertitel</span></div>
+      <div><b>9. Dan</b><span class="label">höchster Grad im Verein</span></div>
     </div>
   </div>
 
-  <figure class="hero-fig">
-    <span class="ph" style="--i:var(--i-hero-judo-wurf)" role="img" aria-label="Zwei Kampfsportler im weißen Anzug: ein Wurf aus dem Stand, in Bewegung aufgelöst"></span>
-    <figcaption><span>Wurftechnik</span><span>Ho Sin Sul</span></figcaption>
-  </figure>
+  <div class="hero-scroll" aria-hidden="true">Scrollen</div>
+</section>
 
-  <div class="hero-social">
-    <a href="https://www.facebook.com/HoSinDo/" target="_blank" rel="noopener">facebook</a>
-    <a href="mailto:webmaster@hosindo-melsungen.de">e-mail</a>
+<!-- ═════════ MARQUEE ═════════ -->
+<section class="logo-strip-section">
+  <div class="logo-strip-label label">Vier Sparten unter einem Dach</div>
+  <div class="logo-strip">
+    <div class="logo-track" id="logoTrack" aria-hidden="true"></div>
   </div>
 </section>
 
-<!-- ═════════════ VEREIN + SPARTEN (dunkel) ═════════════ -->
-<section class="section seam on-dark" id="verein">
-  <canvas class="chequer" data-chequer="light" aria-hidden="true"></canvas>
+<!-- ═════════ VEREIN ═════════ -->
+<section class="section" id="verein">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">HO SIN DO Melsungen</div>
-        <h2 class="h2 display"><span class="l">Aus dem</span><span class="l">Dojang<span class="dot">.</span></span></h2>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Ho Sin Do Melsungen</span>
+        <h2>Aus dem <em>Dojang.</em></h2>
       </div>
-      <div class="up" data-delay="120">
-        <p class="body-copy">HO SIN DO hat seinen Ursprung in Korea und gehört zu den asiatischen
-          Kampfkünsten, die in Deutschland bekannt geworden sind. Arme und Beine werden durch Schläge
-          und Tritte zur Verteidigung, zur Selbstverteidigung und zum Angriff eingesetzt. Gebracht hat
-          die Kunst in den 1960er-Jahren der koreanische Großmeister Soo Ung Choi.</p>
-        <p class="body-copy" style="margin-top:1.1rem">Unser Dojang ist nicht nur ein Trainingsraum,
-          sondern ein Ort, an dem das körperliche Training nach den Grundsätzen des DO geführt wird:
-          Mut, Geduld, Höflichkeit, Ehrlichkeit, Vertrauen und Respekt. Die Verbindung von HO und SIN
-          steht für das Zusammenwirken von Geist und Körper.</p>
-        <p style="margin-top:1.3rem"><a class="arrow" href="#geschichte"><span class="brk">Unsere Geschichte</span>
-          <svg viewBox="0 0 14 11" fill="none"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg></a></p>
-      </div>
+      <p>Ho Sin Do hat seinen Ursprung in Korea. Arme und Beine werden durch Schläge und Tritte zur
+        Verteidigung, zur Selbstverteidigung und zum Angriff eingesetzt.</p>
     </div>
 
-    <div class="kpis up">
-      <div><span>Gegründet</span><b>24.08.1976</b></div>
-      <div><span>Deutsche Meistertitel</span><b>59</b></div>
-      <div><span>Höchster Grad im Verein</span><b>9. DAN</b></div>
-      <div><span>Sparten</span><b>4</b></div>
+    <div class="duo">
+      <div class="reveal-up">
+        <p class="body-copy">Gebracht hat die Kunst in den 1960er-Jahren der koreanische Großmeister
+          Soo Ung Choi. Unser Dojang ist nicht nur ein Trainingsraum, sondern ein Ort, an dem das
+          körperliche Training nach den Grundsätzen des DO geführt wird: Mut, Geduld, Höflichkeit,
+          Ehrlichkeit, Vertrauen und Respekt.</p>
+        <p class="body-copy">Die Verbindung von HO und SIN steht für das Zusammenwirken von Geist
+          und Körper, das sich im Reifeprozess des Sportlers entwickelt. Wer anfängt, braucht nichts
+          mitzubringen außer bequemer Sportkleidung – alles andere entsteht auf der Matte.</p>
+        <ul class="chips">
+          <li class="on">Selbstverteidigung</li><li>Formen</li><li>Wettkampf</li>
+          <li>Hebel &amp; Würfe</li><li>Waffen</li>
+        </ul>
+      </div>
+      <figure class="figure paper reveal-up">
+        <span class="ph" style="--i:var(--i-karate-fauststoss);background-image:var(--i)"></span>
+        <figcaption class="label">Grundschule · Fauststoß</figcaption>
+      </figure>
     </div>
 
-    <div id="sparten" class="sparten">
-      <a class="sparte up" href="#training">
-        <span class="ph" style="--i:var(--i-taekwondo-sprungkick)" role="img" aria-label="Kampfsportler im Sprungkick"></span>
-        <div class="eyebrow">Sparte 01</div>
+    <div class="kpis reveal-up">
+      <div><span class="label">Gegründet</span><b>1976</b></div>
+      <div><span class="label">Deutsche Meistertitel</span><b>59</b></div>
+      <div><span class="label">Höchster Grad</span><b>9. Dan</b></div>
+      <div><span class="label">Sparten</span><b>4</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ SPARTEN ═════════ -->
+<section class="section section--raised" id="sparten">
+  <div class="wrap">
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Sparten</span>
+        <h2>Was bei uns <em>trainiert wird.</em></h2>
+      </div>
+      <p>Vier Angebote, ein Dojang: von der koreanischen Kampfkunst über Kickboxen und Move and Box
+        bis zu Tai Chi. Gäste sind in jeder Sparte willkommen.</p>
+    </div>
+
+    <div class="cards">
+      <a class="card reveal-up" href="#training">
+        <span class="media paper" aria-hidden="true"><span class="ph"
+          style="--i:var(--i-taekwondo-sprungkick);background-image:var(--i);background-size:cover;background-position:center"></span></span>
+        <span class="label label--accent">Sparte 01</span>
         <h3>Ho Sin Do</h3>
         <p>Koreanische Selbstverteidigung mit Hand- und Fußtechniken, Formen (Hyong), Hebel-, Wurf-
-          und Waffentechniken. Für Kinder, Jugendliche und Erwachsene – vom weißen Gurt bis zum DAN.</p>
-        <div class="time">Mo &amp; Mi · Kinder 18:00 · Jugend/Erwachsene 19:30</div>
+          und Waffentechniken. Für Kinder, Jugendliche und Erwachsene.</p>
+        <div class="time">Mo &amp; Mi · ab 18:00</div>
       </a>
-      <a class="sparte up" data-delay="90" href="#training">
-        <span class="ph" style="--i:var(--i-kickboxen-highkick-dark)" role="img" aria-label="Kickboxer bei einem hohen Tritt"></span>
-        <div class="eyebrow">Sparte 02</div>
+      <a class="card reveal-up" href="#training">
+        <span class="media" aria-hidden="true"><span class="ph"
+          style="--i:var(--i-kickboxen-highkick-dark);background-image:var(--i);background-size:cover;background-position:center"></span></span>
+        <span class="label label--accent">Sparte 02</span>
         <h3>Kickboxen</h3>
-        <p>Kickboxen wird in Melsungen seit 1995 betrieben. Ein moderner Kampfsport, der sich aus
-          traditionellen Stilen wie Karate und Taekwondo entwickelt hat und Boxtechniken,
-          Gewichtsklassen und Sicherheitsstandards vereint.</p>
-        <div class="time">Fr · Kinder 18:00 · Jugend/Erwachsene 19:00</div>
+        <p>In Melsungen seit 1995. Ein moderner Kampfsport aus Karate und Taekwondo, ergänzt um
+          Boxtechniken, Gewichtsklassen und Sicherheitsstandards.</p>
+        <div class="time">Fr · ab 18:00</div>
       </a>
-      <a class="sparte up" data-delay="180" href="#training">
-        <span class="ph" style="--i:var(--i-karate-fauststoss)" role="img" aria-label="Kampfsportler mit gestrecktem Fauststoß"></span>
-        <div class="eyebrow">Sparte 03</div>
+      <a class="card reveal-up" href="#training">
+        <span class="media paper" aria-hidden="true"><span class="ph"
+          style="--i:var(--i-bodenkampf-hell);background-image:var(--i);background-size:cover;background-position:center"></span></span>
+        <span class="label label--accent">Sparte 03</span>
         <h3>Move and Box</h3>
-        <p>Gesundheitsförderndes, ganzheitliches Boxtraining ohne direkten Körperkontakt: Kraft,
-          Ausdauer, Schnelligkeit, Beweglichkeit und Koordination – für alle Altersgruppen, Frauen
-          und Männer, jedes Fitnesslevel.</p>
+        <p>Gesundheitsförderndes Boxtraining ohne direkten Körperkontakt: Kraft, Ausdauer,
+          Schnelligkeit, Beweglichkeit und Koordination – für jedes Alter und Fitnesslevel.</p>
         <div class="time">Di · 20:00 – 21:00</div>
       </a>
-      <a class="sparte up" data-delay="270" href="#training">
-        <span class="ph" style="--i:var(--i-taekwondo-highkick-dark)" role="img" aria-label="Kampfsportler in ruhiger, hoher Beinhaltung"></span>
-        <div class="eyebrow">Sparte 04</div>
+      <a class="card reveal-up" href="#training">
+        <span class="media" aria-hidden="true"><span class="ph"
+          style="--i:var(--i-taekwondo-highkick-dark);background-image:var(--i);background-size:cover;background-position:center"></span></span>
+        <span class="label label--accent">Sparte 04</span>
         <h3>Tai Chi</h3>
         <p>Entspannung, Gesundheitsübung, Meditation und Ausgleichsbewegung – Qi Gong und die
-          Tai-Chi-Form für alle Menschen unabhängig von Alter und Fitness, ohne Leistungsdruck.</p>
-        <div class="time">Do · Fortgeschrittene 19:00 · Anfänger 20:15</div>
+          Tai-Chi-Form, ohne Leistungsdruck, unabhängig von Alter und Fitness.</p>
+        <div class="time">Do · ab 19:00</div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ═════════════ TRAININGSZEITEN ═════════════ -->
-<section class="section paddock" id="training">
-  <canvas class="contour" data-contour="light" aria-hidden="true"></canvas>
-  <figure class="paddock-fig" aria-hidden="true">
-    <span class="ph" style="--i:var(--i-bodenkampf-hell)" aria-hidden="true"></span>
-  </figure>
+<!-- ═════════ TRAINING ═════════ -->
+<section class="section" id="training">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">Trainingszeiten &amp; Ort</div>
-        <h2 class="h2 display"><span class="l">Die Woche</span><span class="l">im Dojang<span class="dot">.</span></span></h2>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Trainingszeiten &amp; Ort</span>
+        <h2>Die Woche <em>im Dojang.</em></h2>
       </div>
-      <div class="up" data-delay="120">
-        <p class="intro">Alle Einheiten finden im Gymnastikraum der Gesamtschule Melsungen statt.
-          Ein kostenloses Probetraining ist jederzeit möglich – einfach mit bequemer Sportkleidung
-          vorbeikommen oder vorher kurz Bescheid geben.</p>
-        <p style="margin-top:1.6rem"><a class="cta" href="#kontakt">
-          <svg class="frame" viewBox="0 0 217 50" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0.5 0.5H216.5V42L209 49.5H0.5Z" fill="#090a0b" stroke="#02d2e3"/>
-            <path class="flood" d="M0.5 0.5H216.5V42L209 49.5H0.5Z" fill="#02d2e3"/>
-          </svg>
-          Probetraining
-          <svg class="arw" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg>
-        </a></p>
-      </div>
+      <p>Alle Einheiten finden im Gymnastikraum der Gesamtschule Melsungen statt, Dreuxallee 28.
+        Ein Probetraining ist jederzeit kostenlos möglich.</p>
     </div>
 
-    <div class="place">
-      <div class="panel up"><i></i>
-        <div class="eyebrow">Dojang</div>
-        <div class="big">Gymnastikraum der Gesamtschule Melsungen</div>
-        <div class="muted">Dreuxallee 28 · 34212 Melsungen</div>
-        <p style="margin-top:.9rem"><a class="arrow"
-          href="https://www.openstreetmap.org/search?query=Dreuxallee%2028%2C%2034212%20Melsungen"
-          target="_blank" rel="noopener"><span class="brk">Karte öffnen</span>
-          <svg viewBox="0 0 14 11" fill="none"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg></a></p>
-      </div>
-      <div class="panel up" data-delay="90"><i></i>
-        <div class="eyebrow">Mitmachen</div>
-        <div class="big">Probetraining &amp; Aufnahme</div>
-        <div class="muted">Aufnahmeantrag, Satzung und Ordnungen findet ihr unter Dokumente.
-          Fragen beantwortet das Trainerteam vor Ort oder per E-Mail.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="band">
     <div class="week">
-      <div class="day" data-dow="1">
-        <div class="mark"><i></i><span class="line"></span></div>
-        <div class="dow">Montag</div><h3>Ho Sin Do</h3>
+      <div class="day reveal-up" data-dow="1">
+        <span class="dow label">Montag</span><h3>Ho Sin Do</h3>
         <div class="slot"><time>18:00 – 19:30</time><b>Kinder</b></div>
         <div class="slot"><time>19:30 – 21:00</time><b>Jugendliche &amp; Erwachsene</b></div>
       </div>
-      <div class="day" data-dow="2">
-        <div class="mark"><i></i><span class="line"></span></div>
-        <div class="dow">Dienstag</div><h3>Move and Box</h3>
+      <div class="day reveal-up" data-dow="2">
+        <span class="dow label">Dienstag</span><h3>Move and Box</h3>
         <div class="slot"><time>20:00 – 21:00</time><b>Alle Altersgruppen</b></div>
       </div>
-      <div class="day" data-dow="3">
-        <div class="mark"><i></i><span class="line"></span></div>
-        <div class="dow">Mittwoch</div><h3>Ho Sin Do</h3>
+      <div class="day reveal-up" data-dow="3">
+        <span class="dow label">Mittwoch</span><h3>Ho Sin Do</h3>
         <div class="slot"><time>18:00 – 19:30</time><b>Kinder</b></div>
         <div class="slot"><time>19:30 – 21:00</time><b>Jugendliche &amp; Erwachsene</b></div>
       </div>
-      <div class="day" data-dow="4">
-        <div class="mark"><i></i><span class="line"></span></div>
-        <div class="dow">Donnerstag</div><h3>Tai Chi</h3>
+      <div class="day reveal-up" data-dow="4">
+        <span class="dow label">Donnerstag</span><h3>Tai Chi</h3>
         <div class="slot"><time>19:00 – 20:15</time><b>Fortgeschrittene</b></div>
         <div class="slot"><time>20:15 – 21:30</time><b>Anfänger</b></div>
       </div>
-      <div class="day" data-dow="5">
-        <div class="mark"><i></i><span class="line"></span></div>
-        <div class="dow">Freitag</div><h3>Kickboxen</h3>
+      <div class="day reveal-up" data-dow="5">
+        <span class="dow label">Freitag</span><h3>Kickboxen</h3>
         <div class="slot"><time>18:00 – 19:00</time><b>Kinder</b></div>
         <div class="slot"><time>19:00 – 20:30</time><b>Jugendliche &amp; Erwachsene</b></div>
       </div>
     </div>
-    <p style="max-width:1440px;margin:1.6rem auto 0;font-size:var(--type-eyebrow);
-       text-transform:uppercase;letter-spacing:-.02em;color:var(--foreground-on-dark-faint)">
-      In den hessischen Schulferien und an Feiertagen kann das Training entfallen.
-      Aktuelle Änderungen erfahrt ihr im Training oder über die Kontaktadresse.</p>
+    <p class="body-copy reveal-up" style="margin-top:24px">In den hessischen Schulferien und an
+      Feiertagen kann das Training entfallen. Aktuelle Änderungen erfahrt ihr im Training oder über
+      die Kontaktadresse.</p>
   </div>
 </section>
 
-<!-- ═════════════ DO / WERTE ═════════════ -->
-<section class="section on-dark" id="do">
-  <div class="wrap do-grid">
-    <div class="up">
-      <div class="eyebrow">Der Weg</div>
-      <h2 class="h2 display"><span class="l">Geist</span><span class="l">und Körper<span class="dot">.</span></span></h2>
-      <p class="intro" style="margin-top:1.4rem">Ein HO SIN DO-Sportler übt zu jeder Zeit Tapferkeit,
-        Geduld, Höflichkeit und Ehrlichkeit. Der Reifeprozess verbindet HO und SIN – das Zusammenwirken
-        von Geist und Körper. Der schwarze Gürtel vereint alle Farben und markiert den Beginn eines
-        neuen Weges.</p>
-
-      <div class="plate-badge">
-        <svg class="frame" viewBox="0 0 277 78" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0.5 0.5H276.5V69L268 77.5H0.5Z" fill="#090a0b" stroke="#02d2e3" vector-effect="non-scaling-stroke"/>
-          <path d="M83 0.5V77.5" stroke="#02d2e3" vector-effect="non-scaling-stroke"/>
-        </svg>
-        <div class="badge"><b>HSD</b><span>/ DO</span></div>
-        <dl>
-          <div><dt>10</dt><dd>Kup-Grade</dd></div>
-          <div><dt>9</dt><dd>Dan-Grade</dd></div>
-          <div><dt>1</dt><dd>Weg.</dd></div>
-        </dl>
-      </div>
-
+<!-- ═════════ DO / WERTE ═════════ -->
+<section class="section section--raised" id="do">
+  <div class="wrap duo">
+    <div class="reveal-up">
+      <span class="label label--accent">Der Weg</span>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:800;letter-spacing:-0.02em;
+                 line-height:110%;font-size:clamp(32px,4.5vw,72px);margin-top:16px">
+        Geist und <em style="font-style:normal;color:var(--red-400)">Körper.</em></h2>
+      <p class="body-copy" style="margin-top:24px">Ein Ho Sin Do-Sportler übt zu jeder Zeit
+        Tapferkeit, Geduld, Höflichkeit und Ehrlichkeit. Der Reifeprozess verbindet HO und SIN – das
+        Zusammenwirken von Geist und Körper. Der schwarze Gürtel vereint alle Farben und markiert
+        den Beginn eines neuen Weges.</p>
       <div class="values">
-        <div><b>Mut</b><small>Tapferkeit</small></div>
-        <div><b>Geduld</b><small>Ausdauer</small></div>
-        <div><b>Höflichkeit</b><small>Haltung</small></div>
-        <div><b>Ehrlichkeit</b><small>Aufrichtigkeit</small></div>
-        <div><b>Vertrauen</b><small>Miteinander</small></div>
-        <div><b>Respekt</b><small>Achtung</small></div>
+        <div><b>Mut</b><span class="label">Tapferkeit</span></div>
+        <div><b>Geduld</b><span class="label">Ausdauer</span></div>
+        <div><b>Höflichkeit</b><span class="label">Haltung</span></div>
+        <div><b>Ehrlichkeit</b><span class="label">Aufrichtigkeit</span></div>
+        <div><b>Vertrauen</b><span class="label">Miteinander</span></div>
+        <div><b>Respekt</b><span class="label">Achtung</span></div>
       </div>
-      <ul class="geist" aria-label="Geistige Werte">
-        <li>Disziplin</li><li>Bescheidenheit</li><li>Ehrlichkeit</li><li>Gerechtigkeit</li><li>Hilfsbereitschaft</li>
+      <ul class="chips">
+        <li>Disziplin</li><li>Bescheidenheit</li><li>Gerechtigkeit</li><li>Hilfsbereitschaft</li>
       </ul>
     </div>
-    <figure class="dark-fig up" data-delay="140">
-      <span class="ph" style="--i:var(--i-judo-wurf-dark)" role="img" aria-label="Wurftechnik vor dunklem Sternenhintergrund"></span>
-      <figcaption>Ho Sin Sul · Wurf aus dem Stand</figcaption>
+    <figure class="figure reveal-up">
+      <span class="ph" style="--i:var(--i-judo-wurf-dark);background-image:var(--i)"></span>
+      <figcaption class="label">Ho Sin Sul · Wurf aus dem Stand</figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ═════════════ GESCHICHTE / TIMELINE ═════════════ -->
-<section class="section timeline" id="geschichte">
-  <div class="wrap on-dark" style="background:none">
-    <div class="up">
-      <div class="eyebrow">Geschichte</div>
-      <h2 class="h2 display"><span class="l">Von Seoul</span><span class="l">nach Melsungen<span class="dot">.</span></span></h2>
+<!-- ═════════ GESCHICHTE ═════════ -->
+<section class="section" id="geschichte">
+  <div class="wrap">
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Geschichte</span>
+        <h2>Von Seoul <em>nach Melsungen.</em></h2>
+      </div>
+      <p>Vom Großmeister in Korea über die ersten Vereine in Hessen bis zum Jubiläum in Melsungen.</p>
     </div>
 
     <div class="rail-wrap" id="rail-wrap">
-      <div class="rail" aria-hidden="true">
-        <svg viewBox="0 0 16 1000" preserveAspectRatio="none">
-          <line x1="8" y1="0" x2="8" y2="98" stroke="rgb(255 255 255 / .2)" stroke-width="1"/>
-          <line x1="8" y1="102" x2="8" y2="1000" stroke="rgb(255 255 255 / .2)" stroke-width="1"
-                stroke-dasharray="6 6"/>
-          <rect id="railProgress" x="7.5" y="0" width="1" height="0" fill="#fff"/>
-          <rect id="railMark" x="-5" y="-5" width="10" height="10" fill="#fff" transform="translate(8 0)"/>
-        </svg>
-      </div>
+      <div class="rail" aria-hidden="true"><i id="railFill"></i><u id="railMark"></u></div>
 
       <article class="row left">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Großmeister</div>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Großmeister</span>
           <h3>Soo Ung Choi wird geboren.</h3>
-          <p>Am 31. Juli 1939 in Seoul. Er studiert später an der Kyung-Hee-Universität verschiedene
-            koreanische Kampfkünste.</p>
+          <p class="body-copy">Am 31. Juli 1939 in Seoul. Er studiert später an der
+            Kyung-Hee-Universität verschiedene koreanische Kampfkünste.</p>
         </div>
         <div class="year">1939</div>
       </article>
 
       <article class="row right">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Lehrbefähigung</div>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Lehrbefähigung</span>
           <h3>4. Dan Judo, 5. Dan Karate.</h3>
-          <p>Am 28. Februar 1964 erhält Soo Ung Choi seine Lehrbefähigung. Aus HO SIN SUL entwickelt
-            er ein modernes, auch sportlich betreibbares Selbstverteidigungssystem: HO SIN SUL-DO,
-            kurz HO SIN DO.</p>
+          <p class="body-copy">Am 28. Februar 1964 erhält Soo Ung Choi seine Lehrbefähigung. Aus
+            HO SIN SUL entwickelt er ein modernes, auch sportlich betreibbares
+            Selbstverteidigungssystem: HO SIN SUL-DO, kurz HO SIN DO.</p>
         </div>
         <div class="year">1964</div>
       </article>
 
       <article class="row left">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Deutschland</div>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Deutschland</span>
           <h3>Ankunft und erste Vereine.</h3>
-          <p>1968 kommt Soo Ung Choi nach Deutschland und gründet die ersten Vereine sowie die
-            S.V.S.U. (Selbstverteidigungs-Sportunion) – den heutigen Deutschen HO SIN DO Verband e.V.</p>
-          <figure><span class="ph" style="--i:var(--i-taekwondo-highkick-dark)" aria-hidden="true"></span></figure>
+          <p class="body-copy">1968 kommt Soo Ung Choi nach Deutschland und gründet die ersten
+            Vereine sowie die S.V.S.U. – den heutigen Deutschen HO SIN DO Verband e.V.</p>
+          <div class="media"><span class="ph"
+            style="--i:var(--i-taekwondo-highkick-dark);background-image:var(--i);background-position:center 30%"></span></div>
         </div>
         <div class="year">1968</div>
       </article>
 
       <article class="row right">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Nordhessen</div>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Nordhessen</span>
           <h3>Sportschule Choi in Kassel.</h3>
-          <p>Mit dem Umzug nach Kassel Ende 1969 entstehen viele weitere Vereine in Hessen –
-            Hofgeismar, Willingen, Warburg, Paderborn und Melsungen.</p>
+          <p class="body-copy">Mit dem Umzug nach Kassel Ende 1969 entstehen viele weitere Vereine
+            in Hessen – Hofgeismar, Willingen, Warburg, Paderborn und Melsungen.</p>
         </div>
         <div class="year">1969</div>
       </article>
 
       <article class="row left">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Gründung</div>
-          <h3>Der HO SIN DO Karateverein Melsungen e.V.</h3>
-          <p>Am 24. August 1976 von neun Mitgliedern gegründet. Jürgen Pschibul ist bis heute als
-            einziges Gründungsmitglied aktiv. Seither wurden über 1.000 Schüler ausgebildet und
-            59 deutsche Meistertitel gewonnen.</p>
-          <figure><span class="ph" style="--i:var(--i-bodenkampf-dark)" aria-hidden="true"></span></figure>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Gründung</span>
+          <h3>Der Ho Sin Do Karateverein Melsungen e.V.</h3>
+          <p class="body-copy">Am 24. August 1976 von neun Mitgliedern gegründet. Jürgen Pschibul
+            ist bis heute als einziges Gründungsmitglied aktiv. Seither wurden über 1.000 Schüler
+            ausgebildet und 59 deutsche Meistertitel gewonnen.</p>
+          <div class="media"><span class="ph"
+            style="--i:var(--i-bodenkampf-dark);background-image:var(--i);background-position:center 35%"></span></div>
         </div>
         <div class="year">1976</div>
       </article>
 
       <article class="row right">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Neue Sparte</div>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Neue Sparte</span>
           <h3>Kickboxen kommt nach Melsungen.</h3>
-          <p>Seit 1995 wird im Verein zusätzlich Kickboxen trainiert – später folgen Tai Chi und
-            Move and Box.</p>
-          <figure><span class="ph" style="--i:var(--i-kickboxen-highkick-dark)" aria-hidden="true"></span></figure>
+          <p class="body-copy">Seit 1995 wird im Verein zusätzlich Kickboxen trainiert – später
+            folgen Tai Chi und Move and Box.</p>
+          <div class="media"><span class="ph"
+            style="--i:var(--i-kickboxen-highkick-dark);background-image:var(--i);background-position:center 30%"></span></div>
         </div>
         <div class="year">1995</div>
       </article>
 
       <article class="row left">
-        <div class="plate up">
-          <div class="fill"></div>
-          <svg class="outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path d="M13.6168 0.497469H697.378C700.858 0.497469 704.195 1.38786 706.655 2.97277C709.115 4.55769 710.498 6.70729 710.498 8.94869V411.208C710.498 413.449 709.115 415.599 706.655 417.183C704.195 418.768 700.858 419.659 697.378 419.659H460.249C454.073 419.659 447.976 420.555 442.411 422.281C436.847 424.008 431.958 426.519 428.107 429.63L399.246 452.95C395.559 455.928 390.878 458.333 385.55 459.986C380.223 461.639 374.385 462.497 368.472 462.497H13.6168C10.1373 462.497 6.80038 461.607 4.34003 460.022C1.87968 458.437 0.497469 456.288 0.497469 454.046V8.94869C0.497469 6.70729 1.87968 4.55769 4.34003 2.97277C6.80038 1.38786 10.1373 0.497469 13.6168 0.497469Z"/></svg>
-          <div class="eyebrow">Jubiläum</div>
-          <h3>50 Jahre HO SIN DO in Melsungen.</h3>
-          <p>Ein halbes Jahrhundert Kampfkunst, Wettkämpfe, Lehrgänge, Gürtelprüfungen und
-            Vorführungen – und ein Dojang, der offen bleibt für alle, die den Weg gehen wollen.</p>
+        <div class="entry reveal-up">
+          <span class="label label--accent">Jubiläum</span>
+          <h3>50 Jahre Ho Sin Do in Melsungen.</h3>
+          <p class="body-copy">Ein halbes Jahrhundert Kampfkunst, Wettkämpfe, Lehrgänge,
+            Gürtelprüfungen und Vorführungen – und ein Dojang, der offen bleibt für alle, die den
+            Weg gehen wollen.</p>
         </div>
         <div class="year">2026</div>
       </article>
@@ -965,78 +828,80 @@ canvas{display:block}
   </div>
 </section>
 
-<!-- ═════════════ TRAININGSELEMENTE ═════════════ -->
-<section class="section seam" id="elemente">
-  <canvas class="chequer" data-chequer="dark" aria-hidden="true"></canvas>
+<!-- ═════════ ELEMENTE ═════════ -->
+<section class="section section--raised" id="elemente">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">Trainingselemente</div>
-        <h2 class="h2 display"><span class="l">Was wir</span><span class="l">trainieren<span class="dot">.</span></span></h2>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Trainingselemente</span>
+        <h2>Sechs Bausteine <em>einer Kunst.</em></h2>
       </div>
-      <p class="intro up" data-delay="120">HO SIN DO ist eine unbewaffnete Selbstverteidigung mit
-        Elementen aus Taekwondo, Judo und Hapkido. Hand- und Fußtechniken, Formen, Hebel-, Wurf- und
-        Waffentechniken sowie Wettkampf und Bruchtest gehören zum Ganzen.</p>
+      <p>Ho Sin Do ist eine unbewaffnete Selbstverteidigung mit Elementen aus Taekwondo, Judo und
+        Hapkido – ergänzt um Wettkampf, Bruchtest und Waffen.</p>
     </div>
 
     <div class="grid3">
-      <article class="up"><div class="num">01</div><h3>Grundschule</h3>
+      <article class="reveal-up"><div class="num">01</div><h3>Grundschule</h3>
         <p>Das wichtigste Trainingselement: Hier werden die notwendigen Techniken für Verteidigung
-          und Angriff erlernt – Stellungen, Blöcke, Schläge und Tritte, sauber und immer wieder.</p></article>
-      <article class="up" data-delay="60"><h3 class="num">02</h3><h3>Hyong <small>Formen</small></h3>
-        <p>Übungsformen aus verschiedenen Grundbewegungen, die Angriffs- und Verteidigungstechniken
-          aus unterschiedlichen Stellungen verkörpern – der Kampf gegen mehrere imaginäre Gegner.
-          Für jeden Gürtelgrad gibt es eigene Hyongs, die in Geschwindigkeit, Sauberkeit,
+          und Angriff erlernt – Stellungen, Blöcke, Schläge und Tritte.</p></article>
+      <article class="reveal-up"><div class="num">02</div><h3>Hyong<small>Formen</small></h3>
+        <p>Übungsformen aus verschiedenen Grundbewegungen – der Kampf gegen mehrere imaginäre
+          Gegner. Für jeden Gürtelgrad gibt es eigene Hyongs, die in Geschwindigkeit, Sauberkeit,
           Körperhaltung und geistiger Einstellung ein festes Bild ergeben müssen.</p></article>
-      <article class="up" data-delay="120"><div class="num">03</div><h3>Selbstverteidigung <small>Ho Sin Sul</small></h3>
+      <article class="reveal-up"><div class="num">03</div><h3>Selbstverteidigung<small>Ho Sin Sul</small></h3>
         <p>Hebel-, Wurf- und Befreiungstechniken als modernes Selbstverteidigungssystem – der Kern,
-          aus dem HO SIN DO entstanden ist.</p></article>
-      <article class="up"><div class="num">04</div><h3>Wettkampf</h3>
-        <p>Freikampf und Formenwettkampf nach Gewichts- und Altersklassen – mit Sicherheitsstandards
-          und Schutzausrüstung. 59 deutsche Meistertitel sprechen für die Wettkampftradition des Vereins.</p></article>
-      <article class="up" data-delay="60"><div class="num">05</div><h3>Bruchtest</h3>
+          aus dem Ho Sin Do entstanden ist.</p></article>
+      <article class="reveal-up"><div class="num">04</div><h3>Wettkampf</h3>
+        <p>Freikampf und Formenwettkampf nach Gewichts- und Altersklassen, mit Schutzausrüstung.
+          59 deutsche Meistertitel sprechen für die Wettkampftradition des Vereins.</p></article>
+      <article class="reveal-up"><div class="num">05</div><h3>Bruchtest</h3>
         <p>Eigentlich kein Trainingselement: Der Bruchtest wird nur bei Vorführungen oder Prüfungen
           ausgeführt und zeigt Konzentration, Technik und Durchschlagskraft.</p></article>
-      <article class="up" data-delay="120"><div class="num">06</div><h3>Waffen <small>Kum · Ho Sin Bong · Bong</small></h3>
-        <p>Waffentechniken mit Schwert (Kum), Nunchaku (Ho Sin Bong) und Stock (Bong bzw. Danbong)
-          ergänzen das System. Das Waffentraining ist den DAN-Trägern vorbehalten.</p></article>
+      <article class="reveal-up"><div class="num">06</div><h3>Waffen<small>Kum · Ho Sin Bong · Bong</small></h3>
+        <p>Waffentechniken mit Schwert (Kum), Nunchaku (Ho Sin Bong) und Stock (Bong bzw. Danbong).
+          Das Waffentraining ist den DAN-Trägern vorbehalten.</p></article>
     </div>
 
     <div class="trio">
-      <figure class="up"><span class="ph" style="--i:var(--i-karate-fauststoss)" role="img" aria-label="Fauststoß aus der Grundschule"></span><figcaption>Grundschule</figcaption></figure>
-      <figure class="up" data-delay="80"><span class="ph" style="--i:var(--i-taekwondo-sprungkick)" role="img" aria-label="Sprungkick"></span><figcaption>Fußtechnik</figcaption></figure>
-      <figure class="dark up" data-delay="160"><span class="ph" style="--i:var(--i-judo-wurf-dark);background-position:center 45%" role="img" aria-label="Bodentechnik"></span><figcaption>Ho Sin Sul</figcaption></figure>
+      <figure class="figure paper reveal-up"><span class="ph"
+        style="--i:var(--i-karate-fauststoss);background-image:var(--i)"></span>
+        <figcaption class="label">Grundschule</figcaption></figure>
+      <figure class="figure paper reveal-up"><span class="ph"
+        style="--i:var(--i-taekwondo-sprungkick);background-image:var(--i)"></span>
+        <figcaption class="label">Fußtechnik</figcaption></figure>
+      <figure class="figure reveal-up"><span class="ph"
+        style="--i:var(--i-bodenkampf-dark);background-image:var(--i);background-position:center 40%"></span>
+        <figcaption class="label">Ho Sin Sul</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ═════════════ RANGFOLGE ═════════════ -->
-<section class="section rang" id="rangfolge">
+<!-- ═════════ RANGFOLGE ═════════ -->
+<section class="section" id="rangfolge">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">Rangfolge</div>
-        <h2 class="h2 display"><span class="l">Vom weißen</span><span class="l">zum schwarzen Gurt<span class="dot">.</span></span></h2>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Rangfolge</span>
+        <h2>Vom weißen zum <em>schwarzen Gurt.</em></h2>
       </div>
-      <p class="intro up" data-delay="120">Die Schülergrade (Kup) werden vom 10. bis zum 1. Kup
-        gezählt, danach folgen die Meistergrade (Dan). Ab dem 5. Dan legen Dan-Träger keine Prüfungen
-        mehr ab; höhere Grade werden nur für besondere Verdienste im HO SIN DO Verband verliehen.</p>
+      <p>Die Schülergrade (Kup) zählen vom 10. bis zum 1. Kup, danach folgen die Meistergrade (Dan).
+        Ab dem 5. Dan werden höhere Grade nur für besondere Verdienste verliehen.</p>
     </div>
 
-    <div class="belts up" aria-label="Schülergrade">
-      <div class="belt" style="--b1:#fff"><i></i><b>10. Kup</b><span>Weiß</span></div>
-      <div class="belt" style="--b1:#fff;--b2:#f2c200"><i class="two"></i><b>9. Kup</b><span>Weiß-Gelb</span></div>
+    <div class="belts reveal-up" aria-label="Schülergrade">
+      <div class="belt" style="--b1:#F4F1E8"><i></i><b>10. Kup</b><span>Weiß</span></div>
+      <div class="belt" style="--b1:#F4F1E8;--b2:#f2c200"><i class="two"></i><b>9. Kup</b><span>Weiß-Gelb</span></div>
       <div class="belt" style="--b1:#f2c200"><i></i><b>8. Kup</b><span>Gelb</span></div>
       <div class="belt" style="--b1:#f28c00"><i></i><b>7. Kup</b><span>Orange</span></div>
       <div class="belt" style="--b1:#1f9d3a"><i></i><b>6. Kup</b><span>Grün</span></div>
       <div class="belt" style="--b1:#1f5fbf"><i></i><b>5. Kup</b><span>Blau</span></div>
-      <div class="belt" style="--b1:#c8102e"><i></i><b>4. Kup</b><span>Rot</span></div>
+      <div class="belt" style="--b1:#C01818"><i></i><b>4. Kup</b><span>Rot</span></div>
       <div class="belt" style="--b1:#7a4a1e"><i></i><b>3. Kup</b><span>Braun</span></div>
-      <div class="belt" style="--b1:#7a4a1e;--b2:#090a0b"><i class="two"></i><b>2. Kup</b><span>Braun-Schwarz</span></div>
-      <div class="belt" style="--b1:#7a4a1e;--b2:#090a0b"><i class="two"></i><b>1. Kup</b><span>Braun-Schwarz</span></div>
+      <div class="belt" style="--b1:#7a4a1e;--b2:#0D0000"><i class="two"></i><b>2. Kup</b><span>Braun-Schwarz</span></div>
+      <div class="belt" style="--b1:#7a4a1e;--b2:#0D0000"><i class="two"></i><b>1. Kup</b><span>Braun-Schwarz</span></div>
     </div>
 
-    <div class="dans up" aria-label="Meistergrade">
+    <div class="dans reveal-up" aria-label="Meistergrade">
       <div><b>Il Dan</b><span>1. Dan</span></div><div><b>I Dan</b><span>2. Dan</span></div>
       <div><b>Sam Dan</b><span>3. Dan</span></div><div><b>Sa Dan</b><span>4. Dan</span></div>
       <div><b>O Dan</b><span>5. Dan</span></div><div><b>Yuk Dan</b><span>6. Dan</span></div>
@@ -1044,7 +909,7 @@ canvas{display:block}
       <div><b>Gu Dan</b><span>9. Dan</span></div>
     </div>
 
-    <div class="seasons up">
+    <div class="seasons reveal-up">
       <div><b>Weiß</b><p>Die Farbe der Reinheit und des Winters – der Anfang.</p></div>
       <div><b>Gelb &amp; Orange</b><p>Frühling und Wachstum – die ersten Techniken keimen.</p></div>
       <div><b>Grün, Blau &amp; Rot</b><p>Sommer und Reifung – Technik und Haltung festigen sich.</p></div>
@@ -1053,106 +918,107 @@ canvas{display:block}
   </div>
 </section>
 
-<!-- ═════════════ TRAINER ═════════════ -->
-<section class="section" id="trainer">
+<!-- ═════════ TRAINER ═════════ -->
+<section class="section section--raised" id="trainer">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">Trainerteam Melsungen</div>
-        <h2 class="h2 display"><span class="l">Die</span><span class="l">Trainer<span class="dot">.</span></span></h2>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Trainerteam Melsungen</span>
+        <h2>Die Leute <em>auf der Matte.</em></h2>
       </div>
-      <p class="intro up" data-delay="120">Erfahrung aus fünf Jahrzehnten: Unser Trainerteam reicht
-        vom Gründungsmitglied und Großmeister bis zu jungen DAN-Trägern, die selbst im Verein groß
-        geworden sind.</p>
+      <p>Erfahrung aus fünf Jahrzehnten – vom Gründungsmitglied und Großmeister bis zu jungen
+        DAN-Trägern, die selbst im Verein groß geworden sind.</p>
     </div>
-    <div class="trainers">
-      <div class="trainer lead up"><div class="dan">9. DAN<small>Großmeister · Gründungsmitglied</small></div>
+    <div class="people">
+      <div class="person lead reveal-up"><div class="dan">9. Dan</div>
+        <span class="label">Großmeister · Gründungsmitglied</span>
         <h3>Jürgen Pschibul</h3><p>Ho Sin Do · Kassenwart</p></div>
-      <div class="trainer up" data-delay="60"><div class="dan">4. DAN<small>Sa Dan</small></div>
+      <div class="person reveal-up"><div class="dan">4. Dan</div><span class="label">Sa Dan</span>
         <h3>Deniz Kasper</h3><p>Ho Sin Do · Vereinsmeister 1999</p></div>
-      <div class="trainer up" data-delay="120"><div class="dan">3. DAN<small>Sam Dan</small></div>
+      <div class="person reveal-up"><div class="dan">3. Dan</div><span class="label">Sam Dan</span>
         <h3>Franz Weiß</h3><p>Ho Sin Do · Vereinsmeister 1994</p></div>
-      <div class="trainer up" data-delay="180"><div class="dan">3. DAN<small>Sam Dan</small></div>
-        <h3>Ute Pschibul</h3><p>Ho Sin Do · Mitglied seit 1983 · Trainerin seit 2009</p></div>
-      <div class="trainer up"><div class="dan">2. DAN<small>I Dan</small></div>
+      <div class="person reveal-up"><div class="dan">3. Dan</div><span class="label">Sam Dan</span>
+        <h3>Ute Pschibul</h3><p>Mitglied seit 1983 · Trainerin seit 2009</p></div>
+      <div class="person reveal-up"><div class="dan">2. Dan</div><span class="label">I Dan</span>
         <h3>Frank Dreschert</h3><p>Ho Sin Do · Vereinsmeister 1988</p></div>
-      <div class="trainer up" data-delay="60"><div class="dan">1. DAN<small>Il Dan</small></div>
+      <div class="person reveal-up"><div class="dan">1. Dan</div><span class="label">Il Dan</span>
         <h3>Rojeen Dehyar</h3><p>Ho Sin Do</p></div>
-      <div class="trainer up" data-delay="120"><div class="dan">1. DAN<small>Il Dan</small></div>
+      <div class="person reveal-up"><div class="dan">1. Dan</div><span class="label">Il Dan</span>
         <h3>Frank Mardorf</h3><p>Ho Sin Do</p></div>
-      <div class="trainer up" data-delay="180"><div class="dan">M&amp;B<small>Trainer seit 2018</small></div>
+      <div class="person reveal-up"><div class="dan">M&amp;B</div><span class="label">Trainer seit 2018</span>
         <h3>Burkhard Siebert</h3><p>Move and Box · Mitglied seit 2005</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═════════════ VERBAND ═════════════ -->
-<section class="section seam on-dark" id="verband">
-  <canvas class="chequer" data-chequer="light" aria-hidden="true"></canvas>
-  <div class="wrap split">
-    <div class="up">
-      <div class="eyebrow">Deutscher HO SIN DO Verband e.V.</div>
-      <h2 class="h2 display"><span class="l">Der</span><span class="l">Verband<span class="dot">.</span></span></h2>
-      <p class="body-copy" style="margin-top:1.4rem">Großmeister Soo Ung Choi, Träger des 10. DAN
-        HO SIN DO, gründete in den Sechzigern die S.V.S.U. – die Selbstverteidigungs-Sportunion – um
-        die Kampfkunst als modernen Sport in Deutschland zu betreiben. Daraus wurde der Deutsche
-        HO SIN DO Verband e.V. (D.H.V.), eingetragen beim Amtsgericht Kassel (VR 1233).</p>
-      <p class="body-copy" style="margin-top:1rem">Der Verband richtet DAN-Trägertrainings,
-        DAN-Vorbereitungstrainings, Lehrgänge und Prüfungen aus und führt die Liste der erfolgreichen
-        Meisterprüfungen (DAN) im System von Soo Ung Choi.</p>
-
-      <div class="eyebrow" style="margin-top:2.4rem">DHV-Meister · Auszug der höchsten Grade</div>
-      <ul class="meister">
-        <li><span>10.</span><span>Soo Ung Choi</span><span>Großmeister</span></li>
-        <li><span>9.</span><span>Jürgen Pschibul</span><span>Gu Dan · Melsungen</span></li>
-        <li><span>8.</span><span>Günter Schäfer</span><span>Pal Dan</span></li>
-        <li><span>6.</span><span>Josef Schoop</span><span>Yuk Dan</span></li>
-        <li><span>4.</span><span>Deniz Kasper</span><span>Sa Dan · Melsungen</span></li>
-        <li><span>3.</span><span>Franz Weiß · Ute Pschibul</span><span>Sam Dan · Melsungen</span></li>
-      </ul>
-      <div class="eyebrow" style="margin-top:2rem">HO SIN DO Vereine in Hessen &amp; Umgebung</div>
-      <ul class="vereine">
-        <li class="me">Melsungen</li><li>Kassel</li><li>Hofgeismar</li><li>Willingen</li>
-        <li>Warburg</li><li>Paderborn</li><li>Felsberg</li><li>Bad Zwesten</li><li>Hachenburg</li>
-      </ul>
+<!-- ═════════ VERBAND ═════════ -->
+<section class="section" id="verband">
+  <div class="wrap">
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Deutscher Ho Sin Do Verband e.V.</span>
+        <h2>Der <em>Verband.</em></h2>
+      </div>
+      <p>Amtsgericht Kassel, VR 1233. Der Verband richtet DAN-Trägertrainings, Lehrgänge und
+        Prüfungen aus und führt die Liste der Meisterprüfungen im System von Soo Ung Choi.</p>
     </div>
-    <figure class="dark-fig up" data-delay="140">
-      <span class="ph" style="--i:var(--i-bodenkampf-dark)" role="img" aria-label="Bodentechnik vor dunklem Hintergrund"></span>
-      <figcaption>DAN-Trägertraining · Ho Sin Sul</figcaption>
-    </figure>
+
+    <div class="duo">
+      <div class="reveal-up">
+        <p class="body-copy">Großmeister Soo Ung Choi, Träger des 10. DAN Ho Sin Do, gründete in den
+          Sechzigern die S.V.S.U. – die Selbstverteidigungs-Sportunion – um die Kampfkunst als
+          modernen Sport in Deutschland zu betreiben. Daraus wurde der Deutsche Ho Sin Do
+          Verband e.V.</p>
+        <span class="label label--accent" style="margin-top:40px">DHV-Meister · höchste Grade</span>
+        <ul class="rows">
+          <li><span>10.</span><span>Soo Ung Choi</span><span>Großmeister</span></li>
+          <li><span>9.</span><span>Jürgen Pschibul</span><span>Gu Dan · Melsungen</span></li>
+          <li><span>8.</span><span>Günter Schäfer</span><span>Pal Dan</span></li>
+          <li><span>6.</span><span>Josef Schoop</span><span>Yuk Dan</span></li>
+          <li><span>4.</span><span>Deniz Kasper</span><span>Sa Dan · Melsungen</span></li>
+          <li><span>3.</span><span>Franz Weiß · Ute Pschibul</span><span>Sam Dan · Melsungen</span></li>
+        </ul>
+        <span class="label label--accent" style="margin-top:32px">Vereine in Hessen &amp; Umgebung</span>
+        <ul class="chips">
+          <li class="on">Melsungen</li><li>Kassel</li><li>Hofgeismar</li><li>Willingen</li>
+          <li>Warburg</li><li>Paderborn</li><li>Felsberg</li><li>Bad Zwesten</li><li>Hachenburg</li>
+        </ul>
+      </div>
+      <figure class="figure reveal-up">
+        <span class="ph" style="--i:var(--i-bodenkampf-dark);background-image:var(--i)"></span>
+        <figcaption class="label">DAN-Trägertraining · Ho Sin Sul</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<!-- ═════════════ VEREINSLEBEN ═════════════ -->
-<section class="section seam" id="vereinsleben">
-  <canvas class="chequer" data-chequer="dark" aria-hidden="true"></canvas>
+<!-- ═════════ VEREINSLEBEN ═════════ -->
+<section class="section section--raised" id="vereinsleben">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">Vereinsleben</div>
-        <h2 class="h2 display"><span class="l">News, Ehrungen</span><span class="l">&amp; Dokumente<span class="dot">.</span></span></h2>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Vereinsleben</span>
+        <h2>News, Ehrungen <em>&amp; Dokumente.</em></h2>
       </div>
-      <p class="intro up" data-delay="120">Wettkämpfe, Trainingslager, Gürtelprüfungen und
-        Vorführungen prägen das Jahr. Hier findet ihr die aktuellen Termine, unsere Vereinsmeister
-        und die Unterlagen zur Mitgliedschaft.</p>
+      <p>Wettkämpfe, Trainingslager, Gürtelprüfungen und Vorführungen prägen das Jahr.</p>
     </div>
 
     <div class="grid3">
-      <article class="up"><h3>DHV-News <small>Termine des Verbandes</small></h3>
-        <ul class="list">
-          <li><span>2026</span><span>Jubiläumsfeier „50 Jahre HO SIN DO in Melsungen“</span></li>
+      <article class="reveal-up"><h3>DHV-News<small>Termine des Verbandes</small></h3>
+        <ul class="mini">
+          <li><span>2026</span><span>Jubiläumsfeier „50 Jahre Ho Sin Do“</span></li>
           <li><span>DHV</span><span>DAN-Trägertraining</span></li>
           <li><span>DHV</span><span>DAN-Vorbereitungstraining</span></li>
           <li><span>JHV</span><span>Jahreshauptversammlung</span></li>
         </ul></article>
-      <article class="up" data-delay="60"><h3>Vereinsmeister <small>Auszug aus dem Archiv</small></h3>
-        <ul class="list">
+      <article class="reveal-up"><h3>Vereinsmeister<small>Auszug aus dem Archiv</small></h3>
+        <ul class="mini">
           <li><span>1988</span><span>Frank Dreschert</span></li>
           <li><span>1994</span><span>Franz Weiß</span></li>
           <li><span>1999</span><span>Deniz Kasper</span></li>
         </ul></article>
-      <article class="up" data-delay="120"><h3>Ehrungen <small>für Trainingseinheiten</small></h3>
-        <ul class="list">
+      <article class="reveal-up"><h3>Ehrungen<small>für Trainingseinheiten</small></h3>
+        <ul class="mini">
           <li><span>10.</span><span>Franz Weiß</span></li>
           <li><span>13.</span><span>Deniz Kasper</span></li>
           <li><span>14.</span><span>Rojeen Dehyar</span></li>
@@ -1160,335 +1026,301 @@ canvas{display:block}
         </ul></article>
     </div>
 
-    <div class="eyebrow" id="dokumente" style="margin-top:3rem">Dokumente</div>
-    <div class="docs up">
-      <a href="#kontakt">Aufnahmeantrag <span aria-hidden="true">↓</span></a>
-      <a href="#kontakt">Satzung <span aria-hidden="true">↓</span></a>
-      <a href="#kontakt">Finanzordnung <span aria-hidden="true">↓</span></a>
-      <a href="#kontakt">Ehrenordnung <span aria-hidden="true">↓</span></a>
-      <a href="#kontakt">Ethikordnung <span aria-hidden="true">↓</span></a>
+    <span class="label label--accent" id="dokumente" style="margin-top:48px">Dokumente</span>
+    <div class="docs reveal-up">
+      <a href="#kontakt">Aufnahmeantrag <span aria-hidden="true">→</span></a>
+      <a href="#kontakt">Satzung <span aria-hidden="true">→</span></a>
+      <a href="#kontakt">Finanzordnung <span aria-hidden="true">→</span></a>
+      <a href="#kontakt">Ehrenordnung <span aria-hidden="true">→</span></a>
+      <a href="#kontakt">Ethikordnung <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ═════════════ KONTAKT ═════════════ -->
-<section class="section kontakt" id="kontakt">
+<!-- ═════════ KONTAKT ═════════ -->
+<section class="section" id="kontakt">
   <div class="wrap">
-    <div class="split">
-      <div class="up">
-        <div class="eyebrow">Kontakt</div>
-        <h2 class="h2 display"><span class="l">Komm</span><span class="l">ins Dojang<span class="dot">.</span></span></h2>
-        <p class="intro" style="margin-top:1.3rem">Der einfachste Weg: einfach zum Training kommen.
-          Für alles andere erreicht ihr uns per E-Mail oder Telefon.</p>
-        <div class="card" style="margin-top:2rem">
-          <h3>HO SIN DO Karateverein Melsungen e.V.</h3>
-          <dl>
-            <dt>Dojang</dt><dd>Gymnastikraum der Gesamtschule Melsungen<br>Dreuxallee 28 · 34212 Melsungen</dd>
-            <dt>Postanschrift</dt><dd>Hofstatt 5 · 34587 Felsberg-Beuern</dd>
-            <dt>Telefon</dt><dd><a href="tel:+4956625223">05662 – 5223</a></dd>
-            <dt>E-Mail</dt><dd><a href="mailto:webmaster@hosindo-melsungen.de">webmaster@hosindo-melsungen.de</a></dd>
-            <dt>Vertreten durch</dt><dd>Deniz Kasper · Jürgen Pschibul</dd>
-            <dt>Social</dt><dd><a href="https://www.facebook.com/HoSinDo/" target="_blank" rel="noopener">facebook.com/HoSinDo</a></dd>
-          </dl>
-        </div>
+    <div class="head reveal-up">
+      <div>
+        <span class="label label--accent">Kontakt</span>
+        <h2>Komm ins <em>Dojang.</em></h2>
       </div>
-      <div class="invite up" data-delay="120">
-        <span class="ph" style="--i:var(--i-taekwondo-highkick-dark)" aria-hidden="true"></span>
-        <div class="eyebrow light">Probetraining</div>
-        <div class="big">Kostenlos &amp; unverbindlich – jeden Montag und Mittwoch ab 18:00 Uhr.</div>
-        <div><a class="cta" href="mailto:webmaster@hosindo-melsungen.de?subject=Probetraining%20HO%20SIN%20DO%20Melsungen">
-          <svg class="frame" viewBox="0 0 275 50" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0.5 0.5H274.5V41.165L266.165 49.5H0.5Z" fill="none" stroke="#02d2e3"/>
-            <path class="flood" d="M0.5 0.5H274.5V41.165L266.165 49.5H0.5Z" fill="#02d2e3"/>
-          </svg>
-          Anfrage senden
-          <svg class="arw" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg>
-        </a></div>
+      <p>Der einfachste Weg: einfach zum Training kommen. Für alles andere erreicht ihr uns per
+        E-Mail oder Telefon.</p>
+    </div>
+
+    <div class="contact">
+      <div class="panel reveal-up">
+        <h3>Ho Sin Do Karateverein Melsungen e.V.</h3>
+        <dl>
+          <dt>Dojang</dt><dd>Gymnastikraum der Gesamtschule Melsungen<br>Dreuxallee 28 · 34212 Melsungen</dd>
+          <dt>Postanschrift</dt><dd>Hofstatt 5 · 34587 Felsberg-Beuern</dd>
+          <dt>Telefon</dt><dd><a href="tel:+4956625223">05662 – 5223</a></dd>
+          <dt>E-Mail</dt><dd><a href="mailto:webmaster@hosindo-melsungen.de">webmaster@hosindo-melsungen.de</a></dd>
+          <dt>Vertreten durch</dt><dd>Deniz Kasper · Jürgen Pschibul</dd>
+          <dt>Social</dt><dd><a href="https://www.facebook.com/HoSinDo/" target="_blank" rel="noopener">facebook.com/HoSinDo</a></dd>
+        </dl>
+      </div>
+      <div class="invite reveal-up">
+        <span class="ph" style="--i:var(--i-taekwondo-highkick-dark);background-image:var(--i)" aria-hidden="true"></span>
+        <span class="label">Probetraining</span>
+        <div class="big">Kostenlos und unverbindlich – jeden Montag und Mittwoch ab 18:00 Uhr.</div>
+        <div class="magnetic-wrap">
+          <a class="cta-btn" href="mailto:webmaster@hosindo-melsungen.de?subject=Probetraining%20Ho%20Sin%20Do%20Melsungen">
+            <span class="cta-btn-text">Anfrage senden</span>
+            <span class="cta-btn-circle" aria-hidden="true">
+              <svg viewBox="0 0 14 14"><path d="M1 13L13 1M13 1H4M13 1v9" stroke-width="1.5"/></svg>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═════════════ FOOTER ═════════════ -->
+<!-- ═════════ FOOTER ═════════ -->
 <footer class="foot">
-  <div class="foot-panel">
-    <canvas class="contour" data-contour="dark" aria-hidden="true"></canvas>
-    <div class="foot-grid">
-      <div class="up on-dark" style="background:none">
-        <div class="eyebrow light">HO SIN DO Melsungen</div>
-        <h2 class="h2 display" style="margin-top:.6rem"><span class="l">Weiter auf</span><span class="l">dem Weg<span class="dot">.</span></span></h2>
-        <p style="margin-top:1.8rem"><a class="cta" href="#top">
-          <svg class="frame" viewBox="0 0 275 50" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0.5 0.5H274.5V41.165L266.165 49.5H0.5Z" fill="none" stroke="#02d2e3"/>
-            <path class="flood" d="M0.5 0.5H274.5V41.165L266.165 49.5H0.5Z" fill="#02d2e3"/>
-          </svg>
-          Nach oben
-          <svg class="arw" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35 8 .35"/></svg>
-        </a></p>
+  <div class="foot-grid">
+    <div class="reveal-up">
+      <span class="label label--accent">Ho Sin Do Melsungen</span>
+      <h2 style="margin-top:16px">Weiter auf <em>dem Weg.</em></h2>
+      <div class="magnetic-wrap" style="margin-top:40px">
+        <a class="cta-btn" href="#top">
+          <span class="cta-btn-text">Nach oben</span>
+          <span class="cta-btn-circle" aria-hidden="true">
+            <svg viewBox="0 0 14 14"><path d="M1 13L13 1M13 1H4M13 1v9" stroke-width="1.5"/></svg>
+          </span>
+        </a>
       </div>
-      <nav aria-label="Fußzeile">
-        <div>
-          <h4>Verein</h4>
-          <ul>
-            <li><a href="#verein">Ho Sin Do Melsungen</a></li>
-            <li><a href="#sparten">Sparten</a></li>
-            <li><a href="#training">Trainingszeiten</a></li>
-            <li><a href="#trainer">Trainer</a></li>
-            <li><a href="#vereinsleben">Vereinsmeister</a></li>
-            <li><a href="#vereinsleben">Ehrungen</a></li>
-            <li><a href="#rangfolge">Rangfolge</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Verband &amp; Rechtliches</h4>
-          <ul>
-            <li><a href="#verband">DHV – Entstehung</a></li>
-            <li><a href="#verband">DHV – Meister</a></li>
-            <li><a href="#vereinsleben">DHV-News</a></li>
-            <li><a href="#dokumente">Dokumente</a></li>
-            <li><a href="#impressum">Impressum</a></li>
-            <li><a href="#datenschutz">Datenschutz</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-        </div>
-      </nav>
     </div>
-    <div class="legal">
+    <nav aria-label="Fußzeile">
       <div>
-        <p id="impressum"><b>Impressum</b> · Redaktionell verantwortlich: Deutscher HO SIN DO Verband e.V.
-          und HO SIN DO Karateverein Melsungen e.V. · Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-          Jürgen Pschibul · Hofstatt 5, 34587 Felsberg-Beuern · Tel. 05662-5223 · Amtsgericht Kassel VR 1233</p>
-        <p id="datenschutz" style="margin-top:.6rem"><b>Datenschutz</b> · Diese Seite setzt keine Cookies
-          und keine Tracking-Dienste ein. Bei Kontaktaufnahme per E-Mail werden die übermittelten Daten
-          nur zur Bearbeitung der Anfrage verwendet.</p>
+        <h4 class="label">Verein</h4>
+        <ul>
+          <li><a href="#verein">Ho Sin Do Melsungen</a></li>
+          <li><a href="#sparten">Sparten</a></li>
+          <li><a href="#training">Trainingszeiten</a></li>
+          <li><a href="#trainer">Trainer</a></li>
+          <li><a href="#vereinsleben">Vereinsmeister</a></li>
+          <li><a href="#rangfolge">Rangfolge</a></li>
+        </ul>
       </div>
-      <p>© 2026 HO SIN DO Karateverein Melsungen e.V.<br>Alle Rechte vorbehalten.</p>
+      <div>
+        <h4 class="label">Verband &amp; Rechtliches</h4>
+        <ul>
+          <li><a href="#verband">DHV – Entstehung</a></li>
+          <li><a href="#verband">DHV – Meister</a></li>
+          <li><a href="#vereinsleben">DHV-News</a></li>
+          <li><a href="#dokumente">Dokumente</a></li>
+          <li><a href="#impressum">Impressum</a></li>
+          <li><a href="#datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="legal">
+    <div>
+      <p id="impressum"><b>Impressum</b> · Redaktionell verantwortlich: Deutscher HO SIN DO Verband e.V.
+        und HO SIN DO Karateverein Melsungen e.V. · Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+        Jürgen Pschibul · Hofstatt 5, 34587 Felsberg-Beuern · Tel. 05662-5223 · Amtsgericht Kassel VR 1233</p>
+      <p id="datenschutz" style="margin-top:8px"><b>Datenschutz</b> · Diese Seite setzt keine Cookies
+        und keine Tracking-Dienste ein. Bei Kontaktaufnahme per E-Mail werden die übermittelten Daten
+        nur zur Bearbeitung der Anfrage verwendet.</p>
     </div>
+    <p>© 2026 Ho Sin Do Karateverein Melsungen e.V.<br>Alle Rechte vorbehalten.</p>
   </div>
 </footer>
 
 <script>
 (function(){
   "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── Ladevorhang ─────────────────────────────────────────── */
-  var veil = document.getElementById("veil"), meter = document.getElementById("meter");
-  requestAnimationFrame(function(){ meter.style.width = "70%"; });
-  function lift(){
-    meter.style.width = "100%";
+  /* ─── LOADER ─── */
+  (function(){
+    var host = document.getElementById('loaderName');
+    if (!host) return;
+    var i = 0;
+    'HO SIN DO'.split('').forEach(function(ch){
+      if (ch === ' '){
+        var sp = document.createElement('span'); sp.className = 'l-space';
+        host.appendChild(sp); return;
+      }
+      var wrap = document.createElement('span'); wrap.className = 'l-char-wrap';
+      var c = document.createElement('span'); c.className = 'l-char';
+      c.style.setProperty('--i', i); c.textContent = ch;
+      wrap.appendChild(c); host.appendChild(wrap); i++;
+    });
     setTimeout(function(){
-      veil.classList.add("gone");
-      setTimeout(function(){ veil.remove(); }, 800);
-    }, 260);
-  }
-  if (document.readyState === "complete") setTimeout(lift, 250);
-  else window.addEventListener("load", function(){ setTimeout(lift, 250); });
-  setTimeout(lift, 3000);
+      var el = document.getElementById('loader');
+      if (el) el.style.display = 'none';
+    }, reduced ? 60 : 2000);
+  })();
 
-  /* ── Menü ────────────────────────────────────────────────── */
-  var burger = document.getElementById("burger"), sheet = document.getElementById("sheet"),
-      close = document.getElementById("sheetClose");
-  function setMenu(open){
-    sheet.classList.toggle("open", open);
-    burger.setAttribute("aria-expanded", open ? "true" : "false");
-    document.documentElement.style.overflow = open ? "hidden" : "";
-    if (open) close.focus();
-  }
-  burger.addEventListener("click", function(){ setMenu(true); });
-  close.addEventListener("click", function(){ setMenu(false); });
-  sheet.addEventListener("click", function(e){ if (e.target.tagName === "A") setMenu(false); });
-  document.addEventListener("keydown", function(e){ if (e.key === "Escape") setMenu(false); });
+  /* ─── HERO: Wort-Reveal ─── */
+  (function(){
+    var h1 = document.getElementById('heroHeadline');
+    if (!h1) return;
+    var words = h1.getAttribute('data-words').split(' ');
+    words.forEach(function(w, wi){
+      var s = document.createElement('span');
+      s.className = 'word-reveal';
+      s.setAttribute('aria-hidden', 'true');
+      if (wi === words.length - 1){
+        var em = document.createElement('em'); em.textContent = w; s.appendChild(em);
+      } else s.textContent = w;
+      s.style.animationDelay = (1.1 + wi * 0.06) + 's';
+      h1.appendChild(s);
+    });
+  })();
 
-  /* ── Text-Reveals: Wörter / Buchstaben ───────────────────── */
-  document.querySelectorAll("[data-reveal]").forEach(function(el){
-    var mode = el.getAttribute("data-reveal"),
-        stagger = +(el.getAttribute("data-stagger") || 40),
-        base = +(el.getAttribute("data-delay") || 0),
-        text = el.textContent.trim(), i = 0;
-    el.textContent = "";
-    if (mode === "letters") el.classList.add("ltr");
-    (mode === "letters" ? text.split("") : text.split(/\s+/)).forEach(function(part){
-      var u = document.createElement("u");
-      u.textContent = part === " " ? " " : part;
-      u.style.transitionDelay = (base + i * stagger) + "ms";
-      el.appendChild(u); i++;
+  /* ─── MARQUEE ─── */
+  (function(){
+    var track = document.getElementById('logoTrack');
+    if (!track) return;
+    var items = ['Ho Sin Do','Kickboxen','Move and Box','Tai Chi','Selbstverteidigung',
+                 'Hyong','Wettkampf','Seit 1976'];
+    var html = items.map(function(t){ return '<span>' + t + '</span>'; }).join('');
+    track.innerHTML = html + html;
+  })();
+
+  /* ─── HERO-REVEAL: der Zeiger legt das zweite Motiv frei ─── */
+  (function(){
+    var canvas = document.getElementById('reveal-canvas');
+    if (!canvas || reduced) return;
+    var ctx = canvas.getContext('2d');
+    var hero = canvas.parentElement;
+    var raw = getComputedStyle(document.documentElement)
+                .getPropertyValue('--i-hero-judo-wurf').trim();
+    var m = raw.match(/url\(["']?([^"')]+)["']?\)/);
+    var img = new Image(), loaded = false;
+    if (m){ img.onload = function(){ loaded = true; }; img.src = m[1]; }
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 2), w = 0, h = 0;
+    function size(){
+      w = hero.clientWidth; h = hero.clientHeight;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    size();
+    window.addEventListener('resize', size);
+
+    var state = 'waiting', px = 0, py = 0, tx = 0, ty = 0, r = 0, target = 0;
+    var MAX_R = 380;
+
+    hero.addEventListener('mousemove', function(e){
+      var b = hero.getBoundingClientRect();
+      tx = e.clientX - b.left; ty = e.clientY - b.top;
+      if (state === 'waiting'){ px = tx; py = ty; }
+      state = 'entering'; target = MAX_R;
+    });
+    hero.addEventListener('mouseleave', function(){ state = 'shrinking'; target = 0; });
+
+    function frame(){
+      requestAnimationFrame(frame);
+      px += (tx - px) * 0.12; py += (ty - py) * 0.12;
+      r += (target - r) * 0.10;
+      if (state === 'shrinking' && r < 0.6){ r = 0; state = 'waiting'; }
+      ctx.clearRect(0, 0, w, h);
+      if (!loaded || r < 0.6) return;
+
+      var s = Math.max(w / img.width, h / img.height);
+      var dw = img.width * s, dh = img.height * s;
+      ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2 - dh * 0.06, dw, dh);
+
+      var g = ctx.createRadialGradient(px, py, 0, px, py, r);
+      g.addColorStop(0,    'rgba(255,255,255,1)');
+      g.addColorStop(0.35, 'rgba(255,255,255,0.70)');
+      g.addColorStop(0.55, 'rgba(255,255,255,0.35)');
+      g.addColorStop(0.75, 'rgba(255,255,255,0.10)');
+      g.addColorStop(1,    'rgba(255,255,255,0)');
+      ctx.globalCompositeOperation = 'destination-in';
+      ctx.fillStyle = g;
+      ctx.fillRect(px - r, py - r, r * 2, r * 2);
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    frame();
+  })();
+
+  /* ─── MAGNETISCHE BUTTONS ─── */
+  document.querySelectorAll('.magnetic-wrap').forEach(function(wrap){
+    var btn = wrap.querySelector('.cta-btn');
+    if (!btn || reduced) return;
+    wrap.addEventListener('mousemove', function(e){
+      var b = wrap.getBoundingClientRect();
+      var dx = (e.clientX - (b.left + b.width / 2)) * 0.28;
+      var dy = (e.clientY - (b.top + b.height / 2)) * 0.28;
+      btn.style.transition = 'transform 0.15s ease, box-shadow 0.3s ease';
+      btn.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+    });
+    wrap.addEventListener('mouseleave', function(){
+      btn.style.transition = 'transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s ease';
+      btn.style.transform = 'translate(0, 0)';
     });
   });
 
-  /* ── Sichtbarkeits-Trigger ───────────────────────────────── */
-  var targets = document.querySelectorAll(".up,.rv,.row");
-  if (!("IntersectionObserver" in window) || reduce){
-    targets.forEach(function(t){ t.classList.add("in"); });
+  /* ─── MENÜ ─── */
+  (function(){
+    var btn = document.getElementById('burger-btn');
+    var panel = document.getElementById('menu-panel');
+    function set(open){
+      panel.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    }
+    set(false);
+    btn.addEventListener('click', function(){
+      set(btn.getAttribute('aria-expanded') !== 'true');
+    });
+    panel.querySelectorAll('.menu-nav a, .menu-cta-circle').forEach(function(a){
+      a.addEventListener('click', function(){ set(false); });
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') set(false);
+    });
+  })();
+
+  /* ─── NAV + ZEITSTRAHL ─── */
+  var nav = document.getElementById('nav');
+  var railWrap = document.getElementById('rail-wrap');
+  var railFill = document.getElementById('railFill');
+  var railMark = document.getElementById('railMark');
+  function onScroll(){
+    nav.classList.toggle('solid', window.scrollY > 40);
+    if (!railWrap) return;
+    var vh = window.innerHeight || 1;
+    var b = railWrap.getBoundingClientRect();
+    var p = Math.min(1, Math.max(0, (vh * 0.5 - b.top) / (b.height + vh * 0.5)));
+    railFill.style.height = (p * 100) + '%';
+    railMark.style.top = (p * 100) + '%';
+  }
+  window.addEventListener('scroll', function(){ requestAnimationFrame(onScroll); }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ─── SCROLL-REVEALS ─── */
+  var items = document.querySelectorAll('.reveal-up');
+  if (!('IntersectionObserver' in window) || reduced){
+    items.forEach(function(el){ el.classList.add('in'); });
   } else {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         if (!en.isIntersecting) return;
-        var el = en.target, d = +(el.getAttribute("data-delay") || 0);
-        if (el.classList.contains("up")) el.style.transitionDelay = d + "ms";
-        el.classList.add("in");
-        io.unobserve(el);
+        en.target.classList.add('in');
+        io.unobserve(en.target);
       });
-    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
-    targets.forEach(function(t){ io.observe(t); });
-  }
-
-  /* ── Geteilter Ticker ────────────────────────────────────── */
-  var subs = [];
-  function loop(t){ for (var i = 0; i < subs.length; i++) subs[i](t); requestAnimationFrame(loop); }
-  if (!reduce) requestAnimationFrame(loop);
-
-  /* ── Konturfeld (Marching Squares, wie im Design-System) ─── */
-  var LINE_SCALE = 3.8, LINE_COUNT = 2.5, WAVE_AMOUNT = .37, WAVE_SPEED = 1.66,
-      LINE_OPACITY = .85, CELLS = 68;
-  function fieldAt(x, y, t){
-    var f = Math.sin(x * 1.0 + t * .6) * .5;
-    f += Math.sin(y * .85 - t * .45) * .45;
-    f += Math.sin((x + y) * .65 + t * .35) * .35;
-    f += Math.sin((x - y) * .95 - t * .55) * .25;
-    return f * .5 + .5;
-  }
-  document.querySelectorAll("[data-contour]").forEach(function(canvas){
-    var ctx = canvas.getContext("2d"), start = performance.now(), visible = false, last = 0;
-    var colour = canvas.getAttribute("data-contour") === "dark"
-      ? "rgba(255,255,255,.10)" : "rgba(9,10,11,.09)";
-    function size(){
-      var r = Math.min(window.devicePixelRatio || 1, 2),
-          w = canvas.clientWidth, h = canvas.clientHeight;
-      if (!w || !h) return false;
-      canvas.width = Math.round(w * r); canvas.height = Math.round(h * r);
-      ctx.setTransform(r, 0, 0, r, 0, 0);
-      return true;
-    }
-    function draw(now){
-      if (!size()) return;
-      var width = canvas.clientWidth, height = canvas.clientHeight,
-          t = (now - start) / 1000 * WAVE_SPEED,
-          cols = width >= height ? CELLS : Math.max(8, Math.round(CELLS * width / height)),
-          rows = Math.max(8, Math.round(cols * height / width)),
-          stepX = width / cols, stepY = height / rows, aspect = width / height,
-          values = new Float32Array((cols + 1) * (rows + 1)), i, j;
-      for (j = 0; j <= rows; j++) for (i = 0; i <= cols; i++){
-        var nx = ((i / cols) * 2 - 1) * aspect * LINE_SCALE,
-            ny = ((j / rows) * 2 - 1) * LINE_SCALE,
-            qx = nx + Math.sin(ny * .8 + t * .7) * WAVE_AMOUNT,
-            qy = ny + Math.cos(nx * .7 - t * .6) * WAVE_AMOUNT;
-        values[j * (cols + 1) + i] = fieldAt(qx, qy, t) * LINE_COUNT;
-      }
-      ctx.clearRect(0, 0, width, height);
-      ctx.strokeStyle = colour; ctx.lineWidth = 1; ctx.globalAlpha = LINE_OPACITY;
-      ctx.beginPath();
-      for (var level = .5; level < LINE_COUNT; level++)
-        for (j = 0; j < rows; j++) for (i = 0; i < cols; i++){
-          var a = values[j * (cols + 1) + i], b = values[j * (cols + 1) + i + 1],
-              c = values[(j + 1) * (cols + 1) + i + 1], d = values[(j + 1) * (cols + 1) + i],
-              idx = (a > level ? 8 : 0) | (b > level ? 4 : 0) | (c > level ? 2 : 0) | (d > level ? 1 : 0);
-          if (idx === 0 || idx === 15) continue;
-          var x0 = i * stepX, y0 = j * stepY,
-              top = [x0 + stepX * ((level - a) / (b - a)), y0],
-              right = [x0 + stepX, y0 + stepY * ((level - b) / (c - b))],
-              bottom = [x0 + stepX * ((level - d) / (c - d)), y0 + stepY],
-              left = [x0, y0 + stepY * ((level - a) / (d - a))];
-          function seg(p, q){ ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); }
-          switch (idx){
-            case 1: case 14: seg(left, bottom); break;
-            case 2: case 13: seg(bottom, right); break;
-            case 3: case 12: seg(left, right); break;
-            case 4: case 11: seg(top, right); break;
-            case 6: case 9:  seg(top, bottom); break;
-            case 7: case 8:  seg(left, top); break;
-            case 5: seg(left, top); seg(bottom, right); break;
-            case 10: seg(left, bottom); seg(top, right); break;
-          }
-        }
-      ctx.stroke(); ctx.globalAlpha = 1;
-    }
-    if ("IntersectionObserver" in window){
-      new IntersectionObserver(function(e){ visible = e[0].isIntersecting; })
-        .observe(canvas.parentElement);
-    } else visible = true;
-    draw(performance.now());
-    if (!reduce) subs.push(function(now){
-      if (!visible || now - last < 40) return;
-      last = now; draw(now);
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    items.forEach(function(el, i){
+      el.style.transitionDelay = (i % 4) * 60 + 'ms';
+      io.observe(el);
     });
-    window.addEventListener("resize", function(){ draw(performance.now()); });
-  });
-
-  /* ── Zielflaggen-Übergang ────────────────────────────────── */
-  var CELL = 24, SOLID_UNTIL = .16, LIFT = 2, ACCENT_SHARE = .06;
-  function hash(x, y){
-    var h = Math.imul(x, 374761393) + Math.imul(y, 668265263);
-    h = Math.imul(h ^ (h >>> 13), 1274126177);
-    return ((h ^ (h >>> 16)) >>> 0) / 4294967295;
   }
-  var chequers = [];
-  document.querySelectorAll("[data-chequer]").forEach(function(canvas){
-    var ctx = canvas.getContext("2d"),
-        carry = canvas.getAttribute("data-chequer"),
-        surface = carry === "light" ? "#f7fafb" : "#090a0b";
-    function render(progress){
-      var r = Math.min(window.devicePixelRatio || 1, 2),
-          w = canvas.clientWidth, h = canvas.clientHeight;
-      if (!w || !h) return;
-      canvas.width = Math.round(w * r); canvas.height = Math.round(h * r);
-      ctx.setTransform(r, 0, 0, r, 0, 0);
-      ctx.clearRect(0, 0, w, h);
-      var cols = Math.ceil(w / CELL), rows = Math.ceil(h / CELL), lift = progress * LIFT;
-      for (var y = 0; y < rows; y++){
-        var depth = y / Math.max(1, rows - 1) + lift;
-        if (depth > 1) break;
-        var solid = depth <= SOLID_UNTIL,
-            fade = Math.min(1, Math.max(0, 1 - (depth - SOLID_UNTIL) / (1 - SOLID_UNTIL)));
-        if (!solid && fade <= 0) break;
-        for (var x = 0; x < cols; x++){
-          if (!solid){
-            if ((x + y) % 2 !== 0) continue;
-            if (hash(x, y) > fade) continue;
-          }
-          ctx.fillStyle = (!solid && hash(x + 101, y + 57) < ACCENT_SHARE) ? "#02d2e3" : surface;
-          ctx.fillRect(x * CELL, y * CELL, CELL, CELL);
-        }
-      }
-    }
-    chequers.push({ el: canvas, render: render, last: -1 });
-    render(0);
-  });
 
-  /* ── Scroll-Scrubs: Flaggen + Timeline-Schiene ───────────── */
-  var railWrap = document.getElementById("rail-wrap"),
-      railProgress = document.getElementById("railProgress"),
-      railMark = document.getElementById("railMark");
-  function onScroll(){
-    var vh = window.innerHeight || 1;
-    chequers.forEach(function(c){
-      var b = c.el.getBoundingClientRect(),
-          p = Math.min(1, Math.max(0, 1 - b.top / vh));
-      if (Math.abs(p - c.last) < .004) return;
-      c.last = p; c.render(p);
-    });
-    if (railWrap && railProgress){
-      var b = railWrap.getBoundingClientRect(),
-          span = b.height + vh * .5,
-          p = Math.min(1, Math.max(0, (vh * .5 - b.top) / span)),
-          rest = 1000 * .96, run = p * rest;
-      railProgress.setAttribute("height", run.toFixed(1));
-      railMark.setAttribute("transform", "translate(8 " + run.toFixed(1) + ") rotate(" + (p * 1800).toFixed(1) + ")");
-    }
-  }
-  window.addEventListener("scroll", function(){ requestAnimationFrame(onScroll); }, { passive: true });
-  window.addEventListener("resize", onScroll);
-  onScroll();
-
-  /* ── Heutiger Trainingstag markieren ─────────────────────── */
-  var dow = new Date().getDay();
-  var today = document.querySelector('.day[data-dow="' + dow + '"]');
-  if (today){
-    today.classList.add("live");
-    var pulse = document.createElement("span");
-    pulse.className = "pulse"; pulse.setAttribute("aria-hidden", "true");
-    today.querySelector(".mark").appendChild(pulse);
-  }
+  /* ─── Heutiger Trainingstag ─── */
+  var today = document.querySelector('.day[data-dow="' + new Date().getDay() + '"]');
+  if (today) today.classList.add('live');
 })();
 </script>
 </body>

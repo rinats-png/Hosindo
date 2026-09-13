@@ -1,18 +1,19 @@
-# HO SIN DO Melsungen – Website-Neuaufbau
+# HO SIN DO Melsungen – Website
 
-Neuaufbau von www.hosindo.de im Design-System des kimi-Starters: Oswald + Space
-Grotesk, Eis-Weiß / Tinte-Schwarz / Cyan-Akzent, Klammer-Ecken, gestufte Plates,
-animiertes Konturfeld und Zielflaggen-Übergänge zwischen den Blöcken.
+Statische Seite im „Nora“-Designsystem (Awesmos-Vorlage): Schwarzrot (#0D0000 →
+#C01818), Geist + Inter, Loader mit buchstabenweisem Schriftzug, Hero mit
+cursor-gesteuertem Reveal-Canvas, magnetische Buttons, Clip-Path-Menü und
+Laufband.
 
 ## Dateien
 
 | Datei | Zweck |
 |---|---|
-| `index.html` | **Das Ergebnis.** Eine einzige Datei, alle Bilder sind als Base64 eingebettet – einfach im Browser öffnen oder irgendwo hochladen. |
+| `index.html` | **Das Ergebnis.** Eine einzige Datei, alle Bilder als Base64 eingebettet – im Browser öffnen oder hochladen. |
 | `index.src.html` | Die Quelle mit `var(--i-…)`-Platzhaltern statt Bilddaten. Hier wird bearbeitet. |
-| `build.py` | Baut aus der Quelle `index.html`, bettet jedes Bild genau einmal ein. |
+| `build.py` | Baut daraus `index.html` und bettet jedes Bild genau einmal ein. |
 | `assets/img/` | Die acht Motive als JPG. |
-| `assets/ui/` | SVG-Elemente aus dem Template. |
+| `assets/ui/` | SVG-Elemente aus einer früheren Ausbaustufe. |
 
 ## Ändern
 
@@ -21,8 +22,12 @@ animiertes Konturfeld und Zielflaggen-Übergänge zwischen den Blöcken.
 python3 build.py
 ```
 
-## Inhalt
+## Interaktionen
 
-Alle Bereiche der alten Seite als eine Seite mit Ankernavigation: Verein,
-Sparten, Trainingszeiten, DO-Werte, Geschichte, Trainingselemente, Rangfolge,
-Trainer, Verband, Vereinsleben, Kontakt, Impressum und Datenschutz.
+- **Reveal-Canvas:** Der Zeiger legt im Hero ein zweites Motiv frei; Radialmaske
+  über `destination-in`, Radius 380px, Zustände waiting / entering / shrinking.
+- **Magnetische Buttons:** folgen dem Zeiger (0.15s), federn beim Verlassen zurück.
+- **Menü:** Clip-Path-Vorhang, 0.65s, Burger dreht zu einem Kreuz, Escape schließt.
+- **Laufband:** 28s linear, verdoppelte Liste.
+- **Zeitstrahl:** Schiene füllt sich beim Scrollen, Marke wandert mit.
+- `prefers-reduced-motion` schaltet Loader, Canvas und alle Übergänge ab.

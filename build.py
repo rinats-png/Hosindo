@@ -7,7 +7,7 @@ import base64, pathlib, re
 root = pathlib.Path(__file__).parent
 src = (root / "index.src.html").read_text(encoding="utf-8")
 
-names = sorted(set(re.findall(r"--i-([a-z0-9\-]+)\)", src)))
+names = sorted(set(re.findall(r"--i-([a-z0-9\-]+)", src)))
 decls = []
 for n in names:
     raw = (root / "assets" / "img" / (n + ".jpg")).read_bytes()
