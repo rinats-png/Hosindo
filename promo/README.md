@@ -35,7 +35,9 @@ cd promo && npm install            # oder den Symlink auf ../film/node_modules n
 export FFMPEG=/pfad/zu/ffmpeg      # mit libx264
 node capture.mjs                   # Screenshots der Website (../index.html)
 node render.mjs audio --out out/bed_raw.wav
-# zweistufig auf −14 LUFS / −2,0 dBTP normalisieren (Befehle im Verlauf von DECISIONS.md), dann:
+# 1. Durchgang messen, 2. Durchgang mit den Messwerten (input_i, input_tp, input_lra, input_thresh, target_offset):
+"$FFMPEG" -i out/bed_raw.wav -af loudnorm=I=-14:TP=-2.0:LRA=7:print_format=json -f null -
+"$FFMPEG" -y -i out/bed_raw.wav -af "loudnorm=I=-14:TP=-2.0:LRA=7:measured_I=…:measured_TP=…:measured_LRA=…:measured_thresh=…:offset=…:linear=true" -ar 48000 -c:a pcm_s16le out/bed.wav
 node render.mjs video --out out/raw_promo.mp4      # ~10 min
 "$FFMPEG" -y -i out/raw_promo.mp4 -i out/bed.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest out/promo_9x16.mp4
 python3 verify.py out/promo_9x16.mp4
