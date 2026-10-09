@@ -31,3 +31,8 @@ python3 build.py
 - **Laufband:** 28s linear, verdoppelte Liste.
 - **Zeitstrahl:** Schiene füllt sich beim Scrollen, Marke wandert mit.
 - `prefers-reduced-motion` schaltet Loader, Canvas und alle Übergänge ab.
+
+## Erklärfilm
+
+Unter `film/` liegt ein 60-Sekunden-Erklärfilm („Erst fit werden?“) in 16:9, 9:16 und 1:1 samt
+Quelle, Ton, Untertiteln und Prüfprotokoll – siehe `film/README.md`.

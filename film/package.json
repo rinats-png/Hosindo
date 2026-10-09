@@ -1,0 +1,7 @@
+{
+  "name": "hosindo-erklaerfilm",
+  "private": true,
+  "type": "module",
+  "description": "Seekbare Bühne und Render-Pipeline für den HO SIN DO Erklärfilm",
+  "dependencies": { "playwright-core": "1.56.1" }
+}

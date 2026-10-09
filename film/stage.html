@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bühne – Erklärfilm HO SIN DO</title>
+<link rel="stylesheet" href="brand/tokens.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ground);overflow:hidden}
+  #stage{position:relative;overflow:hidden;background:var(--ground);color:var(--ink)}
+  #stage div{position:absolute}
+  .belt{border:2px solid rgba(13,0,0,.22);border-radius:6px;display:flex;align-items:center;
+        overflow:hidden}
+  .belt i{position:absolute;top:0;bottom:0;right:0;width:50%;background:var(--belt-schwarz)}
+  .blabel{font:600 26px var(--text);white-space:nowrap;line-height:1}
+  .pathline{background:rgba(13,0,0,.22)}
+  .ring{border:3px solid var(--ink);border-radius:10px}
+  .gate{background:#E3DDD0;border:2px solid rgba(13,0,0,.38);border-radius:8px;display:flex;
+        flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;
+        font:600 26px/1.15 var(--text);color:var(--ink)}
+  .gate svg{width:26px;height:30px}
+  .ghost{border:2px dashed rgba(13,0,0,.45);border-radius:8px;display:flex;flex-direction:column;align-items:center;
+         justify-content:center;text-align:center;font:600 26px/1.15 var(--text);color:var(--ink-muted)}
+  .ghost span{position:relative;display:inline-block}
+  .ghost .strike{position:absolute;left:-6px;right:-6px;top:50%;height:3px;margin-top:-1px;
+                 background:var(--ink);transform-origin:left center}
+  .examhalf{background:var(--ink);border-radius:3px}
+  .examlabel{font:600 26px var(--text);white-space:nowrap;line-height:1}
+  .dot{border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;
+       align-items:center;justify-content:center;font:700 20px var(--display);line-height:1}
+  .blk-label{font:500 30px var(--text);white-space:nowrap;line-height:1}
+  .blk-track{background:var(--track);border-radius:99px;overflow:hidden}
+  .blk-fill{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--ink)}
+  .blk-fill.fit{background:var(--accent)}
+  .card{background:#FFFFFF;border:2px solid var(--line);border-radius:12px;padding:20px 22px;
+        display:flex;flex-direction:column;gap:10px}
+  #stage .card div{position:static}
+  .card.on{border-color:var(--ink)}
+  .card .day{font:600 34px var(--display);line-height:1}
+  .card .body{font:500 28px/1.25 var(--text);color:var(--ink)}
+  .card .body small{display:block;font:500 1em var(--text);color:var(--ink-muted)}
+  .card.off .body{color:var(--ink-muted)}
+  .rowlabel{font:600 32px/1.15 var(--display);white-space:normal}
+  .rowlabel small{display:block;font:500 28px/1.3 var(--text);color:var(--ink-muted)}
+  .l1{font:700 72px/1.05 var(--display);letter-spacing:-.02em;white-space:nowrap}
+  .l2{font:500 36px/1.3 var(--text);color:var(--ink-muted);white-space:nowrap}
+  .brand{font:600 28px var(--text);color:var(--ink-muted);white-space:nowrap;letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="timeline.js"></script>
+<script src="audio.js"></script>
+<script>
+(function(){
+"use strict";
+const TL = window.TIMELINE;
+const Q = new URLSearchParams(location.search);
+const FMT = Q.get("fmt") || "16x9";
+const RM = Q.get("rm") === "1";
+const [W, H] = { "16x9":[1920,1080], "9x16":[1080,1920], "1x1":[1080,1080] }[FMT];
+
+/* ───────── Easing: setzt sich, ohne zu federn ───────── */
+const EASE = {
+  lin: x => x,
+  out: x => 1 - Math.pow(1 - x, 4),
+  io:  x => x < .5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2
+};
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, x) => a + (b - a) * x;
+
+function sample(name, t){
+  const k = TL.tracks[name];
+  if (!k) return 0;
+  if (t <= k[0][0]) return k[0][1];
+  for (let i = 1; i < k.length; i++){
+    const [t1, v1, e] = k[i], [t0, v0] = k[i - 1];
+    if (t < t1){
+      if (RM){
+        if (TL.presence.includes(name)){
+          const d = Math.min(.25, t1 - t0);
+          return lerp(v0, v1, clamp((t - t0) / d));
+        }
+        return v1;                       /* Bewegung springt an den Startpunkt */
+      }
+      return lerp(v0, v1, EASE[e || "lin"]((t - t0) / (t1 - t0)));
+    }
+  }
+  return k[k.length - 1][1];
+}
+
+/* ───────── Layouts pro Format: F0 Gurtweg, F1 + Woche, F2 zwei Wege ───────── */
+const LAYOUTS = {
+  "16x9": {
+    orient: "row",
+    text: { x: 96, y: 96, l1: 72, l2: 36, gap: 18 },
+    brand: { x: 96, y: 1080 - 96 - 28 },
+    F: [
+      { A:{x0:329,y0:540,bw:140,bh:70,g:26}, bOff:{dx:0,dy:250}, gate:{x:123,y:480,w:170,h:120},
+        blocks:{x:329,y:670,w:620,sp:92,font:34,bar:16}, labels:{on:1,font:32},
+        exam:{len:140,font:32,on:1}, dotR:28, dotRW:30, rowFont:34,
+        week:{x:96,y:440,w:244,h:290,g:22,dir:"row"} },
+      { A:{x0:96,y0:340,bw:84,bh:40,g:18}, bOff:{dx:0,dy:250}, gate:{x:123,y:480,w:170,h:120},
+        blocks:{x:1440,y:448,w:384,sp:80,font:28,bar:12}, labels:{on:1,font:26},
+        exam:{len:70,font:24,on:1}, dotR:16, dotRW:30, rowFont:34,
+        week:{x:96,y:440,w:244,h:290,g:22,dir:"row"} },
+      { A:{x0:324,y0:470,bw:120,bh:54,g:24}, bOff:{dx:0,dy:270}, gate:{x:123,y:480,w:170,h:120},
+        blocks:{x:1440,y:448,w:384,sp:80,font:28,bar:12}, labels:{on:0,font:26},
+        exam:{len:70,font:24,on:0}, dotR:22, dotRW:30, rowFont:34,
+        week:{x:96,y:440,w:244,h:290,g:22,dir:"row"} }
+    ],
+    card: { day:36, body:30 }
+  },
+  "9x16": {
+    orient: "col",
+    text: { x: 72, y: 150, l1: 64, l2: 36, gap: 16 },
+    brand: { x: 72, y: 1920 - 120 - 28 },
+    F: [
+      { A:{x0:72,y0:1560,bw:360,bh:64,g:20}, bOff:{dx:528,dy:0}, gate:{x:72,y:1588,w:360,h:90},
+        blocks:{x:504,y:1000,w:504,sp:100,font:34,bar:12}, labels:{on:1,font:30},
+        exam:{len:0,font:30,on:1}, dotR:26, dotRW:30, rowFont:30,
+        week:{x:72,y:830,w:936,h:150,g:16,dir:"col"} },
+      { A:{x0:72,y0:800,bw:170,bh:40,g:12}, bOff:{dx:528,dy:0}, gate:{x:72,y:1588,w:360,h:90},
+        blocks:{x:300,y:380,w:708,sp:88,font:32,bar:10}, labels:{on:1,font:30},
+        exam:{len:0,font:30,on:1}, dotR:13, dotRW:30, rowFont:30,
+        week:{x:72,y:830,w:936,h:150,g:16,dir:"col"} },
+      { A:{x0:72,y0:1560,bw:330,bh:52,g:16}, bOff:{dx:528,dy:0}, gate:{x:72,y:1588,w:360,h:90},
+        blocks:{x:300,y:380,w:708,sp:88,font:32,bar:10}, labels:{on:0,font:22},
+        exam:{len:0,font:24,on:0}, dotR:20, dotRW:30, rowFont:30,
+        week:{x:72,y:830,w:936,h:150,g:16,dir:"col"} }
+    ],
+    card: { day:38, body:32 }
+  },
+  "1x1": {
+    orient: "col",
+    text: { x: 72, y: 72, l1: 56, l2: 32, gap: 12 },
+    brand: { x: 72, y: 1080 - 72 - 26 },
+    F: [
+      { A:{x0:72,y0:880,bw:280,bh:46,g:14}, bOff:{dx:528,dy:0}, gate:{x:72,y:904,w:280,h:72},
+        blocks:{x:440,y:470,w:568,sp:92,font:28,bar:12}, labels:{on:1,font:26},
+        exam:{len:0,font:26,on:1}, dotR:20, dotRW:22, rowFont:28,
+        week:{x:72,y:600,w:176,h:260,g:14,dir:"row"} },
+      { A:{x0:72,y0:560,bw:120,bh:26,g:8}, bOff:{dx:528,dy:0}, gate:{x:72,y:904,w:280,h:72},
+        blocks:{x:260,y:262,w:748,sp:72,font:30,bar:10}, labels:{on:0,font:18},
+        exam:{len:0,font:20,on:0}, dotR:11, dotRW:22, rowFont:28,
+        week:{x:72,y:600,w:176,h:260,g:14,dir:"row"} },
+      { A:{x0:72,y0:960,bw:300,bh:40,g:12}, bOff:{dx:528,dy:0}, gate:{x:72,y:904,w:280,h:72},
+        blocks:{x:260,y:262,w:748,sp:72,font:24,bar:10}, labels:{on:0,font:18},
+        exam:{len:0,font:20,on:0}, dotR:16, dotRW:22, rowFont:28,
+        week:{x:72,y:600,w:176,h:260,g:14,dir:"row"} }
+    ],
+    card: { day:28, body:22 }
+  }
+};
+const LY = LAYOUTS[FMT];
+const ORIENT = LY.orient;
+
+/* Zwei Layout-Rahmen nach der Kamera-Spur mischen (Zahlen rekursiv lerpen). */
+function mix(a, b, x){
+  if (typeof a === "number") return lerp(a, b, x);
+  if (typeof a !== "object" || a === null) return x < .5 ? a : b;
+  const o = {};
+  for (const k in a) o[k] = mix(a[k], b[k], x);
+  return o;
+}
+function frameAt(cam){
+  const seq = [0, 1, 2, 0];
+  const i = clamp(Math.floor(cam), 0, 2), f = cam - i;
+  return mix(LY.F[seq[i]], LY.F[seq[Math.min(i + 1, 3)]], f);
+}
+
+/* ───────── Gurte (belegte Farbfolge, siehe SOURCES.md) ───────── */
+const BELTS = [
+  { name:"Weiß",          c:"var(--belt-weiss)",  ink:true },
+  { name:"Gelb",          c:"var(--belt-gelb)",   ink:true },
+  { name:"Orange",        c:"var(--belt-orange)", ink:true },
+  { name:"Rot",           c:"var(--belt-rot)" },
+  { name:"Grün",          c:"var(--belt-gruen)" },
+  { name:"Blau",          c:"var(--belt-blau)" },
+  { name:"Braun",         c:"var(--belt-braun)" },
+  { name:"Braun-Schwarz", c:"var(--belt-braun)", split:true },
+  { name:"Schwarz",       c:"var(--belt-schwarz)" }
+];
+function beltRect(A, k){
+  if (ORIENT === "row") return { x:A.x0 + k * (A.bw + A.g), y:A.y0 - A.bh / 2, w:A.bw, h:A.bh };
+  return { x:A.x0, y:A.y0 - (k + 1) * A.bh - k * A.g, w:A.bw, h:A.bh };
+}
+function beltRectF(A, k){                 /* Zwischenpositionen für Ring und Punkt */
+  const i = clamp(Math.floor(k), 0, 8), f = k - i;
+  if (f <= 0 || i >= 8) return beltRect(A, clamp(k, 0, 8));
+  return mix(beltRect(A, i), beltRect(A, i + 1), f);
+}
+
+/* ───────── DOM einmal aufbauen ───────── */
+const stage = document.getElementById("stage");
+stage.style.width = W + "px"; stage.style.height = H + "px";
+function el(cls, html, parent){
+  const d = document.createElement("div");
+  d.className = cls; if (html != null) d.innerHTML = html;
+  (parent || stage).appendChild(d); return d;
+}
+function place(d, x, y, w, h){
+  d.style.left = x + "px"; d.style.top = y + "px";
+  if (w != null) d.style.width = w + "px";
+  if (h != null) d.style.height = h + "px";
+}
+
+const lineA = el("pathline"), lineB = el("pathline");
+const beltsB = BELTS.map(b => { const d = el("belt"); d.style.background = b.c; return d; });
+const beltsA = BELTS.map(b => { const d = el("belt"); d.style.background = b.c; return d; });
+[beltsA, beltsB].forEach(arr => arr.forEach((d, k) => { if (BELTS[k].split){ const i = document.createElement("i"); d.appendChild(i); } }));
+const labelsA = BELTS.map(b => { const d = el("blabel", b.name); d.style.color = (ORIENT === "col" && !b.ink) ? "#fff" : "var(--ink)"; return d; });
+
+const LOCK = '<svg viewBox="0 0 26 30" fill="none" aria-hidden="true"><rect x="2" y="13" width="22" height="15" rx="3" fill="#0D0000"/><path d="M7 13V9a6 6 0 0 1 12 0v4" stroke="#0D0000" stroke-width="3"/></svg>';
+const gate = el("gate", LOCK + (ORIENT === "row" ? "<span>erst fit<br>werden</span>" : "<span>erst fit werden</span>"));
+/* Ein Durchstrich pro Zeile, damit er nie als Unterstreichung gelesen wird. */
+const ghost = el("ghost", (ORIENT === "row" ? ["erst fit", "werden"] : ["erst fit werden"])
+  .map(l => '<span>' + l + '<i class="strike"></i></span>').join(""));
+const strikes = [...ghost.querySelectorAll(".strike")];
+strikes.forEach(s => s.style.position = "absolute");
+
+const examA = el("examhalf"), examB = el("examhalf"), examLabel = el("examlabel", "Prüfung");
+const ring = el("ring");
+
+const BLOCKS = [["Technik","fillG"],["Form","fillH"],["Selbstverteidigung","fillS"],["Fitness","fitLevel"]];
+const blk = BLOCKS.map(([name], i) => {
+  const label = el("blk-label", name), track = el("blk-track");
+  const fill = el("blk-fill" + (i === 3 ? " fit" : ""), "", track);
+  return { label, track, fill };
+});
+
+const DAYS = [
+  ["Mo", true], ["Di", false], ["Mi", true], ["Do", false], ["Fr", false]
+];
+const cards = DAYS.map(([d, on]) => el("card " + (on ? "on" : "off"),
+  '<div class="day">' + d + '</div><div class="body">' +
+  (on ? 'Ho Sin Do<small>ab 18 Uhr</small>' : '–') + '</div>'));
+cards.forEach(c => {
+  c.querySelector(".day").style.fontSize = LY.card.day + "px";
+  c.querySelector(".body").style.fontSize = LY.card.body + "px";
+  if (LY.F[1].week.dir === "col"){
+    c.style.flexDirection = "row"; c.style.alignItems = "center"; c.style.gap = "40px";
+    c.querySelector(".day").style.width = "80px";
+  }
+});
+
+/* „Du“ bleibt auf dem Weg der Erwachsenen – das Publikum sind Erwachsene und Eltern. */
+const rowLabA = el("rowlabel", 'Jugendliche &amp; Erwachsene<small>danach</small>');
+const rowLabB = el("rowlabel", 'Kinder<small>ab 18 Uhr</small>');
+
+const dotA = el("dot", "Du"), dotB = el("dot", "");
+
+const l1 = el("l1"), l2 = el("l2");
+l1.style.fontSize = LY.text.l1 + "px"; l2.style.fontSize = LY.text.l2 + "px";
+const brand = el("brand", "Ho Sin Do Melsungen · seit 1976");
+place(brand, LY.brand.x, LY.brand.y);
+
+/* ───────── seek(t): jedes Bild ist eine reine Funktion von t ───────── */
+function seek(t){
+  const S = n => sample(n, t);
+  const F = frameAt(S("cam"));
+  const A = F.A;
+  const split = S("rowB");
+  const Boff = { dx: F.bOff.dx * split, dy: F.bOff.dy * split };
+
+  /* Gurtwege */
+  const beltsIn = S("beltsIn");
+  const presB = clamp(split * 4);
+  BELTS.forEach((b, k) => {
+    const r = beltRect(A, k);
+    const p = RM ? beltsIn : EASE.out(clamp((beltsIn - k * .08) / .36));
+    const off = (1 - p) * 14;
+    place(beltsA[k], r.x, r.y + (ORIENT === "row" ? off : 0) , r.w, r.h);
+    if (ORIENT === "col") beltsA[k].style.left = (r.x - off) + "px";
+    beltsA[k].style.opacity = p;
+    place(beltsB[k], r.x + Boff.dx, r.y + Boff.dy, r.w, r.h);
+    beltsB[k].style.opacity = presB;
+  });
+  const r0 = beltRect(A, 0), r8 = beltRect(A, 8);
+  const lineP = RM ? beltsIn : clamp(beltsIn * 1.1);
+  if (ORIENT === "row"){
+    const len = (r8.x + r8.w / 2 - (r0.x + r0.w / 2)) * lineP;
+    place(lineA, r0.x + r0.w / 2, A.y0 - 1, len, 2);
+    place(lineB, r0.x + r0.w / 2 + Boff.dx, A.y0 - 1 + Boff.dy, len * presB, 2);
+  } else {
+    const yb = r0.y + r0.h / 2, len = (yb - (r8.y + r8.h / 2)) * lineP;
+    place(lineA, A.x0 + A.bw / 2 - 1, yb - len, 2, len);
+    place(lineB, A.x0 + A.bw / 2 - 1 + Boff.dx, yb - len * presB + Boff.dy, 2, len * presB);
+  }
+  lineB.style.opacity = presB;
+
+  /* Gurtnamen folgen dem Ring */
+  const ringV = S("ring"), ringPos = S("ringPos");
+  BELTS.forEach((b, k) => {
+    const r = beltRect(A, k), d = labelsA[k];
+    const on = ringV * clamp(1 - Math.abs(ringPos - k) * 2) * F.labels.on;
+    d.style.opacity = on;
+    d.style.fontSize = F.labels.font + "px";
+    if (ORIENT === "row"){
+      const w = d.offsetWidth;
+      place(d, r.x + r.w / 2 - w / 2, r.y + r.h + 14);
+    } else {
+      place(d, r.x + 16, r.y + r.h / 2 - F.labels.font / 2);
+    }
+  });
+
+  /* Ring */
+  const rr = beltRectF(A, ringPos);
+  place(ring, rr.x - 8, rr.y - 8, rr.w + 16, rr.h + 16);
+  ring.style.opacity = ringV;
+
+  /* Tor des Irrtums */
+  const g = F.gate, gy = RM ? 0 : S("gateY");
+  place(gate, g.x, g.y + gy * 60, g.w, g.h);
+  gate.style.opacity = S("gate");
+  const gf = ORIENT === "row" ? 30 : (FMT === "9x16" ? 34 : 28);
+  gate.style.fontSize = gf + "px";
+  place(ghost, g.x, g.y, g.w, g.h);
+  ghost.style.fontSize = gf + "px";
+  ghost.style.opacity = S("ghost");
+  strikes.forEach(s => s.style.transform = "scaleX(" + S("strike") + ")");
+
+  /* Prüfung */
+  const ex = S("exam") , open = S("examOpen"), ep = S("examPos");
+  const re = beltRectF(A, ep);
+  if (ORIENT === "row"){
+    const cx = re.x + re.w + A.g / 2, len = F.exam.len, gap = open * len * .55;
+    place(examA, cx - 3, A.y0 - len / 2 - gap, 6, len / 2);
+    place(examB, cx - 3, A.y0 + gap, 6, len / 2);
+    examLabel.style.fontSize = F.exam.font + "px";
+    const w = examLabel.offsetWidth;
+    place(examLabel, cx - w / 2, A.y0 - len / 2 - F.exam.font - 18 - gap);
+  } else {
+    const cy = re.y - A.g / 2, len = A.bw + 40, gap = open * (len / 2) * .5;
+    place(examA, A.x0 - 20 - gap, cy - 3, len / 2, 6);
+    place(examB, A.x0 - 20 + len / 2 + gap, cy - 3, len / 2, 6);
+    examLabel.style.fontSize = F.exam.font + "px";
+    place(examLabel, A.x0 + A.bw + 44 + gap, cy - F.exam.font / 2);
+  }
+  examA.style.opacity = examB.style.opacity = ex;
+  examLabel.style.opacity = ex * F.exam.on;
+
+  /* Bausteine + Fitness */
+  const bl = S("blocks"), fit = S("fitness");
+  blk.forEach((b, i) => {
+    const B = F.blocks, y = B.y + i * B.sp;
+    const pres = i === 3 ? fit : (RM ? bl : EASE.out(clamp((bl - i * .2) / .6)));
+    b.label.style.fontSize = B.font + "px";
+    place(b.label, B.x, y);
+    place(b.track, B.x, y + B.font + 14, B.w, B.bar);
+    b.fill.style.width = (S(BLOCKS[i][1]) * 100) + "%";
+    b.label.style.opacity = b.track.style.opacity = pres;
+  });
+
+  /* Woche */
+  const wk = S("week"), Wk = F.week;
+  const cardRect = i => Wk.dir === "row"
+    ? { x: Wk.x + i * (Wk.w + Wk.g), y: Wk.y, w: Wk.w, h: Wk.h }
+    : { x: Wk.x, y: Wk.y + i * (Wk.h + Wk.g), w: Wk.w, h: Wk.h };
+  cards.forEach((c, i) => {
+    const r = cardRect(i);
+    const p = RM ? wk : EASE.out(clamp((wk - i * .1) / .6));
+    place(c, r.x, r.y + (1 - p) * (RM ? 0 : 18), r.w, r.h);
+    c.style.opacity = p;
+  });
+
+  /* Punkt „Du“: auf dem Gurt oder in der Woche */
+  const dw = S("dotWeek"), day = S("dotDay"), db = S("dotBelt");
+  const rb = beltRectF(A, db);
+  const rD = ORIENT === "row" ? F.dotR : F.dotR;
+  const onBelt = ORIENT === "row"
+    ? { x: rb.x + rb.w / 2, y: rb.y + rb.h / 2 }
+    : { x: rb.x + rb.w - rD - 12, y: rb.y + rb.h / 2 };
+  const di = clamp(Math.floor(day), 0, 3), df = day - di;
+  const cA = cardRect(di), cB = cardRect(Math.min(di + 1, 4));
+  const cR = mix(cA, cB, df);
+  const onWeek = Wk.dir === "row"
+    ? { x: cR.x + cR.w / 2, y: cR.y + cR.h - F.dotRW - 22 }
+    : { x: cR.x + cR.w - F.dotRW - 28, y: cR.y + cR.h / 2 };
+  const arc = Math.sin(Math.PI * clamp(day / 2, 0, 1)) * (day > 0 && day < 2 ? 1 : 0);
+  const pw = EASE.io(dw);
+  let dx = lerp(onBelt.x, onWeek.x, pw), dy = lerp(onBelt.y, onWeek.y, pw);
+  if (Wk.dir === "row") dy -= arc * 90; else dx -= arc * 70;
+  const dr = lerp(rD, F.dotRW, pw);
+  place(dotA, dx - dr, dy - dr, dr * 2, dr * 2);
+  dotA.style.opacity = S("dot");
+  dotA.style.fontSize = Math.round(dr * .8) + "px";
+  dotA.textContent = dr >= 15 ? "Du" : "";
+
+  const dbp = S("dotB");
+  place(dotB, onBelt.x - rD + Boff.dx, onBelt.y - rD + Boff.dy, rD * 2, rD * 2);
+  dotB.style.opacity = dbp;
+
+  /* Gruppenlabels der Wende */
+  const rl = S("rowLabels");
+  rowLabA.style.fontSize = rowLabB.style.fontSize = F.rowFont + "px";
+  if (ORIENT === "row"){
+    const y = A.y0 - A.bh / 2 - 16;
+    place(rowLabA, A.x0, y); rowLabA.style.transform = "translateY(-100%)";
+    place(rowLabB, A.x0 + F.bOff.dx, y + F.bOff.dy); rowLabB.style.transform = "translateY(-100%)";
+  } else {
+    const top = A.y0 - 9 * A.bh - 8 * A.g - 24;
+    place(rowLabA, A.x0, top, A.bw + 120); rowLabA.style.transform = "translateY(-100%)";
+    place(rowLabB, A.x0 + F.bOff.dx, top, W - (A.x0 + F.bOff.dx) - 72); rowLabB.style.transform = "translateY(-100%)";
+  }
+  rowLabA.style.opacity = rowLabB.style.opacity = rl;
+
+  /* Text: Anker + Stütze pro Beat */
+  let best = null, bestO = 0, rise = 0;
+  for (const b of TL.beats){
+    const inP = clamp((t - b.start) / .5), outP = b.end >= TL.duration ? 1 : clamp((b.end - t) / .35);
+    const o = Math.min(EASE.out(inP), outP);
+    if (o > bestO){ bestO = o; best = b; rise = (1 - EASE.out(inP)) * 16; }
+  }
+  if (RM) rise = 0;
+  const T = LY.text;
+  if (best){
+    if (l1.textContent !== best.l1) l1.textContent = best.l1;
+    if (l2.textContent !== best.l2) l2.textContent = best.l2;
+  }
+  place(l1, T.x, T.y + rise);
+  place(l2, T.x, T.y + T.l1 * 1.05 + T.gap + rise);
+  l1.style.opacity = l2.style.opacity = bestO;
+
+  brand.style.opacity = S("brand");
+  return true;
+}
+
+/* ───────── Prüfungen für die Verifikation ───────── */
+function textCheck(){
+  const T = LY.text, max = W - 2 * T.x, out = [];
+  for (const b of TL.beats){
+    l1.textContent = b.l1; l2.textContent = b.l2;
+    const w1 = l1.scrollWidth, w2 = l2.scrollWidth;
+    out.push({ id: b.id, l1w: w1, l2w: w2, max, ok: w1 <= max && w2 <= max,
+               words1: b.l1.split(/\s+/).length, words2: b.l2.split(/\s+/).length });
+  }
+  return out;
+}
+
+window.TIMELINE = TL;
+window.seek = seek;
+window.textCheck = textCheck;
+window.ready = (async () => {
+  const faces = ["500 20px Geist","600 20px Geist","700 20px Geist","800 20px Geist",
+                 "400 20px Inter","500 20px Inter","600 20px Inter"];
+  await Promise.all(faces.map(f => document.fonts.load(f, "äöüßÄÖÜ")));
+  await document.fonts.ready;
+  seek(0);
+  return { fmt: FMT, rm: RM, w: W, h: H,
+           fonts: [...document.fonts].filter(f => f.status === "loaded").length };
+})();
+})();
+</script>
+</body>
+</html>

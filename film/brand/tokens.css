@@ -1,0 +1,39 @@
+/* Film-Tokens, abgeleitet aus dem Nora-System der Website (index.src.html).
+   Ein Grund, ein Akzent, zwei Schriften, ein Raster. */
+@font-face{font-family:"Geist";font-weight:500;src:url("../fonts/geist-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist";font-weight:600;src:url("../fonts/geist-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist";font-weight:700;src:url("../fonts/geist-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist";font-weight:800;src:url("../fonts/geist-latin-800-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:400;src:url("../fonts/inter-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;src:url("../fonts/inter-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;src:url("../fonts/inter-latin-600-normal.woff2") format("woff2")}
+
+:root{
+  /* Farbe */
+  --ground:#F4F1E8;          /* warmer neutraler Grund (Website: --fg) */
+  --ink:#0D0000;             /* Text, Linien (Website: --red-950) */
+  --ink-muted:#5A4F4A;       /* Stützzeilen – 7.0:1 auf Grund */
+  --line:#D9D3C7;            /* Haarlinien, Kartenränder */
+  --track:#E6E0D4;           /* leere Balken */
+  --accent:#C01818;          /* einziger Akzent: „Du“, Schlüsselmomente */
+  --on-accent:#FFFFFF;
+
+  /* Gurte (Sachfarben, kein Akzent) */
+  --belt-weiss:#FFFFFF;
+  --belt-gelb:#F2C200;
+  --belt-orange:#F28C00;
+  --belt-rot:#9E1B1B;
+  --belt-gruen:#24734A;          /* 5.6:1 mit Weiß */
+  --belt-blau:#1F5FBF;
+  --belt-braun:#7A4A1E;
+  --belt-schwarz:#0D0000;
+
+  /* Schrift */
+  --display:"Geist",sans-serif;
+  --text:"Inter",sans-serif;
+
+  /* Raster: Einheit = 1px auf der 1080er-Kante, Ränder pro Format */
+  --margin-16x9:96px;
+  --margin-9x16:72px;
+  --margin-1x1:72px;
+}

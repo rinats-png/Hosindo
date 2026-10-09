@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Richtungen – Erklärfilm HO SIN DO</title>
+<link rel="stylesheet" href="brand/tokens.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E9E4D8;color:var(--ink);font-family:var(--text);padding:40px 24px 80px}
+  header,main,footer{max-width:1320px;margin:0 auto}
+  h1{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-.02em}
+  header p{color:var(--ink-muted);max-width:720px;margin-top:12px;line-height:1.55}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:36px}
+  @media (max-width:860px){.grid{grid-template-columns:1fr}}
+  .dir{background:#fff;border:1px solid var(--line);padding:18px;position:relative}
+  .dir.win{outline:3px solid var(--accent);outline-offset:-3px}
+  .tag{display:inline-block;font:600 12px var(--text);letter-spacing:.12em;text-transform:uppercase;
+       padding:5px 10px;border:1px solid var(--line);margin-bottom:12px}
+  .win .tag{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .dir h2{font-family:var(--display);font-weight:700;font-size:24px;margin-bottom:6px}
+  .dir p{font-size:14px;line-height:1.55;color:var(--ink-muted)}
+  .dir p+p{margin-top:8px}
+  .frame{aspect-ratio:16/9;width:100%;margin:14px 0;position:relative;overflow:hidden;border:1px solid var(--line)}
+  /* A – Gurtweg */
+  .a{background:var(--ground)}
+  .a .q{position:absolute;left:5%;top:9%;font:700 4.2cqw var(--display)}
+  .a .s{position:absolute;left:5%;top:19%;font:500 2cqw var(--text);color:var(--ink-muted)}
+  .frame{container-type:inline-size}
+  .a .row{position:absolute;left:21%;top:50%;display:flex;gap:1.5%;width:68%}
+  .a .row i{flex:1;height:5.2cqw;border:1px solid #0001}
+  .a .gate{position:absolute;left:11%;top:47%;width:8%;height:9cqw;background:#0D00001f;
+           display:grid;place-items:center;font:600 1.3cqw var(--text);text-align:center;color:var(--ink)}
+  /* B – Dojang-Nacht */
+  .b{background:#0D0000;color:#F4F1E8}
+  .b .ph{position:absolute;inset:0;background:radial-gradient(60% 70% at 70% 50%,#5C0000 0,#1F0000 55%,#0D0000 100%)}
+  .b .q{position:absolute;left:5%;bottom:14%;font:800 5cqw var(--display)}
+  .b .q em{color:#D43030;font-style:normal}
+  /* C – Matten-Raster */
+  .c{background:var(--ground);background-image:linear-gradient(var(--line) 1px,transparent 1px),
+     linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:12.5% 22.2%}
+  .c .dot{position:absolute;left:19%;top:61%;width:3cqw;height:3cqw;border-radius:50%;background:var(--accent)}
+  .c .q{position:absolute;left:5%;top:9%;font:700 4.2cqw var(--display)}
+  /* D – Kalender */
+  .d{background:var(--ground)}
+  .d .cal{position:absolute;left:5%;right:5%;top:36%;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5%}
+  .d .cal i{height:22cqw;background:#fff;border:1px solid var(--line);font:600 1.6cqw var(--display);
+            font-style:normal;padding:1.2cqw}
+  .d .cal i.on{border-color:var(--ink)}
+  .d .q{position:absolute;left:5%;top:9%;font:700 4.2cqw var(--display)}
+  .log{margin-top:44px;background:#fff;border:1px solid var(--line);padding:24px}
+  .log h2{font-family:var(--display);font-size:24px;margin-bottom:12px}
+  .log table{width:100%;border-collapse:collapse;font-size:14px}
+  .log th,.log td{text-align:left;padding:10px 8px;border-top:1px solid var(--line);vertical-align:top}
+  .log th{font-weight:600}
+</style>
+</head>
+<body>
+<header>
+  <h1>Vier Richtungen für einen Satz</h1>
+  <p>Der Film soll eine Sache klären: Bei Ho Sin Do musst du nicht erst fit werden – der weiße Gurt ist
+     der Anfang. Jede Richtung zeigt hier ihr Eröffnungsbild. Die rot gerahmte gewinnt; die Begründung steht
+     unten im Entscheidungslog.</p>
+</header>
+
+<main class="grid">
+  <section class="dir win">
+    <span class="tag">Gewinner · A</span>
+    <h2>Gurtweg</h2>
+    <div class="frame a" aria-label="Eröffnungsbild Richtung A">
+      <div class="q">Erst fit werden?</div>
+      <div class="s">Das denken viele vor dem Anfang.</div>
+      <div class="gate">erst fit<br>werden</div>
+      <div class="row">
+        <i style="background:#fff"></i><i style="background:#F2C200"></i><i style="background:#F28C00"></i>
+        <i style="background:#9E1B1B"></i><i style="background:#24734A"></i><i style="background:#1F5FBF"></i>
+        <i style="background:#7A4A1E"></i><i style="background:linear-gradient(90deg,#7A4A1E 50%,#0D0000 50%)"></i>
+        <i style="background:#0D0000"></i>
+      </div>
+    </div>
+    <p>Die echte Gurtfolge als Weg. Der Irrtum ist ein Tor vor dem weißen Gurt, das später einfach
+       verschwindet. Ein Objekt pro Idee: Tor, Gurt, Bausteine, Prüfung, Woche.</p>
+    <p>Creme-Grund und Rot aus dem Nora-System, Diagramme statt Fotos.</p>
+  </section>
+
+  <section class="dir">
+    <span class="tag">B</span>
+    <h2>Dojang-Nacht</h2>
+    <div class="frame b" aria-label="Eröffnungsbild Richtung B">
+      <div class="ph"></div>
+      <div class="q">Erst fit <em>werden?</em></div>
+    </div>
+    <p>Die dunkle Website-Bühne mit Kampfsportfotos und Reveal. Stark in der Stimmung, schwach im Erklären:
+       ein Foto zeigt keinen Ablauf.</p>
+    <p>Die Fotos sind KI-generiert und tragen ein Wasserzeichen; dunkler Grund widerspricht „warmer neutraler Grund“.</p>
+  </section>
+
+  <section class="dir">
+    <span class="tag">C</span>
+    <h2>Matten-Raster</h2>
+    <div class="frame c" aria-label="Eröffnungsbild Richtung C">
+      <div class="q">Erst fit werden?</div>
+      <div class="dot"></div>
+    </div>
+    <p>Ein Punkt wandert über ein Tatami-Raster. Hübsch, aber eine Metapher, die nichts genauer macht als
+       die echte Gurtfolge – also raus.</p>
+  </section>
+
+  <section class="dir">
+    <span class="tag">D</span>
+    <h2>Kalender</h2>
+    <div class="frame d" aria-label="Eröffnungsbild Richtung D">
+      <div class="q">Erst fit werden?</div>
+      <div class="cal"><i class="on">Mo</i><i>Di</i><i class="on">Mi</i><i>Do</i><i>Fr</i></div>
+    </div>
+    <p>Alles um die Trainingswoche gebaut. Beantwortet „wann“, aber nicht „wie geht der Weg“ – das Modell
+       fehlt. Die Woche wandert als Beleg in Richtung A.</p>
+  </section>
+</main>
+
+<footer class="log">
+  <h2>Entscheidungslog</h2>
+  <table>
+    <tr><th>Frage</th><th>Antwort</th></tr>
+    <tr><td>Für wen?</td><td>Erwachsene und Eltern in Melsungen, die glauben, man müsse erst fit sein.</td></tr>
+    <tr><td>Was kommunizieren wir?</td><td>Der weiße Gurt ist der Anfang; Fitness entsteht unterwegs; der Weg ist für jedes Alter gleich.</td></tr>
+    <tr><td>Braucht es einen Namen?</td><td>Nein. Der Gurtweg bleibt unbenannt – er ist einfach der Weg. Benannt werden nur Dinge, die man im Dojang wieder hört: Gurt, Hyong, Prüfung.</td></tr>
+    <tr><td>Gewinner</td><td><b>A – Gurtweg.</b> Einzige Richtung, in der das Bild selbst das Modell ist: das Tor verschwindet, die Bausteine füllen sich, die Prüfung öffnet sich. B stimmt, erklärt aber nicht; C ist eine Metapher ohne Genauigkeitsgewinn; D zeigt nur das Wann.</td></tr>
+    <tr><td>Übernommen aus D</td><td>Die echte Trainingswoche als Beleg im Proof-Akt.</td></tr>
+  </table>
+</footer>
+</body>
+</html>

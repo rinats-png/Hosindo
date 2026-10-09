@@ -1,0 +1,165 @@
+{
+ "master_16x9.mp4": {
+  "probe": {
+   "codec": "h264",
+   "pix": "yuv420p",
+   "size": "1920x1080",
+   "fps": 60.0,
+   "audio": "aac 48000 Hz stereo",
+   "duration": 60.0
+  },
+  "flashes": {
+   "frames": 3600,
+   "max_changed_area": 0.0503,
+   "transitions_over_threshold": 0,
+   "worst_second_count": 0
+  },
+  "loudness": {
+   "integrated_lufs": -15.9,
+   "true_peak_dbtp": -1.6,
+   "ok": true
+  }
+ },
+ "cut_9x16.mp4": {
+  "probe": {
+   "codec": "h264",
+   "pix": "yuv420p",
+   "size": "1080x1920",
+   "fps": 60.0,
+   "audio": "aac 48000 Hz stereo",
+   "duration": 60.0
+  },
+  "flashes": {
+   "frames": 3600,
+   "max_changed_area": 0.1136,
+   "transitions_over_threshold": 0,
+   "worst_second_count": 0
+  },
+  "loudness": {
+   "integrated_lufs": -15.9,
+   "true_peak_dbtp": -1.6,
+   "ok": true
+  }
+ },
+ "cut_1x1.mp4": {
+  "probe": {
+   "codec": "h264",
+   "pix": "yuv420p",
+   "size": "1080x1080",
+   "fps": 60.0,
+   "audio": "aac 48000 Hz stereo",
+   "duration": 60.0
+  },
+  "flashes": {
+   "frames": 3600,
+   "max_changed_area": 0.0828,
+   "transitions_over_threshold": 0,
+   "worst_second_count": 0
+  },
+  "loudness": {
+   "integrated_lufs": -15.9,
+   "true_peak_dbtp": -1.6,
+   "ok": true
+  }
+ },
+ "master_16x9_reduced_motion.mp4": {
+  "probe": {
+   "codec": "h264",
+   "pix": "yuv420p",
+   "size": "1920x1080",
+   "fps": 60.0,
+   "audio": "aac 48000 Hz stereo",
+   "duration": 60.0
+  },
+  "flashes": {
+   "frames": 3600,
+   "max_changed_area": 0.1028,
+   "transitions_over_threshold": 0,
+   "worst_second_count": 0
+  },
+  "loudness": {
+   "integrated_lufs": -15.9,
+   "true_peak_dbtp": -1.6,
+   "ok": true
+  }
+ },
+ "onsets(master_16x9.mp4)": [
+  {
+   "cue": "thud",
+   "t": 2.5,
+   "rise_db": 11.1,
+   "peak_at": 2.51,
+   "offset_ms": 10
+  },
+  {
+   "cue": "lift",
+   "t": 5.625,
+   "rise_db": 11.0,
+   "peak_at": 5.74,
+   "offset_ms": 115
+  },
+  {
+   "cue": "motif",
+   "t": 6.25,
+   "rise_db": 5.6,
+   "peak_at": 6.26,
+   "offset_ms": 10
+  },
+  {
+   "cue": "tick",
+   "t": 27.5,
+   "rise_db": 4.1,
+   "peak_at": 27.51,
+   "offset_ms": 10
+  },
+  {
+   "cue": "tick",
+   "t": 30.0,
+   "rise_db": 13.8,
+   "peak_at": 30.01,
+   "offset_ms": 10
+  },
+  {
+   "cue": "tick",
+   "t": 32.5,
+   "rise_db": 5.6,
+   "peak_at": 32.51,
+   "offset_ms": 10
+  },
+  {
+   "cue": "tick",
+   "t": 35.0,
+   "rise_db": 14.0,
+   "peak_at": 35.01,
+   "offset_ms": 10
+  },
+  {
+   "cue": "open",
+   "t": 38.125,
+   "rise_db": 2.5,
+   "peak_at": 38.18,
+   "offset_ms": 55
+  },
+  {
+   "cue": "motif",
+   "t": 39.375,
+   "rise_db": 5.5,
+   "peak_at": 39.4,
+   "offset_ms": 25
+  },
+  {
+   "cue": "motif",
+   "t": 48.125,
+   "rise_db": 5.6,
+   "peak_at": 48.13,
+   "offset_ms": 5
+  },
+  {
+   "cue": "motifEnd",
+   "t": 53.125,
+   "rise_db": 9.5,
+   "peak_at": 53.14,
+   "offset_ms": 15
+  }
+ ]
+}
