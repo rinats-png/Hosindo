@@ -1,0 +1,7 @@
+node_modules
+out/raw_*
+out/bed_raw.wav
+review/sb/
+review/final/
+review/wm/
+review/diff_*.png

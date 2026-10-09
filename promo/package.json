@@ -1,0 +1,3 @@
+{ "name": "hosindo-promo", "private": true, "type": "module",
+  "description": "9:16-Promovideo aus der HO SIN DO Website (website2video)",
+  "dependencies": { "playwright-core": "1.56.1" } }

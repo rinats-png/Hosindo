@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Promo 9:16 – HO SIN DO Melsungen</title>
+<style>
+  @font-face{font-family:"Geist";font-weight:600;src:url("fonts/geist-latin-600-normal.woff2") format("woff2")}
+  @font-face{font-family:"Geist";font-weight:700;src:url("fonts/geist-latin-700-normal.woff2") format("woff2")}
+  @font-face{font-family:"Geist";font-weight:800;src:url("fonts/geist-latin-800-normal.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:400;src:url("fonts/inter-latin-400-normal.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:500;src:url("fonts/inter-latin-500-normal.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:600;src:url("fonts/inter-latin-600-normal.woff2") format("woff2")}
+  /* Nora-System der Website */
+  :root{--bg:#0D0000;--bg2:#1F0000;--red:#C01818;--red4:#D43030;--fg:#F4F1E8;--muted:rgba(244,241,232,.62);
+        --line:rgba(255,255,255,.12)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);overflow:hidden}
+  #stage{position:relative;width:1080px;height:1920px;overflow:hidden;color:var(--fg);
+         background:radial-gradient(120% 70% at 50% 45%, #1A0303 0%, var(--bg) 70%)}
+  #stage .abs{position:absolute}
+  .photo{inset:0;background:url("../assets/img/judo-wurf-dark.jpg") 85% 28%/cover no-repeat;  /* 85 %: schneidet das KI-Wasserzeichen unten links vollständig ab */transform-origin:50% 40%}
+  .shade{inset:0;background:linear-gradient(to top, rgba(13,0,0,.92) 0%, rgba(13,0,0,.55) 40%, rgba(13,0,0,.35) 70%, rgba(13,0,0,.7) 100%)}
+  .screen{overflow:hidden;background:var(--bg)}
+  .screen .photo{position:absolute;inset:0}
+  .screen img{position:absolute;left:0;top:0;display:block}
+  .bezel{border:14px solid #1C1717;border-radius:66px;box-shadow:0 30px 80px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.06)}
+  .panel{overflow:hidden;border-radius:28px;border:1px solid var(--line);background:var(--bg2)}
+  .panel img{position:absolute;left:0;top:0;display:block;transform-origin:50% 0}
+  .kt{font:800 120px/1.02 "Geist",sans-serif;letter-spacing:-.025em;white-space:nowrap}
+  .kt .line{display:block}
+  .kt .m{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .12em;margin:0 -.02em -.12em}
+  .kt .w{display:inline-block}
+  .kt .red{color:var(--red4)}
+  .label{font:600 30px "Inter",sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .info{font:500 44px/1.35 "Inter",sans-serif;color:var(--fg);white-space:nowrap}
+  .info small{display:block;color:var(--muted);font-size:40px}
+  .stat b{display:block;font:800 150px/1 "Geist",sans-serif;letter-spacing:-.03em}
+  .stat span{display:block;margin-top:14px}
+  .ring{border:4px solid #fff;border-radius:50%}
+  .tapdot{background:rgba(255,255,255,.85);border-radius:50%}
+  .hl{border:4px solid var(--red4);border-radius:12px}
+  .brandmark{width:84px;height:84px;background:var(--red);display:grid;place-items:center;
+             font:800 30px "Geist",sans-serif;letter-spacing:.04em;color:#fff}
+  .brandname{font:700 38px/1 "Geist",sans-serif;letter-spacing:.24em;text-transform:uppercase}
+  .brandname small{display:block;font:500 28px "Inter",sans-serif;letter-spacing:.1em;text-transform:none;
+                   color:var(--muted);margin-top:12px}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="audio.js"></script>
+<script>
+(function(){
+"use strict";
+/* ═════ TIMELINE: jede Szene, jede Bewegung, jeder Ton. 120 BPM → Schlag 0,5 s, Takt 2 s.
+   Alle Szenenwechsel liegen auf Taktgrenzen, Text-Einsätze auf Schlägen oder Halbschlägen. ═════ */
+const TIMELINE = {
+  duration: 26, fps: 60, bpm: 120,
+  safe: { top: 285, bottom: 1635 },                     /* zentrierte 4:5-Zone */
+  scenes: [
+    { id: "hook",    start: 0,  end: 2,  goal: "Muster unterbrechen: die Headline der Website, groß" },
+    { id: "context", start: 2,  end: 4,  goal: "Für wen: Anfänger, jedes Alter" },
+    { id: "product", start: 4,  end: 8,  goal: "Match Cut: Foto wird zur Website, Scroll durch den Einstieg" },
+    { id: "sparten", start: 8,  end: 12, goal: "Feature 1: vier Sparten, echte Karten" },
+    { id: "woche",   start: 12, end: 16, goal: "Feature 2: Mo & Mi ab 18 Uhr, Tipp auf echte Wochenkarten" },
+    { id: "trainer", start: 16, end: 18, goal: "Feature 3: Trainer bis zum 9. Dan" },
+    { id: "outcome", start: 18, end: 22, goal: "Ergebnis: 50 Jahre, 1.000+ Schüler, 59 Titel" },
+    { id: "cta",     start: 22, end: 26, goal: "CTA: Komm ins Dojang · wann · wo" }
+  ],
+  text: [
+    { id: "hook",  lines: [["Der", "Weg"], ["beginnt", "im"], ["Dojang.*"]], size: 132, y: 760,
+      at: [0.10, 0.35, 0.60, 0.85, 1.10], out: 1.90 },
+    { id: "ctx",   lines: [["Für", "Anfänger."], ["Für", "jedes", "Alter."]], size: 112, y: 820,
+      at: [2.15, 2.40, 2.65, 2.85, 3.05], out: 3.85 },
+    { id: "since", lines: [["Seit", "1976.*"]], size: 104, y: 360, at: [5.00, 5.25], out: 7.85 },
+    { id: "spart", lines: [["Vier", "Sparten.*"]], size: 104, y: 330, at: [8.15, 8.40], out: 11.85 },
+    { id: "woche", lines: [["Mo", "&", "Mi"], ["ab", "18", "Uhr.*"]], size: 96, y: 300,
+      at: [12.25, 12.40, 12.55, 12.75, 12.90, 13.05], out: 15.85, scale: .78 },
+    { id: "train", lines: [["Trainer", "bis"], ["zum", "9.", "Dan.*"]], size: 96, y: 300,
+      at: [16.15, 16.30, 16.50, 16.65, 16.80], out: 17.85, scale: .78 },
+    { id: "cta",   lines: [["Komm", "ins"], ["Dojang.*"]], size: 140, y: 560, at: [22.15, 22.40, 22.65], out: 99 }
+  ],
+  labels: [
+    { id: "brandlbl", text: "Ho Sin Do Melsungen", y: 300, in: 5.0, out: 7.85 }
+  ],
+  moves: {
+    photoScale:  [[0, 1.15], [2, 1.04, "out"], [4, 1.0, "lin"]],
+    shadeDeep:   [[2.0, 0], [2.4, 1, "out"]],
+    morph:       [[4.0, 0], [4.9, 1, "io"]],                /* Vollbild → Telefon-Bildschirm */
+    toSite:      [[4.45, 0], [4.95, 1, "io"]],              /* Foto → Website-Hero */
+    bezel:       [[4.6, 0], [5.0, 1, "out"]],
+    scrollTop:   [[5.8, 0], [7.6, 1, "io"]],
+    phoneOut:    [[7.85, 0], [8.15, 1, "io"]],
+    spartenIn:   [[8.0, 0], [8.5, 1, "io"]],
+    spartenCard: [[9.1, 0], [9.5, 1, "io"], [10.1, 1], [10.5, 2, "io"], [11.1, 2], [11.5, 3, "io"]],
+    spartenOut:  [[11.85, 0], [12.15, 1, "io"]],
+    phoneIn:     [[12.0, 0], [12.5, 1, "out"]],
+    tapMo:       [[13.0, 0], [13.6, 1, "lin"]],
+    tapMi:       [[14.0, 0], [14.6, 1, "lin"]],
+    phoneOut2:   [[15.85, 0], [16.15, 1, "io"]],
+    trainerIn:   [[16.0, 0], [16.4, 1, "io"]],
+    trainerZoom: [[16.0, 1.0], [18.0, 1.10, "io"]],
+    trainerOut:  [[17.85, 0], [18.1, 1, "io"]],
+    stat1:       [[18.25, 0], [18.85, 1, "out"]],
+    stat2:       [[18.75, 0], [19.35, 1, "out"]],
+    stat3:       [[19.25, 0], [19.85, 1, "out"]],
+    statsOut:    [[21.85, 0], [22.1, 1, "io"]],
+    ctaPhoto:    [[22.0, 0], [22.6, 1, "out"]],
+    ctaScale:    [[22.0, 1.06], [26.0, 1.0, "out"]],
+    ctaInfo:     [[22.9, 0], [23.4, 1, "out"]],
+    ctaBrand:    [[23.4, 0], [23.9, 1, "out"]]
+  },
+  /* Ton: Szenenwechsel auf Takt-Einsen, Tipps auf Schlägen. */
+  cues: [
+    { t: 3.0,  type: "riser",  why: "Spannung in den Match Cut" },
+    { t: 4.0,  type: "impact", why: "Foto wird Website" },
+    { t: 8.0,  type: "impact", why: "Sparten" },
+    { t: 9.5,  type: "swipe",  why: "nächste Karte" },
+    { t: 10.5, type: "swipe",  why: "nächste Karte" },
+    { t: 11.5, type: "swipe",  why: "nächste Karte" },
+    { t: 12.0, type: "impact", why: "Woche" },
+    { t: 13.0, type: "tap",    why: "Montag" },
+    { t: 14.0, type: "tap",    why: "Mittwoch" },
+    { t: 16.0, type: "impact", why: "Trainer" },
+    { t: 18.0, type: "impact", why: "Zahlen" },
+    { t: 18.25, type: "count", why: "50" },
+    { t: 18.75, type: "count", why: "1.000+" },
+    { t: 19.25, type: "count", why: "59" },
+    { t: 22.0, type: "final",  why: "CTA" }
+  ],
+  /* Geometrie */
+  phone: { screen: { x: 305, y: 567, w: 470, h: 1019 }, radius: 52, border: 14 },
+  site: { css: 430, heroH: 2330, heroW: 1075, scrollH: 6613, trainingH: 2330,
+          days: [{ y: 306.8, h: 222 }, null, { y: 715.8, h: 222 }], dayX: 21.5, dayW: 387 },
+  panel: { x: 60, y: 520, w: 960, h: 1115 },
+  stats: [ { v: 50, fmt: n => String(n), label: "Jahre Verein" },
+           { v: 1000, fmt: n => (n >= 1000 ? "1.000+" : n.toLocaleString("de-DE")), label: "ausgebildete Schüler" },
+           { v: 59, fmt: n => String(n), label: "Deutsche Meistertitel" } ]
+};
+window.TIMELINE = TIMELINE;
+
+const EASE = { lin: x => x, out: x => 1 - Math.pow(1 - x, 4),
+               io: x => x < .5 ? 8 * x ** 4 : 1 - Math.pow(-2 * x + 2, 4) / 2 };
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, x) => a + (b - a) * x;
+function S(name, t){
+  const k = TIMELINE.moves[name];
+  if (t <= k[0][0]) return k[0][1];
+  for (let i = 1; i < k.length; i++){
+    const [t1, v1, e] = k[i], [t0, v0] = k[i - 1];
+    if (t < t1) return lerp(v0, v1, EASE[e || "lin"]((t - t0) / (t1 - t0)));
+  }
+  return k[k.length - 1][1];
+}
+
+/* ═════ DOM ═════ */
+const stage = document.getElementById("stage");
+const mk = (cls, html, parent) => { const d = document.createElement("div"); d.className = "abs " + cls;
+  if (html != null) d.innerHTML = html; (parent || stage).appendChild(d); return d; };
+const box = (d, x, y, w, h) => { d.style.left = x + "px"; d.style.top = y + "px";
+  if (w != null) d.style.width = w + "px"; if (h != null) d.style.height = h + "px"; };
+
+const photo = mk("photo"), shade = mk("shade");
+const screen = mk("screen"), screenPhoto = mk("photo", null, screen);
+const siteHero = document.createElement("img"); siteHero.src = "assets/site/scroll_top.png"; screen.appendChild(siteHero);
+const siteWeek = document.createElement("img"); siteWeek.src = "assets/site/training_view.png"; screen.appendChild(siteWeek);
+const bezel = mk("bezel");
+const hlMo = mk("hl"), hlMi = mk("hl");
+const ringMo = mk("ring"), ringMi = mk("ring"), dotMo = mk("tapdot"), dotMi = mk("tapdot");
+const panelS = mk("panel"), imgS = document.createElement("img"); imgS.src = "assets/site/sparten.png"; panelS.appendChild(imgS);
+const panelT = mk("panel"), imgT = document.createElement("img"); imgT.src = "assets/site/trainer.png"; panelT.appendChild(imgT);
+
+/* Kinetische Zeilen: Wort für Wort, maskiert. „*“ markiert das rote Wort. */
+const texts = TIMELINE.text.map(tx => {
+  const d = mk("kt"); d.style.fontSize = tx.size + "px";
+  const words = [];
+  tx.lines.forEach(line => {
+    const l = document.createElement("span"); l.className = "line";
+    line.forEach((w, i) => {
+      const m = document.createElement("span"); m.className = "m";
+      const s = document.createElement("span"); s.className = "w" + (w.endsWith("*") ? " red" : "");
+      s.textContent = w.replace("*", ""); m.appendChild(s); l.appendChild(m);
+      if (i < line.length - 1) l.appendChild(document.createTextNode(" "));
+      words.push(s);
+    });
+    d.appendChild(l);
+  });
+  return { tx, d, words };
+});
+const labels = TIMELINE.labels.map(L => { const d = mk("label", L.text); return { L, d }; });
+const stats = TIMELINE.stats.map(st => mk("stat", '<b></b><span class="label">' + st.label + "</span>"));
+const ctaInfo = mk("info", "Mo oder Mi ab 18 Uhr<small>Dreuxallee 28 · Melsungen</small>");
+const ctaBrand = mk("", '<div style="display:flex;align-items:center;gap:28px"><div class="brandmark">HSD</div>' +
+  '<div class="brandname">Ho Sin Do<small>hosindo.de</small></div></div>');
+
+/* ═════ seek(t) – jedes Bild eine reine Funktion von t ═════ */
+function seek(t){
+  const P = TIMELINE.phone.screen, site = TIMELINE.site;
+
+  /* Hintergrundfoto: Hook, Kontext – und zurück im CTA */
+  const ctaP = S("ctaPhoto", t), m = S("morph", t);
+  const photoOn = t < 4 ? 1 : ctaP;
+  photo.style.opacity = photoOn;
+  photo.style.transform = "scale(" + (t < 22 ? S("photoScale", t) : S("ctaScale", t)) + ")";
+  shade.style.opacity = photoOn;
+  shade.style.background = "linear-gradient(to top, rgba(13,0,0,.94) 0%, rgba(13,0,0," +
+    lerp(.55, .72, Math.max(S("shadeDeep", t), t >= 22 ? 1 : 0)) + ") 45%, rgba(13,0,0," +
+    lerp(.30, .62, Math.max(S("shadeDeep", t), t >= 22 ? 1 : 0)) + ") 72%, rgba(13,0,0,.7) 100%)";
+
+  /* Bildschirm: morpht vom Vollbild zum Telefon, zeigt dann die Website */
+  const out1 = S("phoneOut", t), in2 = S("phoneIn", t), out2 = S("phoneOut2", t);
+  let sx, sy, sw, sh, rad, op = 0, dx = 0, dy = 0;
+  if (t >= 4 && t < 8.2){
+    sx = lerp(0, P.x, m); sy = lerp(0, P.y, m); sw = lerp(1080, P.w, m); sh = lerp(1920, P.h, m);
+    rad = lerp(0, TIMELINE.phone.radius, m); op = 1 - out1; dx = -260 * out1;
+  } else if (t >= 12 && t < 16.2){
+    sx = P.x; sy = P.y; sw = P.w; sh = P.h; rad = TIMELINE.phone.radius;
+    op = in2 * (1 - out2); dx = 260 * (1 - in2); dy = 120 * out2;
+  } else { sx = P.x; sy = P.y; sw = P.w; sh = P.h; rad = TIMELINE.phone.radius; }
+  box(screen, sx + dx, sy + dy, sw, sh);
+  screen.style.borderRadius = rad + "px";
+  screen.style.opacity = op;
+  const toSite = S("toSite", t);
+  screenPhoto.style.opacity = t < 8.2 ? 1 - toSite : 0;
+  const k = sw / site.heroW;
+  siteHero.style.width = sw + "px";
+  siteHero.style.opacity = t < 8.2 ? toSite : 0;
+  const maxScroll = site.scrollH * (P.w / site.heroW) - P.h;
+  siteHero.style.transform = "translateY(" + (-S("scrollTop", t) * maxScroll * (sw / P.w)) + "px)";
+  siteWeek.style.width = sw + "px";
+  siteWeek.style.opacity = t >= 12 && t < 16.2 ? 1 : 0;
+  const bz = TIMELINE.phone.border;
+  box(bezel, sx + dx - bz, sy + dy - bz, sw + 2 * bz, sh + 2 * bz);
+  bezel.style.opacity = t < 8.2 ? S("bezel", t) * (1 - out1) : (t >= 12 && t < 16.2 ? op : 0);
+
+  /* Tipps auf Montag und Mittwoch: Ring + Punkt + bleibende Markierung */
+  const cs = P.w / site.css;
+  [[0, "tapMo", hlMo, ringMo, dotMo], [2, "tapMi", hlMi, ringMi, dotMi]].forEach(([i, tr, hl, ring, dot]) => {
+    const d = site.days[i], p = S(tr, t), started = t >= TIMELINE.moves[tr][0][0];
+    const x = P.x + dx + site.dayX * cs, y = P.y + dy + d.y * cs, w = site.dayW * cs;
+    const h = Math.min(d.h * cs, P.y + P.h - y - 6);
+    box(hl, x - 2, y - 2, w + 4, h + 4);
+    hl.style.opacity = started ? Math.min(1, p * 4) * op : 0;
+    const cx = x + w * .72, cy = y + 64 * cs, r = 30 + 60 * EASE.out(p);
+    box(ring, cx - r, cy - r, r * 2, r * 2); ring.style.opacity = started ? (1 - p) * op : 0;
+    const dr = 22 * (1 - .3 * p);
+    box(dot, cx - dr, cy - dr, dr * 2, dr * 2); dot.style.opacity = started ? clamp(1 - (p - .5) * 2) * op : 0;
+  });
+
+  /* Panels: echte Ausschnitte der Website, maskiert enthüllt */
+  const Pn = TIMELINE.panel;
+  const spIn = S("spartenIn", t), spOut = S("spartenOut", t);
+  box(panelS, Pn.x, Pn.y, Pn.w, Pn.h);
+  panelS.style.opacity = t >= 8 && t < 12.2 ? 1 : 0;
+  panelS.style.clipPath = "inset(" + (spOut * 100) + "% 0 " + ((1 - spIn) * 100) + "% 0 round 28px)";
+  const sScale = Pn.w / 970, cardH = 3308 * sScale / 4, maxS = 3308 * sScale - Pn.h;
+  imgS.style.width = Pn.w + "px";
+  imgS.style.transform = "translateY(" + (-Math.min(maxS, S("spartenCard", t) * cardH)) + "px)";
+
+  const trIn = S("trainerIn", t), trOut = S("trainerOut", t);
+  box(panelT, Pn.x, Pn.y, Pn.w, Pn.h);
+  panelT.style.opacity = t >= 16 && t < 18.2 ? 1 : 0;
+  panelT.style.clipPath = "inset(" + (trOut * 100) + "% 0 " + ((1 - trIn) * 100) + "% 0 round 28px)";
+  imgT.style.width = Pn.w + "px";
+  imgT.style.transform = "scale(" + S("trainerZoom", t) + ")";
+
+  /* Kinetische Zeilen */
+  texts.forEach(({ tx, d, words }) => {
+    const sc = tx.scale || 1;
+    d.style.fontSize = tx.size + "px";
+    d.style.left = "0px"; d.style.width = "1080px"; d.style.textAlign = "center";
+    d.style.top = tx.y + "px";
+    words.forEach((w, i) => {
+      const a = tx.at[Math.min(i, tx.at.length - 1)];
+      const pin = EASE.out(clamp((t - a) / .45));
+      const pout = EASE.io(clamp((t - tx.out - i * .03) / .3));
+      w.style.transform = "translateY(" + ((1 - pin) * 105 - pout * 105) + "%)";
+    });
+    const vis = t >= tx.at[0] - .01 && t < tx.out + .6;
+    d.style.visibility = vis ? "visible" : "hidden";
+    d.style.transform = sc !== 1 ? "" : "";
+  });
+  labels.forEach(({ L, d }) => {
+    const o = EASE.out(clamp((t - L.in) / .4)) * (1 - clamp((t - L.out) / .3));
+    d.style.opacity = o; d.style.left = "0px"; d.style.width = "1080px"; d.style.textAlign = "center";
+    d.style.top = L.y + "px";
+  });
+
+  /* Zahlen zählen hoch */
+  const so = 1 - S("statsOut", t);
+  TIMELINE.stats.forEach((st, i) => {
+    const p = S("stat" + (i + 1), t), el = stats[i];
+    el.style.left = "0px"; el.style.width = "1080px"; el.style.textAlign = "center";
+    el.style.top = (430 + i * 390 + (1 - p) * 40) + "px";
+    el.style.opacity = Math.min(1, p * 1.6) * so;
+    const n = Math.round(st.v * EASE.out(clamp(p * 1.15)));
+    el.firstChild.textContent = st.fmt(n);
+    el.firstChild.style.color = i === 2 ? "var(--red4)" : "var(--fg)";
+  });
+
+  /* CTA */
+  const ci = S("ctaInfo", t), cb = S("ctaBrand", t);
+  box(ctaInfo, 0, 1000 + (1 - ci) * 30, 1080); ctaInfo.style.textAlign = "center"; ctaInfo.style.opacity = ci;
+  box(ctaBrand, 0, 1300 + (1 - cb) * 30, 1080); ctaBrand.style.opacity = cb;
+  ctaBrand.firstChild.style.justifyContent = "center";
+  return true;
+}
+
+function textCheck(){                                    /* alle Zeilen in der Sicherheitszone? */
+  const out = [];
+  texts.forEach(({ tx, d }) => {
+    seek(tx.at[tx.at.length - 1] + .6);
+    const r = d.getBoundingClientRect();
+    out.push({ id: tx.id, top: Math.round(r.top), bottom: Math.round(r.bottom), width: Math.round(d.scrollWidth),
+               inSafe: r.top >= TIMELINE.safe.top && r.bottom <= TIMELINE.safe.bottom });
+  });
+  return out;
+}
+
+window.seek = seek;
+window.textCheck = textCheck;
+window.ready = (async () => {
+  await Promise.all(["600 20px Geist", "700 20px Geist", "800 20px Geist", "400 20px Inter", "500 20px Inter", "600 20px Inter"]
+    .map(f => document.fonts.load(f, "äöüß")));
+  await Promise.all([...document.images].map(i => i.decode()));
+  const bg = new Image(); bg.src = "../assets/img/judo-wurf-dark.jpg"; await bg.decode();
+  seek(0);
+  return { fonts: [...document.fonts].filter(f => f.status === "loaded").length, images: document.images.length };
+})();
+})();
+</script>
+</body>
+</html>
